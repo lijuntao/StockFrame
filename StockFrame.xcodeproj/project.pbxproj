@@ -37,6 +37,7 @@
 		2990137220D3AFC9009B914C /* ViewControllerBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2990137120D3AFC9009B914C /* ViewControllerBase.swift */; };
 		2990137420D3AFE0009B914C /* NodeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2990137320D3AFE0009B914C /* NodeItem.swift */; };
 		29F3900420DC8D2E00E76165 /* NodeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F3900320DC8D2E00E76165 /* NodeManager.swift */; };
+		6648E79220E3E1A100A3DB67 /* FDTLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6648E79120E3E1A100A3DB67 /* FDTLog.swift */; };
 		76ECA25D7FABFBE1DE3EC40B /* Pods_StockFrame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B56EA61C210A2315FDBF714D /* Pods_StockFrame.framework */; };
 /* End PBXBuildFile section */
 
@@ -96,6 +97,7 @@
 		2990137320D3AFE0009B914C /* NodeItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeItem.swift; sourceTree = "<group>"; };
 		29F3900320DC8D2E00E76165 /* NodeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeManager.swift; sourceTree = "<group>"; };
 		555E1DC5B9168A94DF945015 /* Pods-StockFrame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockFrame.release.xcconfig"; path = "Pods/Target Support Files/Pods-StockFrame/Pods-StockFrame.release.xcconfig"; sourceTree = "<group>"; };
+		6648E79120E3E1A100A3DB67 /* FDTLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FDTLog.swift; sourceTree = "<group>"; };
 		834AF762B77B599313483F71 /* Pods-StockFrameTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockFrameTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StockFrameTests/Pods-StockFrameTests.debug.xcconfig"; sourceTree = "<group>"; };
 		863EB99F651FBCC656F4C49A /* Pods-StockFrame.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockFrame.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StockFrame/Pods-StockFrame.debug.xcconfig"; sourceTree = "<group>"; };
 		8A7DC487DE8AE5053834E01A /* Pods_StockFrameTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StockFrameTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -248,6 +250,7 @@
 			children = (
 				296A9A4D20E35EB800AA07DE /* GlobalMacro.swift */,
 				296A9A6420E3973A00AA07DE /* FDTEnum.swift */,
+				6648E79120E3E1A100A3DB67 /* FDTLog.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -328,7 +331,6 @@
 				292F2D5B204F92B0005AF091 /* Frameworks */,
 				292F2D5C204F92B0005AF091 /* Resources */,
 				93E3E835074FE022B07C2A4E /* [CP] Embed Pods Frameworks */,
-				680018D0DAE09D8C59F8C0D2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -348,7 +350,6 @@
 				292F2D6F204F92B0005AF091 /* Frameworks */,
 				292F2D70204F92B0005AF091 /* Resources */,
 				13D899A9822593E528DC5C8A /* [CP] Embed Pods Frameworks */,
-				4F9A209434460D16012EDF2A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -463,6 +464,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-StockFrameTests/Pods-StockFrameTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/CocoaAsyncSocket/CocoaAsyncSocket.framework",
+				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
@@ -472,6 +474,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaAsyncSocket.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaLumberjack.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
@@ -518,36 +521,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		4F9A209434460D16012EDF2A /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StockFrameTests/Pods-StockFrameTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		680018D0DAE09D8C59F8C0D2 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StockFrame/Pods-StockFrame-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		93E3E835074FE022B07C2A4E /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -557,6 +530,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-StockFrame/Pods-StockFrame-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/CocoaAsyncSocket/CocoaAsyncSocket.framework",
+				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
@@ -566,6 +540,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaAsyncSocket.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaLumberjack.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
@@ -600,6 +575,7 @@
 				296A9A6120E393BC00AA07DE /* TransactionViewController.swift in Sources */,
 				296A9A5720E370F500AA07DE /* FDTUIWindow.swift in Sources */,
 				296A9A6520E3973A00AA07DE /* FDTEnum.swift in Sources */,
+				6648E79220E3E1A100A3DB67 /* FDTLog.swift in Sources */,
 				296A9A6320E393CA00AA07DE /* MineViewController.swift in Sources */,
 				2947DCBE20B7E126007BCAF4 /* FDTUITabFrame.swift in Sources */,
 				2947DCC320B7F1DA007BCAF4 /* NavigationControllerBase.swift in Sources */,

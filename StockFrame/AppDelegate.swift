@@ -13,10 +13,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
+    let StartTime = CFAbsoluteTimeGetCurrent()
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FDTEntry.sharedInstance.show()
+        
+        FDTLog.initLog() //初始化日志系统
+        DispatchQueue.main.async {
+            FDTLog.logInfo("启动耗时:\(CFAbsoluteTimeGetCurrent() - self.StartTime)")
+        }
         return true
     }
 
