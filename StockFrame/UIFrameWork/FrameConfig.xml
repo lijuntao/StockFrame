@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<menu id="3999" id_name="Toolbar" type="toolbar">
+		<i id="6801" type="stack" linkid="2790" pic="tab_shouye.png" pagelist="6824">首页</i> 
+		<i id="6802" type="stack" linkid="2312" pic="tab_hangqing.png" pagelist="6821">行情</i>
+		<i id="6803" type="stack" linkid="2222" pic="tab_zixuan.png" pagelist="6822">自选</i>		
+		<i id="6804" type="stack" linkid="3601" pic="tab_jiaoyi.png" pagelist="6823">交易</i>
+		<i id="6805" type="stack" linkid="3140" pic="tab_zixun.png" pagelist="6824">我的</i>
+	</menu>
+</root>
