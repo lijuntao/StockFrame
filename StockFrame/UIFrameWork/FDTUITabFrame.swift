@@ -37,6 +37,7 @@ class FDTUITabFrame: NSObject {
             let module = Bundle.main.infoDictionary!["CFBundleExecutable"] as! String
             let typeViewController = NSClassFromString(module + "." + className) as! ViewControllerBase.Type
             let rootViewController = typeViewController.init()
+            rootViewController.navTitle = node.value
             
             let rootNavViewController = NavigationControllerBase.init(rootViewController: rootViewController)
             rootNavViewController.setNavId(node.id, linkId: node.linkid, pagelist: node.pagelist)

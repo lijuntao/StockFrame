@@ -28,6 +28,12 @@
 		296A9A5520E366B400AA07DE /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296A9A5420E366B400AA07DE /* UIImage+Extension.swift */; };
 		296A9A5720E370F500AA07DE /* FDTUIWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296A9A5620E370F500AA07DE /* FDTUIWindow.swift */; };
 		296A9A5920E3713200AA07DE /* FDTEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296A9A5820E3713200AA07DE /* FDTEntry.swift */; };
+		296A9A5D20E3938700AA07DE /* StockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296A9A5C20E3938700AA07DE /* StockViewController.swift */; };
+		296A9A5F20E393A900AA07DE /* FinancialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296A9A5E20E393A900AA07DE /* FinancialViewController.swift */; };
+		296A9A6120E393BC00AA07DE /* TransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296A9A6020E393BC00AA07DE /* TransactionViewController.swift */; };
+		296A9A6320E393CA00AA07DE /* MineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296A9A6220E393CA00AA07DE /* MineViewController.swift */; };
+		296A9A6520E3973A00AA07DE /* FDTEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296A9A6420E3973A00AA07DE /* FDTEnum.swift */; };
+		296A9A6720E397B600AA07DE /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296A9A6620E397B600AA07DE /* UIColor+Extension.swift */; };
 		2990137220D3AFC9009B914C /* ViewControllerBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2990137120D3AFC9009B914C /* ViewControllerBase.swift */; };
 		2990137420D3AFE0009B914C /* NodeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2990137320D3AFE0009B914C /* NodeItem.swift */; };
 		29F3900420DC8D2E00E76165 /* NodeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F3900320DC8D2E00E76165 /* NodeManager.swift */; };
@@ -80,6 +86,12 @@
 		296A9A5420E366B400AA07DE /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		296A9A5620E370F500AA07DE /* FDTUIWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FDTUIWindow.swift; sourceTree = "<group>"; };
 		296A9A5820E3713200AA07DE /* FDTEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FDTEntry.swift; sourceTree = "<group>"; };
+		296A9A5C20E3938700AA07DE /* StockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockViewController.swift; sourceTree = "<group>"; };
+		296A9A5E20E393A900AA07DE /* FinancialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialViewController.swift; sourceTree = "<group>"; };
+		296A9A6020E393BC00AA07DE /* TransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionViewController.swift; sourceTree = "<group>"; };
+		296A9A6220E393CA00AA07DE /* MineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineViewController.swift; sourceTree = "<group>"; };
+		296A9A6420E3973A00AA07DE /* FDTEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FDTEnum.swift; sourceTree = "<group>"; };
+		296A9A6620E397B600AA07DE /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		2990137120D3AFC9009B914C /* ViewControllerBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerBase.swift; sourceTree = "<group>"; };
 		2990137320D3AFE0009B914C /* NodeItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeItem.swift; sourceTree = "<group>"; };
 		29F3900320DC8D2E00E76165 /* NodeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeManager.swift; sourceTree = "<group>"; };
@@ -235,6 +247,7 @@
 			isa = PBXGroup;
 			children = (
 				296A9A4D20E35EB800AA07DE /* GlobalMacro.swift */,
+				296A9A6420E3973A00AA07DE /* FDTEnum.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -250,6 +263,10 @@
 		296A9A5B20E3878D00AA07DE /* TabPage */ = {
 			isa = PBXGroup;
 			children = (
+				296A9A5C20E3938700AA07DE /* StockViewController.swift */,
+				296A9A5E20E393A900AA07DE /* FinancialViewController.swift */,
+				296A9A6020E393BC00AA07DE /* TransactionViewController.swift */,
+				296A9A6220E393CA00AA07DE /* MineViewController.swift */,
 			);
 			path = TabPage;
 			sourceTree = "<group>";
@@ -266,6 +283,7 @@
 			children = (
 				296A9A4F20E362E700AA07DE /* String+Extension.swift */,
 				296A9A5420E366B400AA07DE /* UIImage+Extension.swift */,
+				296A9A6620E397B600AA07DE /* UIColor+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -565,6 +583,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				296A9A6720E397B600AA07DE /* UIColor+Extension.swift in Sources */,
 				296A9A5520E366B400AA07DE /* UIImage+Extension.swift in Sources */,
 				296A9A4E20E35EB800AA07DE /* GlobalMacro.swift in Sources */,
 				2990137420D3AFE0009B914C /* NodeItem.swift in Sources */,
@@ -572,11 +591,16 @@
 				2947DCD520B8068E007BCAF4 /* GDataXMLNode.m in Sources */,
 				296A9A5920E3713200AA07DE /* FDTEntry.swift in Sources */,
 				296A9A5020E362E700AA07DE /* String+Extension.swift in Sources */,
+				296A9A5F20E393A900AA07DE /* FinancialViewController.swift in Sources */,
+				296A9A5D20E3938700AA07DE /* StockViewController.swift in Sources */,
 				292F2D64204F92B0005AF091 /* ViewController.swift in Sources */,
 				292F2D62204F92B0005AF091 /* AppDelegate.swift in Sources */,
 				2947DCB620B7D999007BCAF4 /* FDTUIFrameWork.swift in Sources */,
 				2990137220D3AFC9009B914C /* ViewControllerBase.swift in Sources */,
+				296A9A6120E393BC00AA07DE /* TransactionViewController.swift in Sources */,
 				296A9A5720E370F500AA07DE /* FDTUIWindow.swift in Sources */,
+				296A9A6520E3973A00AA07DE /* FDTEnum.swift in Sources */,
+				296A9A6320E393CA00AA07DE /* MineViewController.swift in Sources */,
 				2947DCBE20B7E126007BCAF4 /* FDTUITabFrame.swift in Sources */,
 				2947DCC320B7F1DA007BCAF4 /* NavigationControllerBase.swift in Sources */,
 				29F3900420DC8D2E00E76165 /* NodeManager.swift in Sources */,

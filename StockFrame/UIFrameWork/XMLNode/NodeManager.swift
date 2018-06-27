@@ -14,7 +14,7 @@ let NodeType = "type"
 let NodeLinkId = "linkid"
 let NodePick = "pic"
 let NodePageList = "pagelist"
-let NodeVCName = "vcName"
+let NodeVCName = "vcname"
 
 
 class NodeManager {

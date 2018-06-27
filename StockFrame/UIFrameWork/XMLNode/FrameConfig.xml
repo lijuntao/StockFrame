@@ -2,9 +2,9 @@
 <root>
 	<menu id="3999" name="Tabbar" type="Tabbar">
 		<!-- <i id="6801" type="stack" linkid="2790" pic="tab_shouye.png" pagelist="6824">首页</i>  -->
-		<i id="6802" type="stack" linkid="2312" pic="stock;stock_select" pagelist="6821">行情</i>
-		<i id="6803" type="stack" linkid="2222" pic="financial;financial_select" pagelist="6822">理财</i>		
-		<i id="6804" type="stack" linkid="3601" pic="transaction;transaction_select" pagelist="6823">交易</i>
-		<i id="6805" type="stack" linkid="3140" pic="mine;mine_select" pagelist="6824">我的</i>
+		<i id="6802" type="stack" linkid="2312" pic="stock;stock_select" pagelist="6821" vcname="StockViewController">行情</i>
+		<i id="6803" type="stack" linkid="2222" pic="financial;financial_select" pagelist="6822" vcname="FinancialViewController">理财</i>		
+		<i id="6804" type="stack" linkid="3601" pic="transaction;transaction_select" pagelist="6823" vcname="TransactionViewController">交易</i>
+		<i id="6805" type="stack" linkid="3140" pic="mine;mine_select" pagelist="6824" vcname="MineViewController">我的</i>
 	</menu>
 </root>
