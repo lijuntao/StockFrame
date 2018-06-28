@@ -17,14 +17,15 @@ class FDTLog {
         #else
             defaultDebugLevel = .error
             DDLog.add(DDASLLogger.sharedInstance)
-        #endif
         
-        // 添加DDFileLogger，你的日志语句将写入到一个文件中，
-        // 默认路径在沙盒的Library/Caches/Logs/目录下，文件名为bundleid+空格+日期.log。
-        let fileLogger: DDFileLogger = DDFileLogger() // File Logger
-        fileLogger.rollingFrequency = TimeInterval(60*60*24)  // 24 hours
-        fileLogger.logFileManager.maximumNumberOfLogFiles = 7
-        DDLog.add(fileLogger)
+        
+            // 添加DDFileLogger，你的日志语句将写入到一个文件中，
+            // 默认路径在沙盒的Library/Caches/Logs/目录下，文件名为bundleid+空格+日期.log。
+            let fileLogger: DDFileLogger = DDFileLogger() // File Logger
+            fileLogger.rollingFrequency = TimeInterval(60*60*24)  // 24 hours
+            fileLogger.logFileManager.maximumNumberOfLogFiles = 7
+            DDLog.add(fileLogger)
+        #endif
     }
     
     class func logVerbose(_ message: String) {
