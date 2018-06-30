@@ -14,6 +14,11 @@ class StockViewController: ViewControllerBase {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        let btn = UIButton.init(frame: CGRect(x: 100, y: 100, width: 100, height: 100))
+        btn.backgroundColor = UIColor.red
+        btn.setTitle("股票", for: .normal)
+        btn.addTarget(self, action: #selector(btnAction(_:)), for: .touchUpInside)
+        self.view.addSubview(btn)
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,6 +26,10 @@ class StockViewController: ViewControllerBase {
         // Dispose of any resources that can be recreated.
     }
 
+    @objc func btnAction(_ sender: Any) {
+        FDT_UI_Public_Proxy.GotoVCWithId(PAGE_ID_STOCK_INFO)
+        FDTLog.logDebug("点击按钮")
+    }
     /*
     // MARK: - Navigation
 

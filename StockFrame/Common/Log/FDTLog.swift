@@ -36,15 +36,15 @@ class FDTLog {
         DDLogDebug(message)
     }
     
-    class func logInfo(_ message: String) {
-        DDLogInfo(message)
+    class func logInfo(_ message: String, fileName: String = #file, methodName: String = #function, lineNumber: Int = #line) {
+        DDLogInfo("\((fileName as NSString).lastPathComponent) 方法:\(methodName) 行号:\(lineNumber) 信息: \(message)")
     }
     
-    class func logWarn(_ message: String) {
-        DDLogWarn(message)
+    class func logWarn(_ message: String, fileName: String = #file, methodName: String = #function, lineNumber: Int = #line) {
+        DDLogWarn("\((fileName as NSString).lastPathComponent) 方法:\(methodName) 行号:\(lineNumber) 信息: \(message)")
     }
     
-    class func logError(_ message: String) {
-        DDLogError(message)
+    class func logError(_ message: String, fileName: String = #file, methodName: String = #function, lineNumber: Int = #line) {
+        DDLogError("\((fileName as NSString).lastPathComponent) 方法:\(methodName) 行号:\(lineNumber) 信息: \(message)")
     }
 }

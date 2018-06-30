@@ -11,22 +11,26 @@ import UIKit
 
 /// 节点类
 class NodeItem {
-    var id: String
+    var id: Int
     var name: String
     var type: String
     var pic: String
-    var linkid: String
-    var pagelist: String
+    var linkid: Int
+    var pagelist: Int
+    var stackLevel: Int
     var value: String
     var vcName: String
+    var list: String
     init() {
-        id = ""
+        id = 0
         name = ""
         type = ""
         pic = ""
-        linkid = ""
-        pagelist = ""
+        linkid = 0
+        pagelist = 0
+        stackLevel = 0
         value = ""
         vcName = ""
+        list = ""
     }
 }

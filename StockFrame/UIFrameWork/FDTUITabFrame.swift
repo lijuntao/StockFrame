@@ -44,7 +44,7 @@ class FDTUITabFrame: NSObject {
             
             let arrayImageName = node.pic.components(separatedBy: ";")
             let tabBarImage = UIImage.image(arrayImageName.first!)
-            var tabBarItem = UITabBarItem.init(title: node.value, image: tabBarImage, tag: node.id.integer)
+            var tabBarItem = UITabBarItem.init(title: node.value, image: tabBarImage, tag: node.id)
             if arrayImageName.count >= 2 {
                 let tabBarSelectedImage = UIImage.image(arrayImageName[1])
                 tabBarItem = UITabBarItem.init(title: node.value, image: tabBarImage, selectedImage: tabBarSelectedImage)
@@ -61,5 +61,15 @@ class FDTUITabFrame: NSObject {
     }
     
     
+    func getMainTabBar() -> TabBarControllerBase {
+        return mainTabBar
+    }
     
+    func getCurNavigationController() -> NavigationControllerBase? {
+        
+        if ((mainTabBar.selectedViewController as? NavigationControllerBase) != nil) {
+            return (mainTabBar.selectedViewController as! NavigationControllerBase)
+        }
+        return nil
+    }
 }

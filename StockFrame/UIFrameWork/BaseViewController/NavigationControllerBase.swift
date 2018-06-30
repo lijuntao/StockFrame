@@ -39,16 +39,16 @@ class NavigationControllerBase: UINavigationController {
     
 
     //设置导航条控制器id，根页面的页面id，导航条控制器对应的栈的页面集合id
-    func setNavId(_ id: String, linkId: String, pagelist: String) {
-        naviId = id.integer
-        basePageId = linkId.integer
-        pageListId = pagelist.integer
+    func setNavId(_ id: Int, linkId: Int, pagelist: Int) {
+        naviId = id
+        basePageId = linkId
+        pageListId = pagelist
         
         let array = self.viewControllers
         if array.count > 0 {
             let baseViewController = array.first as! ViewControllerBase
-            baseViewController.beloneStackId = id.integer
-            baseViewController.focusPageId = linkId.integer
+            baseViewController.beloneStackId = id
+            baseViewController.pageId = linkId
         }
     }
     /*

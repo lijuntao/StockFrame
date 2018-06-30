@@ -37,6 +37,6 @@ class FDTEntry: NSObject {
     }
     
     private func createUI() {
-        fdtWindow.rootViewController = FDTUIFrameWork.sharedInstance.shareingUIFramework().mainTabBar
+        fdtWindow.rootViewController = FDTUIFrameWork.sharedInstance.shareingUIFramework().getMainTabBar()
     }
 }
