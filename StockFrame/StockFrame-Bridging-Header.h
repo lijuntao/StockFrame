@@ -9,6 +9,17 @@
 #ifndef StockFrame_Bridging_Header_h
 #define StockFrame_Bridging_Header_h
 
+//OC测试文件
+#import "TestObjc.h"
+
+//net
+#import "DataHelper.h"
+#import "NetworkDefinition.h"
+#import "JPacketReceiveBase.h"
+#import "JPacketSendBase.h"
+
+#import "DLog.h"
+
 #import "GDataXMLNode.h"
 
 #endif /* StockFrame_Bridging_Header_h */

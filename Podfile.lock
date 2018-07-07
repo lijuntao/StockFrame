@@ -1,8 +1,11 @@
 PODS:
   - Alamofire (4.6.0)
   - CocoaAsyncSocket (7.6.2)
+  - CocoaLumberjack (3.4.2):
+    - CocoaLumberjack/Default (= 3.4.2)
+    - CocoaLumberjack/Extensions (= 3.4.2)
   - CocoaLumberjack/Default (3.4.2)
-  - CocoaLumberjack/Swift (3.4.2):
+  - CocoaLumberjack/Extensions (3.4.2):
     - CocoaLumberjack/Default
   - MBProgressHUD (1.1.0)
   - SDWebImage (4.3.0):
@@ -14,14 +17,14 @@ PODS:
 DEPENDENCIES:
   - Alamofire
   - CocoaAsyncSocket
-  - CocoaLumberjack/Swift
+  - CocoaLumberjack
   - MBProgressHUD
   - SDWebImage
   - SnapKit
   - SwiftyJSON
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - Alamofire
     - CocoaAsyncSocket
     - CocoaLumberjack
@@ -39,6 +42,6 @@ SPEC CHECKSUMS:
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
 
-PODFILE CHECKSUM: 4e418e80b63fd98a4586e2e76406747926cb4a42
+PODFILE CHECKSUM: c4a7b2399ff82b970a8c3722e44dd52e39e22c51
 
-COCOAPODS: 1.5.2
+COCOAPODS: 1.5.0

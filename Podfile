@@ -7,7 +7,7 @@ def shared_pods
     pod 'SDWebImage'
     pod 'SnapKit'
     pod 'MBProgressHUD'
-    pod 'CocoaLumberjack/Swift'
+    pod 'CocoaLumberjack'
 end
 
 target:StockFrame do

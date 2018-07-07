@@ -20,9 +20,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //初始化第三方库
         self.initThirdLib()
         
+//        let test = TestObjc.init()
+//        test.test()
         FDTEntry.sharedInstance.show()
         
-        FDTLog.logInfo("启动时间:\(Date())")
+        FDTLog.logDebug("启动时间:\(Date())")
         DispatchQueue.main.async {
             FDTLog.logDebug("启动耗时:\(CFAbsoluteTimeGetCurrent() - self.StartTime)")
         }
