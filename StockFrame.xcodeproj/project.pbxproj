@@ -14,6 +14,8 @@
 		29083C5F20E550400074AC58 /* UIDevice+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29083C5E20E550400074AC58 /* UIDevice+Extension.swift */; };
 		2912AFBF20F3042B00041031 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2912AFBE20F3042B00041031 /* LoginViewController.swift */; };
 		2912AFC120F332FD00041031 /* LoginInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2912AFC020F332FD00041031 /* LoginInfoViewController.swift */; };
+		2912AFC620F368C200041031 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2912AFC520F368C200041031 /* UIView+Extension.swift */; };
+		2912AFC920F3694000041031 /* BaseBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2912AFC820F3694000041031 /* BaseBarButtonItem.swift */; };
 		2924901320EF441800205628 /* ServerConfig.xml in Resources */ = {isa = PBXBuildFile; fileRef = 2924901220EF441800205628 /* ServerConfig.xml */; };
 		2924901520EF443D00205628 /* ServerConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2924901420EF443D00205628 /* ServerConfig.swift */; };
 		2924901720EF447C00205628 /* ServerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2924901620EF447C00205628 /* ServerManager.swift */; };
@@ -229,6 +231,8 @@
 		29083C5E20E550400074AC58 /* UIDevice+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Extension.swift"; sourceTree = "<group>"; };
 		2912AFBE20F3042B00041031 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2912AFC020F332FD00041031 /* LoginInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInfoViewController.swift; sourceTree = "<group>"; };
+		2912AFC520F368C200041031 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		2912AFC820F3694000041031 /* BaseBarButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseBarButtonItem.swift; sourceTree = "<group>"; };
 		2924901220EF441800205628 /* ServerConfig.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ServerConfig.xml; sourceTree = "<group>"; };
 		2924901420EF443D00205628 /* ServerConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerConfig.swift; sourceTree = "<group>"; };
 		2924901620EF447C00205628 /* ServerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerManager.swift; sourceTree = "<group>"; };
@@ -651,6 +655,14 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		2912AFC720F3692C00041031 /* BaseClass */ = {
+			isa = PBXGroup;
+			children = (
+				2912AFC820F3694000041031 /* BaseBarButtonItem.swift */,
+			);
+			path = BaseClass;
+			sourceTree = "<group>";
+		};
 		2924901120EF43DB00205628 /* Config */ = {
 			isa = PBXGroup;
 			children = (
@@ -783,6 +795,7 @@
 		296A9A4C20E35E5F00AA07DE /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				2912AFC720F3692C00041031 /* BaseClass */,
 				296A9A6C20E47A2300AA07DE /* Log */,
 				296A9A4D20E35EB800AA07DE /* GlobalMacro.swift */,
 				296A9A6420E3973A00AA07DE /* FDTEnum.swift */,
@@ -1301,6 +1314,7 @@
 				296A9A6620E397B600AA07DE /* UIColor+Extension.swift */,
 				29083C5920E54CBE0074AC58 /* AppDelegate+Extension.swift */,
 				29083C5E20E550400074AC58 /* UIDevice+Extension.swift */,
+				2912AFC520F368C200041031 /* UIView+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1670,6 +1684,7 @@
 				29083C5F20E550400074AC58 /* UIDevice+Extension.swift in Sources */,
 				299426E520E7664700A67E94 /* PageIdDef.swift in Sources */,
 				29B7F94B20ECA32B00A6F0D4 /* UseCoinUpdate.m in Sources */,
+				2912AFC920F3694000041031 /* BaseBarButtonItem.swift in Sources */,
 				292F2D64204F92B0005AF091 /* ViewController.swift in Sources */,
 				292F2D62204F92B0005AF091 /* AppDelegate.swift in Sources */,
 				29083C5820E4B8A60074AC58 /* NavigationController+UIExtension.swift in Sources */,
@@ -1725,6 +1740,7 @@
 				29B7F91220ECA32B00A6F0D4 /* Resume.m in Sources */,
 				29B7F97D20ECA32B00A6F0D4 /* GetMaxOrderQtyAllow.m in Sources */,
 				2947DCBE20B7E126007BCAF4 /* FDTUITabFrame.swift in Sources */,
+				2912AFC620F368C200041031 /* UIView+Extension.swift in Sources */,
 				29B7F99320ECA32B00A6F0D4 /* WmCalculateOrder.m in Sources */,
 				29B7F91D20ECA32B00A6F0D4 /* GlobalSettingUpdate.m in Sources */,
 				29B7F91020ECA32B00A6F0D4 /* ConnectChallenge.m in Sources */,

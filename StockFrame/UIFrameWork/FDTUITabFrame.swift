@@ -40,7 +40,7 @@ class FDTUITabFrame: NSObject {
             rootViewController.navTitle = node.name
             
             let rootNavViewController = NavigationControllerBase.init(rootViewController: rootViewController)
-            rootNavViewController.setNavId(node.id, linkId: node.linkid, pagelist: node.pagelist)
+            rootNavViewController.setNavId(node.id, linkId: item.linkid, pagelist: item.pagelist)
             
             let arrayImageName = item.pic.components(separatedBy: ";")
             let tabBarImage = UIImage.image(arrayImageName.first!)
@@ -72,6 +72,9 @@ class FDTUITabFrame: NSObject {
             popNavVC.setNavId(node.id, linkId: node.linkid, pagelist: node.pagelist)
             popNavVC.isPopup = true
         }
+        
+//        UITabBar.appearance().tintColor = UIColor.red
+        
     }
     
     

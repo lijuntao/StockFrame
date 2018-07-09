@@ -25,6 +25,7 @@ class TabBarControllerBase: UITabBarController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.initSubview()
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,6 +33,16 @@ class TabBarControllerBase: UITabBarController {
         // Dispose of any resources that can be recreated.
     }
     
+    func initSubview() {
+        var tabBarHeight = 49
+        if FDTTools.isIphoneX() {
+            tabBarHeight = 83
+        }
+        let backView = UIView(frame: CGRect(x: 0,y: 0,width: Int(self.view.frame.width),height: tabBarHeight));
+        backView.backgroundColor = FDTWMColor.navigationColor.color
+        self.tabBar.insertSubview(backView, at: 0);
+        tabBar.isOpaque = true;
+    }
 
     /*
     // MARK: - Navigation

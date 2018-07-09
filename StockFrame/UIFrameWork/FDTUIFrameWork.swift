@@ -71,8 +71,8 @@ class FDTUIFrameWork: NSObject {
         if navigationIndex != curSelected &&
             navigationIndex >= 0 &&
             navigationIndex < (mainTabbar.viewControllers?.count)!{
-            let navigationVC = mainTabbar.viewControllers![navigationIndex] as! NavigationControllerBase
-            navigationVC.gotoPageWithNodeItem(nodeItem, params: params)
+//            let navigationVC = mainTabbar.viewControllers![navigationIndex] as! NavigationControllerBase
+//            navigationVC.gotoPageWithNodeItem(nodeItem, params: params)
             mainTabbar.curSelectIndex = navigationIndex
             mainTabbar.selectedIndex = navigationIndex
             return
