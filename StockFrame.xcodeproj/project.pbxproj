@@ -12,6 +12,8 @@
 		29083C5820E4B8A60074AC58 /* NavigationController+UIExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29083C5720E4B8A60074AC58 /* NavigationController+UIExtension.swift */; };
 		29083C5A20E54CBE0074AC58 /* AppDelegate+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29083C5920E54CBE0074AC58 /* AppDelegate+Extension.swift */; };
 		29083C5F20E550400074AC58 /* UIDevice+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29083C5E20E550400074AC58 /* UIDevice+Extension.swift */; };
+		2912AFBF20F3042B00041031 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2912AFBE20F3042B00041031 /* LoginViewController.swift */; };
+		2912AFC120F332FD00041031 /* LoginInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2912AFC020F332FD00041031 /* LoginInfoViewController.swift */; };
 		2924901320EF441800205628 /* ServerConfig.xml in Resources */ = {isa = PBXBuildFile; fileRef = 2924901220EF441800205628 /* ServerConfig.xml */; };
 		2924901520EF443D00205628 /* ServerConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2924901420EF443D00205628 /* ServerConfig.swift */; };
 		2924901720EF447C00205628 /* ServerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2924901620EF447C00205628 /* ServerManager.swift */; };
@@ -225,6 +227,8 @@
 		29083C5720E4B8A60074AC58 /* NavigationController+UIExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NavigationController+UIExtension.swift"; sourceTree = "<group>"; };
 		29083C5920E54CBE0074AC58 /* AppDelegate+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Extension.swift"; sourceTree = "<group>"; };
 		29083C5E20E550400074AC58 /* UIDevice+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Extension.swift"; sourceTree = "<group>"; };
+		2912AFBE20F3042B00041031 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		2912AFC020F332FD00041031 /* LoginInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInfoViewController.swift; sourceTree = "<group>"; };
 		2924901220EF441800205628 /* ServerConfig.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ServerConfig.xml; sourceTree = "<group>"; };
 		2924901420EF443D00205628 /* ServerConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerConfig.swift; sourceTree = "<group>"; };
 		2924901620EF447C00205628 /* ServerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerManager.swift; sourceTree = "<group>"; };
@@ -638,6 +642,15 @@
 			path = NetWork;
 			sourceTree = "<group>";
 		};
+		2912AFBD20F3040300041031 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				2912AFBE20F3042B00041031 /* LoginViewController.swift */,
+				2912AFC020F332FD00041031 /* LoginInfoViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		2924901120EF43DB00205628 /* Config */ = {
 			isa = PBXGroup;
 			children = (
@@ -780,6 +793,7 @@
 		296A9A5A20E3875E00AA07DE /* PageComponents */ = {
 			isa = PBXGroup;
 			children = (
+				2912AFBD20F3040300041031 /* Login */,
 				296A9A6A20E4777600AA07DE /* Financial */,
 				296A9A6920E4777600AA07DE /* Mine */,
 				296A9A6820E4777600AA07DE /* Stock */,
@@ -1572,6 +1586,7 @@
 				29B7F96F20ECA32B00A6F0D4 /* CloseOrder.m in Sources */,
 				29B7F92B20ECA32B00A6F0D4 /* TokenUpdate.m in Sources */,
 				29B7F95D20ECA32B00A6F0D4 /* WmUnionLogin.m in Sources */,
+				2912AFC120F332FD00041031 /* LoginInfoViewController.swift in Sources */,
 				296A9A7820E47FF300AA07DE /* AccountInfoViewController.swift in Sources */,
 				29B7F93B20ECA32B00A6F0D4 /* ProfitUpdate.m in Sources */,
 				29B7F99E20ECA41500A6F0D4 /* FDUtility.m in Sources */,
@@ -1725,6 +1740,7 @@
 				29B7F96920ECA32B00A6F0D4 /* GetUserMappingList.m in Sources */,
 				298CDDE220EE222700BFBB57 /* TestObjc.m in Sources */,
 				2947DCC320B7F1DA007BCAF4 /* NavigationControllerBase.swift in Sources */,
+				2912AFBF20F3042B00041031 /* LoginViewController.swift in Sources */,
 				29ABCD0C20EE4AAB0040F5D8 /* DataCenter.swift in Sources */,
 				296A9A7220E47F3400AA07DE /* MeInfoViewController.swift in Sources */,
 				29B7F92420ECA32B00A6F0D4 /* SymbolChangedUpdate.m in Sources */,

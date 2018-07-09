@@ -9,36 +9,44 @@
 
 	<menu id="100" name="tabbar" type="tabbar">
 		<!-- <i id="2000" type="stack" linkid="" pic="tab_shouye.png" pagelist="1000" vcname="HomeViewController">首页</i>  -->
-		<i id="3000" type="stack" linkid="0" pic="stock;stock_select" pagelist="1001" vcname="StockViewController">行情</i>
-		<i id="4000" type="stack" linkid="0" pic="financial;financial_select" pagelist="1002" vcname="FinancialViewController">理财</i>		
-		<i id="5000" type="stack" linkid="0" pic="transaction;transaction_select" pagelist="1003" vcname="TransactionViewController">交易</i>
-		<i id="6000" type="stack" linkid="0" pic="mine;mine_select" pagelist="1004" vcname="MineViewController">我的</i>
+		<i id="3000" name="行情" type="stack" linkid="3000" pic="stock;stock_select" pagelist="1001"/>
+		<i id="4000" name="理财" type="stack" linkid="4000" pic="financial;financial_select" pagelist="1002"/>
+		<i id="5000" name="交易" type="stack" linkid="4000" pic="transaction;transaction_select" pagelist="1003"/>
+		<i id="6000" name="我的" type="stack" linkid="4000" pic="mine;mine_select" pagelist="1004"/>
 	</menu>
 	<menu id="101" name="pagelist" type="stack">
-	  	<i pagelist="1000" type="stacklist" list="2000-2500">首页</i>  
-		<i pagelist="1001" type="stacklist" list="3000-3500">行情</i>
-		<i pagelist="1002" type="stacklist" list="4000-4500">理财</i>
-		<i pagelist="1003" type="stacklist" list="5000-5500,3001">交易</i>
-		<i pagelist="1004" type="stacklist" list="6000-6500">我的</i>
+	  	<i pagelist="1000" name="首页" type="stacklist" list="2001-2500"/>
+		<i pagelist="1001" name="行情" type="stacklist" list="3001-3500"/>
+		<i pagelist="1002" name="理财" type="stacklist" list="4001-4500"/>
+		<i pagelist="1003" name="交易" type="stacklist" list="5001-5500,3001"/>
+		<i pagelist="1004" name="我的" type="stacklist" list="6001-6199"/>
+		<i pagelist="1010" name="弹出竖屏幕" type="stacklist" list="6201-6300"/>
 	</menu>
 
+	<menu id="102" name="popNaviPortrait" type="tabbar">
+		<i id="6200" name="弹出竖屏幕" type="stack" linkid="6200" pagelist="1010"/> 
+	</menu>
+	<!-- 认证 -->
+	<page id="6201" name="登录" type="frame" stackLevel="0" vcname="LoginViewController"/>
+	<page id="6202" name="登录详细信息" type="frame" stackLevel="10" vcname="LoginInfoViewController"/>
+
 	<!-- 首页 -->
-	<page id="2000" type="frame" stackLevel="0" vcname="HomeViewController">首页</page>
+	<page id="2001" name="首页" type="frame" stackLevel="0" vcname="HomeViewController"/>
 
 	<!-- 行情 -->
-	<page id="3000" type="frame" stackLevel="0" vcname="StockViewController">行情</page>
-	<page id="3001" type="frame" stackLevel="30" vcname="StockInfoViewController">股票详情</page>
+	<page id="3000" name="行情" type="frame" stackLevel="0" vcname="StockViewController"/>
+	<page id="3002" name="股票详情" type="frame" stackLevel="30" vcname="StockInfoViewController"/>
 
 	<!-- 理财 -->
-	<page id="4000" type="frame" stackLevel="0" vcname="FinancialViewController">理财</page>
-	<page id="4001" type="frame" stackLevel="30" vcname="FunInfoViewController">理财详情</page>
+	<page id="4000" name="理财" type="frame" stackLevel="0" vcname="FinancialViewController"/>
+	<page id="4002" name="理财详情" type="frame" stackLevel="30" vcname="FunInfoViewController"/>
 
 	<!-- 交易 -->
-	<page id="5000" type="frame" stackLevel="0" vcname="TransactionViewController">交易</page>
-	<page id="5001" type="frame" stackLevel="30" vcname="AccountInfoViewController">账户详情</page>
+	<page id="5000" name="交易" type="frame" stackLevel="0" vcname="TransactionViewController"/>
+	<page id="5002" name="账户详情" type="frame" stackLevel="30" vcname="AccountInfoViewController"/>
 
 	<!-- 我的 -->
-	<page id="6000" type="frame" stackLevel="0" vcname="MineViewController">我的</page>
-	<page id="6001" type="frame" stackLevel="30" vcname="MeInfoViewController">我的详情</page>
+	<page id="6000" name="我的" type="frame" stackLevel="0" vcname="MineViewController"/>
+	<page id="6002" name="我的详情" type="frame" stackLevel="30" vcname="MeInfoViewController"/>
 
 </root>

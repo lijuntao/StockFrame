@@ -21,6 +21,8 @@ extension NavigationControllerBase {
         //按照栈level操作
         if newPageId == curPageId { //当前页面
             //刷新当前页面
+            FDTLog.logDebug("刷新当前页面")
+            return
         } else if newPageStackLevel == curPageStackLevel { //栈level相等
             if className == "" {
                 className = "ViewControllerBase"

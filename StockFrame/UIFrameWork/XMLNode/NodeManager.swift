@@ -68,8 +68,7 @@ class NodeManager {
                     nodeItem.linkid = item.attribute(forName: NodeLinkId).stringValue().integer
                     nodeItem.pic = item.attribute(forName: NodePick).stringValue()
                     nodeItem.pagelist = item.attribute(forName: NodePageList).stringValue().integer
-                    nodeItem.value = item.stringValue()
-                    nodeItem.vcName = item.attribute(forName: NodeVCName).stringValue()
+                    nodeItem.name = item.attribute(forName: NodeName).stringValue()
                     nodeItems.append(nodeItem)
                 }
             }
@@ -77,6 +76,33 @@ class NodeManager {
         return nodeItems
     }
     
+    
+    /// 获取弹出竖屏
+    ///
+    /// - Returns: 节点数组
+    func getPopPortraitMenu() -> [NodeItem] {
+        guard let root = rootElement else {
+            return []
+        }
+        // 正常情况下menu 菜单id == 1000 即为tabbar配置
+        let elements = root.elements(forName: "menu") as! [GDataXMLElement]
+        var nodeItems = [NodeItem]()
+        for element in elements {
+            if element.attribute(forName: "id").stringValue() == "102" {
+                let items = element.elements(forName: "i") as! [GDataXMLElement]
+                for item in items {
+                    let nodeItem = NodeItem.init()
+                    nodeItem.id = item.attribute(forName: NodeID).stringValue().integer
+                    nodeItem.type = item.attribute(forName: NodeType).stringValue()
+                    nodeItem.linkid = item.attribute(forName: NodeLinkId).stringValue().integer
+                    nodeItem.pagelist = item.attribute(forName: NodePageList).stringValue().integer
+                    nodeItem.name = item.attribute(forName: NodeName).stringValue()
+                    nodeItems.append(nodeItem)
+                }
+            }
+        }
+        return nodeItems
+    }
     /// 根据Id获取node信息
     ///
     /// - Parameter id: id
@@ -88,12 +114,13 @@ class NodeManager {
         let nodeItem = NodeItem()
         let elements = root.elements(forName: "page") as! [GDataXMLElement]
         for element in elements {
-            if element.attribute(forName: "id").stringValue().integer == id {
+            if element.attribute(forName: NodeID).stringValue().integer == id {
                 nodeItem.id = element.attribute(forName: NodeID).stringValue().integer
                 nodeItem.type = element.attribute(forName: NodeType).stringValue()
-                nodeItem.value = element.stringValue()
+                nodeItem.name = element.attribute(forName: NodeName).stringValue()
                 nodeItem.stackLevel = element.attribute(forName: NodeStackLevel).stringValue().integer
                 nodeItem.vcName = element.attribute(forName: NodeVCName).stringValue()
+                break
             }
         }
         return nodeItem
@@ -246,5 +273,19 @@ class NodeManager {
             }
         }
         return stackIndex
+    }
+    
+    /// 是否为弹出视图
+    ///
+    /// - Parameter node: 节点 NodeItem
+    /// - Returns: true 是 false 不是
+    func isPopPortraitNode(_ node: NodeItem) -> Bool {
+        if let pageList = self.getPopPortraitMenu().first?.pagelist {
+            //判断
+            if self.pageIsInPageList(node.id, pageList: pageList) {
+                return true
+            }
+        }
+        return false
     }
 }
