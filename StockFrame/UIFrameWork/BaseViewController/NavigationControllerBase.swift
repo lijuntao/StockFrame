@@ -34,6 +34,10 @@ class NavigationControllerBase: UINavigationController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        isPopup = false
+    }
 
     //设置导航条控制器id，根页面的页面id，导航条控制器对应的栈的页面集合id
     func setNavId(_ id: Int, linkId: Int, pagelist: Int) {

@@ -56,33 +56,52 @@ class ViewControllerBase: UIViewController {
 
     func configuraLeftNavigationItem() {
         
-        let backItem = BaseBarButtonItem(title: "", style: .plain, target: self, action: #selector(self.popAction))
-        self.navigationController?.navigationBar.tintColor = FDTWMColor.statusBarColor.color
-        self.navigationController?.navigationBar.backIndicatorImage = UIImage.image("navbar_back_arrow")
-        self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage.image("navbar_back_arrow")
-        self.navigationItem.backBarButtonItem = backItem
+        guard let navigationVC = self.navigationController as? NavigationControllerBase else {
+            return
+        }
         
-//        if (self.navigationController?.viewControllers.count)! > 1 {
-//            let btn = UIButton.init(type: UIButtonType.custom)
-//            btn.setTitle("返回", for: UIControlState())
-//            btn.titleLabel?.font = UIFont.systemFont(ofSize: 16);
-//            btn.titleLabel?.textAlignment = NSTextAlignment.left
-//            btn.setImage(UIImage.image("navbar_back_arrow"), for: UIControlState())
-////            btn.frame = CGRect(x: 0, y: 0, width: 58, height: 44);
-//            btn.sizeToFit()
-//            btn.contentHorizontalAlignment = .left
-//            btn.contentVerticalAlignment = .center
-//            btn.contentEdgeInsets = UIEdgeInsets(top: 0, left: -10, bottom: 0, right: 0)
-//            //        btn.applyNavBarConstraints(size: CGSize(width: 58, height: 44))
-//            btn.titleEdgeInsets = UIEdgeInsetsMake(0, 2, 0, 0);
-//            btn.addTarget(self, action: #selector(self.popAction), for: UIControlEvents.touchUpInside)
-//            let leftItem = BaseBarButtonItem.init(customView: btn);
-//            self.navigationItem.leftBarButtonItems = [leftItem];
-//        }
+        if navigationVC.isPopup && navigationVC.viewControllers.count == 1 {
+            let btn = UIButton.init(type: UIButtonType.custom)
+            btn.setTitle("关闭", for: UIControlState())
+            btn.titleLabel?.font = UIFont.systemFont(ofSize: 17);
+            btn.titleLabel?.textAlignment = NSTextAlignment.left
+            btn.sizeToFit()
+            btn.contentHorizontalAlignment = .left
+            btn.contentEdgeInsets = UIEdgeInsets(top: 0, left: -10, bottom: 0, right: 0)
+            btn.addTarget(self, action: #selector(self.disAction), for: UIControlEvents.touchUpInside)
+            let leftItem = BaseBarButtonItem.init(customView: btn);
+            self.navigationItem.leftBarButtonItems = [leftItem];
+        } else {
+//            let backItem = BaseBarButtonItem(title: "", style: .plain, target: self, action: #selector(self.popAction))
+//            navigationVC.navigationBar.tintColor = FDTWMColor.statusBarColor.color
+//            navigationVC.navigationBar.backIndicatorImage = UIImage.image("navbar_back_arrow")
+//            navigationVC.navigationBar.backIndicatorTransitionMaskImage = UIImage.image("navbar_back_arrow")
+//            self.navigationItem.backBarButtonItem = backItem
+            
+            if navigationVC.viewControllers.count > 1 {
+                let btn = UIButton.init(type: UIButtonType.custom)
+                btn.setTitle("返回 ", for: UIControlState())
+                btn.titleLabel?.font = UIFont.systemFont(ofSize: 16);
+                btn.titleLabel?.textAlignment = NSTextAlignment.left
+                btn.setImage(UIImage.image("navbar_back_arrow"), for: UIControlState())
+                btn.sizeToFit()
+                btn.contentHorizontalAlignment = .left
+                btn.contentVerticalAlignment = .center
+                btn.contentEdgeInsets = UIEdgeInsets(top: 0, left: -10, bottom: 0, right: 0)
+                btn.titleEdgeInsets = UIEdgeInsetsMake(0, 2, 0, 0);
+                btn.addTarget(self, action: #selector(self.popAction), for: UIControlEvents.touchUpInside)
+                let leftItem = BaseBarButtonItem.init(customView: btn);
+                self.navigationItem.leftBarButtonItems = [leftItem];
+            }
+        }
     }
     
     @objc func popAction() {
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    @objc func disAction() {
+        self.navigationController?.dismiss(animated: true, completion: nil)
     }
     /*
     // MARK: - Navigation

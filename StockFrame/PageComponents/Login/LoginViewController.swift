@@ -28,7 +28,6 @@ class LoginViewController: ViewControllerBase {
     
     @objc func btnAction(_ sender: Any) {
         FDT_UI_Public_Proxy.GotoVCWithId(6202)
-        FDTLog.logDebug("点击按钮")
     }
 
     /*

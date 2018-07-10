@@ -9,4 +9,7 @@
 import UIKit
 
 extension AppDelegate {
+    func initThirdLib() {
+        FDTLog.initLog() //初始化日志系统
+    }
 }

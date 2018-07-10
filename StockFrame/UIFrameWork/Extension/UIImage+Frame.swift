@@ -9,5 +9,8 @@
 import UIKit
 
 extension UIImage {
-
+    
+    class func image(_ name: String) -> UIImage {
+        return UIImage.init(named: name)!
+    }
 }

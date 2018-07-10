@@ -52,10 +52,10 @@ class FDTUIFrameWork: NSObject {
         if isPopPortraitNode {
             let popNavVC = self.getPopNavigationController()
             
-            let vcCount = popNavVC.viewControllers.count
-            if (vcCount <= 0) { //如果vc的数量小于1 则直接替换
+            if (!popNavVC.isPopup) { //如果vc的数量小于1 则直接替换
                 popNavVC.replaceRootViewController(node: nodeItem)
                 popNavVC.modalTransitionStyle = .coverVertical
+                popNavVC.isPopup = true
                 mainTabbar.present(popNavVC, animated: true, completion: nil)
             } else { //如果vc的数量大于1 怎进行push操作
                 popNavVC.gotoPageWithNodeItem(nodeItem, params: params)

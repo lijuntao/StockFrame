@@ -21,6 +21,6 @@ class BaseBarButtonItem: UIBarButtonItem {
     
     
     func setBarButtonItemTitleColor(_ color: UIColor) {
-        self.setTitleTextAttributes([NSAttributedStringKey.foregroundColor: color], for: UIControlState())
+        self.setTitleTextAttributes([NSAttributedStringKey.foregroundColor: color], for: .normal)
     }
 }

@@ -15,7 +15,6 @@
 		2912AFBF20F3042B00041031 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2912AFBE20F3042B00041031 /* LoginViewController.swift */; };
 		2912AFC120F332FD00041031 /* LoginInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2912AFC020F332FD00041031 /* LoginInfoViewController.swift */; };
 		2912AFC620F368C200041031 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2912AFC520F368C200041031 /* UIView+Extension.swift */; };
-		2912AFC920F3694000041031 /* BaseBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2912AFC820F3694000041031 /* BaseBarButtonItem.swift */; };
 		2924901320EF441800205628 /* ServerConfig.xml in Resources */ = {isa = PBXBuildFile; fileRef = 2924901220EF441800205628 /* ServerConfig.xml */; };
 		2924901520EF443D00205628 /* ServerConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2924901420EF443D00205628 /* ServerConfig.swift */; };
 		2924901720EF447C00205628 /* ServerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2924901620EF447C00205628 /* ServerManager.swift */; };
@@ -35,7 +34,6 @@
 		2947DCD520B8068E007BCAF4 /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 2947DCD420B8068E007BCAF4 /* GDataXMLNode.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		2947DCD720B806AA007BCAF4 /* libxml2.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2947DCD620B806AA007BCAF4 /* libxml2.2.tbd */; };
 		2947DCDB20B8165B007BCAF4 /* FrameConfig.xml in Resources */ = {isa = PBXBuildFile; fileRef = 2947DCDA20B8165B007BCAF4 /* FrameConfig.xml */; };
-		296A9A4E20E35EB800AA07DE /* GlobalMacro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296A9A4D20E35EB800AA07DE /* GlobalMacro.swift */; };
 		296A9A5020E362E700AA07DE /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296A9A4F20E362E700AA07DE /* String+Extension.swift */; };
 		296A9A5520E366B400AA07DE /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296A9A5420E366B400AA07DE /* UIImage+Extension.swift */; };
 		296A9A5720E370F500AA07DE /* FDTUIWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296A9A5620E370F500AA07DE /* FDTUIWindow.swift */; };
@@ -44,17 +42,13 @@
 		296A9A5F20E393A900AA07DE /* FinancialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296A9A5E20E393A900AA07DE /* FinancialViewController.swift */; };
 		296A9A6120E393BC00AA07DE /* TransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296A9A6020E393BC00AA07DE /* TransactionViewController.swift */; };
 		296A9A6320E393CA00AA07DE /* MineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296A9A6220E393CA00AA07DE /* MineViewController.swift */; };
-		296A9A6520E3973A00AA07DE /* FDTEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296A9A6420E3973A00AA07DE /* FDTEnum.swift */; };
 		296A9A6720E397B600AA07DE /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296A9A6620E397B600AA07DE /* UIColor+Extension.swift */; };
-		296A9A6E20E47A2300AA07DE /* FDTLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296A9A6D20E47A2300AA07DE /* FDTLog.swift */; };
 		296A9A7220E47F3400AA07DE /* MeInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296A9A7120E47F3400AA07DE /* MeInfoViewController.swift */; };
 		296A9A7420E47F8E00AA07DE /* FunInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296A9A7320E47F8E00AA07DE /* FunInfoViewController.swift */; };
 		296A9A7620E47FC300AA07DE /* StockInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296A9A7520E47FC300AA07DE /* StockInfoViewController.swift */; };
 		296A9A7820E47FF300AA07DE /* AccountInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296A9A7720E47FF300AA07DE /* AccountInfoViewController.swift */; };
 		298CDDDF20EDFA3600BFBB57 /* DLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 298CDDDE20EDFA3600BFBB57 /* DLog.m */; };
 		298CDDE220EE222700BFBB57 /* TestObjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 298CDDE120EE222700BFBB57 /* TestObjc.m */; };
-		298CDDE420EE3F5300BFBB57 /* FDTTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298CDDE320EE3F5300BFBB57 /* FDTTools.swift */; };
-		298CDDE620EE3F7F00BFBB57 /* WebViewTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298CDDE520EE3F7F00BFBB57 /* WebViewTools.swift */; };
 		2990137220D3AFC9009B914C /* ViewControllerBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2990137120D3AFC9009B914C /* ViewControllerBase.swift */; };
 		2990137420D3AFE0009B914C /* NodeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2990137320D3AFE0009B914C /* NodeItem.swift */; };
 		2990AA3220EDB7DF00658277 /* NSString+FDT.m in Sources */ = {isa = PBXBuildFile; fileRef = 2990AA3120EDB7DF00658277 /* NSString+FDT.m */; };
@@ -203,6 +197,18 @@
 		29B7F9B420ECAF1900A6F0D4 /* BDCryptorError.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B7F9AD20ECAF1900A6F0D4 /* BDCryptorError.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		29B7F9B520ECAF1900A6F0D4 /* BDRSACryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B7F9B020ECAF1900A6F0D4 /* BDRSACryptor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		29B7F9B620ECAF1900A6F0D4 /* BDCryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B7F9B120ECAF1900A6F0D4 /* BDCryptor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		29E1184520F45F40006C366F /* WebViewTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E1184320F45F40006C366F /* WebViewTools.swift */; };
+		29E1184620F45F40006C366F /* FDTTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E1184420F45F40006C366F /* FDTTools.swift */; };
+		29E1184E20F45FA1006C366F /* BaseBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E1184920F45FA0006C366F /* BaseBarButtonItem.swift */; };
+		29E1184F20F45FA1006C366F /* FDTLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E1184B20F45FA0006C366F /* FDTLog.swift */; };
+		29E1185020F45FA1006C366F /* GlobalMacro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E1184C20F45FA0006C366F /* GlobalMacro.swift */; };
+		29E1185120F45FA1006C366F /* FDTEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E1184D20F45FA0006C366F /* FDTEnum.swift */; };
+		29E1185420F45FD6006C366F /* String+Frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E1185220F45FD5006C366F /* String+Frame.swift */; };
+		29E1185520F45FD6006C366F /* AppDelegate+Frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E1185320F45FD6006C366F /* AppDelegate+Frame.swift */; };
+		29E1185A20F46013006C366F /* UIColor+Frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E1185620F46013006C366F /* UIColor+Frame.swift */; };
+		29E1185B20F46013006C366F /* UIImage+Frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E1185720F46013006C366F /* UIImage+Frame.swift */; };
+		29E1185C20F46013006C366F /* UIView+Frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E1185820F46013006C366F /* UIView+Frame.swift */; };
+		29E1185D20F46013006C366F /* UIDevice+Frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E1185920F46013006C366F /* UIDevice+Frame.swift */; };
 		29F3900420DC8D2E00E76165 /* NodeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F3900320DC8D2E00E76165 /* NodeManager.swift */; };
 		76ECA25D7FABFBE1DE3EC40B /* Pods_StockFrame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B56EA61C210A2315FDBF714D /* Pods_StockFrame.framework */; };
 /* End PBXBuildFile section */
@@ -232,7 +238,6 @@
 		2912AFBE20F3042B00041031 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2912AFC020F332FD00041031 /* LoginInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInfoViewController.swift; sourceTree = "<group>"; };
 		2912AFC520F368C200041031 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
-		2912AFC820F3694000041031 /* BaseBarButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseBarButtonItem.swift; sourceTree = "<group>"; };
 		2924901220EF441800205628 /* ServerConfig.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ServerConfig.xml; sourceTree = "<group>"; };
 		2924901420EF443D00205628 /* ServerConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerConfig.swift; sourceTree = "<group>"; };
 		2924901620EF447C00205628 /* ServerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerManager.swift; sourceTree = "<group>"; };
@@ -260,7 +265,6 @@
 		2947DCD620B806AA007BCAF4 /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
 		2947DCD820B80BEE007BCAF4 /* StockFrame-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "StockFrame-Bridging-Header.h"; sourceTree = "<group>"; };
 		2947DCDA20B8165B007BCAF4 /* FrameConfig.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = FrameConfig.xml; sourceTree = "<group>"; };
-		296A9A4D20E35EB800AA07DE /* GlobalMacro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalMacro.swift; sourceTree = "<group>"; };
 		296A9A4F20E362E700AA07DE /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		296A9A5420E366B400AA07DE /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		296A9A5620E370F500AA07DE /* FDTUIWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FDTUIWindow.swift; sourceTree = "<group>"; };
@@ -269,9 +273,7 @@
 		296A9A5E20E393A900AA07DE /* FinancialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialViewController.swift; sourceTree = "<group>"; };
 		296A9A6020E393BC00AA07DE /* TransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionViewController.swift; sourceTree = "<group>"; };
 		296A9A6220E393CA00AA07DE /* MineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineViewController.swift; sourceTree = "<group>"; };
-		296A9A6420E3973A00AA07DE /* FDTEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FDTEnum.swift; sourceTree = "<group>"; };
 		296A9A6620E397B600AA07DE /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
-		296A9A6D20E47A2300AA07DE /* FDTLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FDTLog.swift; sourceTree = "<group>"; };
 		296A9A7120E47F3400AA07DE /* MeInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeInfoViewController.swift; sourceTree = "<group>"; };
 		296A9A7320E47F8E00AA07DE /* FunInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunInfoViewController.swift; sourceTree = "<group>"; };
 		296A9A7520E47FC300AA07DE /* StockInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockInfoViewController.swift; sourceTree = "<group>"; };
@@ -280,8 +282,6 @@
 		298CDDDE20EDFA3600BFBB57 /* DLog.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DLog.m; sourceTree = "<group>"; };
 		298CDDE020EE222700BFBB57 /* TestObjc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestObjc.h; sourceTree = "<group>"; };
 		298CDDE120EE222700BFBB57 /* TestObjc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestObjc.m; sourceTree = "<group>"; };
-		298CDDE320EE3F5300BFBB57 /* FDTTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FDTTools.swift; sourceTree = "<group>"; };
-		298CDDE520EE3F7F00BFBB57 /* WebViewTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewTools.swift; sourceTree = "<group>"; };
 		2990137120D3AFC9009B914C /* ViewControllerBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerBase.swift; sourceTree = "<group>"; };
 		2990137320D3AFE0009B914C /* NodeItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeItem.swift; sourceTree = "<group>"; };
 		2990AA3020EDB7DF00658277 /* NSString+FDT.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+FDT.h"; sourceTree = "<group>"; };
@@ -576,6 +576,18 @@
 		29B7F9B020ECAF1900A6F0D4 /* BDRSACryptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDRSACryptor.m; sourceTree = "<group>"; };
 		29B7F9B120ECAF1900A6F0D4 /* BDCryptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDCryptor.m; sourceTree = "<group>"; };
 		29B7F9B220ECAF1900A6F0D4 /* BDCryptorError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDCryptorError.h; sourceTree = "<group>"; };
+		29E1184320F45F40006C366F /* WebViewTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewTools.swift; sourceTree = "<group>"; };
+		29E1184420F45F40006C366F /* FDTTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FDTTools.swift; sourceTree = "<group>"; };
+		29E1184920F45FA0006C366F /* BaseBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseBarButtonItem.swift; sourceTree = "<group>"; };
+		29E1184B20F45FA0006C366F /* FDTLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FDTLog.swift; sourceTree = "<group>"; };
+		29E1184C20F45FA0006C366F /* GlobalMacro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalMacro.swift; sourceTree = "<group>"; };
+		29E1184D20F45FA0006C366F /* FDTEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FDTEnum.swift; sourceTree = "<group>"; };
+		29E1185220F45FD5006C366F /* String+Frame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Frame.swift"; sourceTree = "<group>"; };
+		29E1185320F45FD6006C366F /* AppDelegate+Frame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Frame.swift"; sourceTree = "<group>"; };
+		29E1185620F46013006C366F /* UIColor+Frame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Frame.swift"; sourceTree = "<group>"; };
+		29E1185720F46013006C366F /* UIImage+Frame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Frame.swift"; sourceTree = "<group>"; };
+		29E1185820F46013006C366F /* UIView+Frame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Frame.swift"; sourceTree = "<group>"; };
+		29E1185920F46013006C366F /* UIDevice+Frame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIDevice+Frame.swift"; sourceTree = "<group>"; };
 		29F3900320DC8D2E00E76165 /* NodeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeManager.swift; sourceTree = "<group>"; };
 		555E1DC5B9168A94DF945015 /* Pods-StockFrame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockFrame.release.xcconfig"; path = "Pods/Target Support Files/Pods-StockFrame/Pods-StockFrame.release.xcconfig"; sourceTree = "<group>"; };
 		834AF762B77B599313483F71 /* Pods-StockFrameTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockFrameTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StockFrameTests/Pods-StockFrameTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -658,7 +670,6 @@
 		2912AFC720F3692C00041031 /* BaseClass */ = {
 			isa = PBXGroup;
 			children = (
-				2912AFC820F3694000041031 /* BaseBarButtonItem.swift */,
 			);
 			path = BaseClass;
 			sourceTree = "<group>";
@@ -738,6 +749,8 @@
 		2947DCB420B7D975007BCAF4 /* UIFrameWork */ = {
 			isa = PBXGroup;
 			children = (
+				29E1184720F45FA0006C366F /* Common */,
+				29E1184220F45F40006C366F /* Tools */,
 				29ABCD0720EE4A570040F5D8 /* DetaCenter */,
 				298CDDDC20EDF9EB00BFBB57 /* Log */,
 				2990AA2F20EDB66200658277 /* Extension */,
@@ -797,8 +810,6 @@
 			children = (
 				2912AFC720F3692C00041031 /* BaseClass */,
 				296A9A6C20E47A2300AA07DE /* Log */,
-				296A9A4D20E35EB800AA07DE /* GlobalMacro.swift */,
-				296A9A6420E3973A00AA07DE /* FDTEnum.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -862,7 +873,6 @@
 		296A9A6C20E47A2300AA07DE /* Log */ = {
 			isa = PBXGroup;
 			children = (
-				296A9A6D20E47A2300AA07DE /* FDTLog.swift */,
 			);
 			path = Log;
 			sourceTree = "<group>";
@@ -879,6 +889,12 @@
 		2990AA2F20EDB66200658277 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				29E1185620F46013006C366F /* UIColor+Frame.swift */,
+				29E1185920F46013006C366F /* UIDevice+Frame.swift */,
+				29E1185720F46013006C366F /* UIImage+Frame.swift */,
+				29E1185820F46013006C366F /* UIView+Frame.swift */,
+				29E1185320F45FD6006C366F /* AppDelegate+Frame.swift */,
+				29E1185220F45FD5006C366F /* String+Frame.swift */,
 				2990AA3320EDEA2300658277 /* NSData+Encrypt.h */,
 				2990AA3420EDEA2300658277 /* NSData+Encrypt.m */,
 				2990AA3020EDB7DF00658277 /* NSString+FDT.h */,
@@ -1299,6 +1315,42 @@
 			path = RSA;
 			sourceTree = "<group>";
 		};
+		29E1184220F45F40006C366F /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				29E1184320F45F40006C366F /* WebViewTools.swift */,
+				29E1184420F45F40006C366F /* FDTTools.swift */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		29E1184720F45FA0006C366F /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				29E1184820F45FA0006C366F /* BaseClass */,
+				29E1184A20F45FA0006C366F /* Log */,
+				29E1184C20F45FA0006C366F /* GlobalMacro.swift */,
+				29E1184D20F45FA0006C366F /* FDTEnum.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		29E1184820F45FA0006C366F /* BaseClass */ = {
+			isa = PBXGroup;
+			children = (
+				29E1184920F45FA0006C366F /* BaseBarButtonItem.swift */,
+			);
+			path = BaseClass;
+			sourceTree = "<group>";
+		};
+		29E1184A20F45FA0006C366F /* Log */ = {
+			isa = PBXGroup;
+			children = (
+				29E1184B20F45FA0006C366F /* FDTLog.swift */,
+			);
+			path = Log;
+			sourceTree = "<group>";
+		};
 		29F38FFE20DC8C6400E76165 /* CommonUI */ = {
 			isa = PBXGroup;
 			children = (
@@ -1322,8 +1374,6 @@
 		29F3900220DC8C9400E76165 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				298CDDE320EE3F5300BFBB57 /* FDTTools.swift */,
-				298CDDE520EE3F7F00BFBB57 /* WebViewTools.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -1596,8 +1646,8 @@
 				29B7F96C20ECA32B00A6F0D4 /* UserLogin.m in Sources */,
 				296A9A5520E366B400AA07DE /* UIImage+Extension.swift in Sources */,
 				296A9A7420E47F8E00AA07DE /* FunInfoViewController.swift in Sources */,
-				296A9A4E20E35EB800AA07DE /* GlobalMacro.swift in Sources */,
 				29B7F96F20ECA32B00A6F0D4 /* CloseOrder.m in Sources */,
+				29E1184520F45F40006C366F /* WebViewTools.swift in Sources */,
 				29B7F92B20ECA32B00A6F0D4 /* TokenUpdate.m in Sources */,
 				29B7F95D20ECA32B00A6F0D4 /* WmUnionLogin.m in Sources */,
 				2912AFC120F332FD00041031 /* LoginInfoViewController.swift in Sources */,
@@ -1607,6 +1657,7 @@
 				2924901520EF443D00205628 /* ServerConfig.swift in Sources */,
 				29B7F98D20ECA32B00A6F0D4 /* CancelOrder.m in Sources */,
 				29B7F95120ECA32B00A6F0D4 /* AlertStatus.m in Sources */,
+				29E1185C20F46013006C366F /* UIView+Frame.swift in Sources */,
 				29B7F93E20ECA32B00A6F0D4 /* UserMappingUpdate.m in Sources */,
 				29B7F98920ECA32B00A6F0D4 /* RefreshUnionToken.m in Sources */,
 				29B7F95420ECA32B00A6F0D4 /* SubscribeStatus.m in Sources */,
@@ -1628,12 +1679,14 @@
 				296A9A5920E3713200AA07DE /* FDTEntry.swift in Sources */,
 				29B7F95520ECA32B00A6F0D4 /* SubscribeChart2.m in Sources */,
 				29B7F94920ECA32B00A6F0D4 /* LightWeightRankUpdate.m in Sources */,
+				29E1185A20F46013006C366F /* UIColor+Frame.swift in Sources */,
 				29B7F94720ECA32B00A6F0D4 /* QuoteUpdate.m in Sources */,
 				29B7F9A320ECAA6800A6F0D4 /* Networking.m in Sources */,
 				29B7F97320ECA32B00A6F0D4 /* GetUserPhone.m in Sources */,
 				29B7F92720ECA32B00A6F0D4 /* FavoriteSymbolUpdate.m in Sources */,
 				29B7F96620ECA32B00A6F0D4 /* ChangeUserPassword.m in Sources */,
 				29B7F91B20ECA32B00A6F0D4 /* Alive.m in Sources */,
+				29E1185D20F46013006C366F /* UIDevice+Frame.swift in Sources */,
 				29B7F96220ECA32B00A6F0D4 /* WmEnterOrder.m in Sources */,
 				296A9A5020E362E700AA07DE /* String+Extension.swift in Sources */,
 				29B7F9B520ECAF1900A6F0D4 /* BDRSACryptor.m in Sources */,
@@ -1647,6 +1700,7 @@
 				29B7F94020ECA32B00A6F0D4 /* WmProfitUpdate.m in Sources */,
 				29B7F7E920ECA32100A6F0D4 /* PacketAnalyzer.m in Sources */,
 				29B7F93620ECA32B00A6F0D4 /* MaxOrderQtyAllowUpdate.m in Sources */,
+				29E1184620F45F40006C366F /* FDTTools.swift in Sources */,
 				29B7F93A20ECA32B00A6F0D4 /* AttachUnionIdUpdate.m in Sources */,
 				29B7F98B20ECA32B00A6F0D4 /* UnionTokenLogin.m in Sources */,
 				29B7F96820ECA32B00A6F0D4 /* UnionLogin.m in Sources */,
@@ -1659,6 +1713,7 @@
 				29B7F99820ECA32B00A6F0D4 /* GetExrightInfo.m in Sources */,
 				29B7F97F20ECA32B00A6F0D4 /* AttachUnionId.m in Sources */,
 				29B7F96720ECA32B00A6F0D4 /* WmCancelOrder.m in Sources */,
+				29E1184F20F45FA1006C366F /* FDTLog.swift in Sources */,
 				2990AA3520EDEA2300658277 /* NSData+Encrypt.m in Sources */,
 				29B7F94C20ECA32B00A6F0D4 /* UserUpdate.m in Sources */,
 				29B7F93320ECA32B00A6F0D4 /* LastTradeDateUpdate.m in Sources */,
@@ -1684,7 +1739,6 @@
 				29083C5F20E550400074AC58 /* UIDevice+Extension.swift in Sources */,
 				299426E520E7664700A67E94 /* PageIdDef.swift in Sources */,
 				29B7F94B20ECA32B00A6F0D4 /* UseCoinUpdate.m in Sources */,
-				2912AFC920F3694000041031 /* BaseBarButtonItem.swift in Sources */,
 				292F2D64204F92B0005AF091 /* ViewController.swift in Sources */,
 				292F2D62204F92B0005AF091 /* AppDelegate.swift in Sources */,
 				29083C5820E4B8A60074AC58 /* NavigationController+UIExtension.swift in Sources */,
@@ -1705,6 +1759,7 @@
 				29B7F97420ECA32B00A6F0D4 /* UserMappingStatus.m in Sources */,
 				296A9A6120E393BC00AA07DE /* TransactionViewController.swift in Sources */,
 				29B7F94520ECA32B00A6F0D4 /* WmExchangeRateUpdate.m in Sources */,
+				29E1185020F45FA1006C366F /* GlobalMacro.swift in Sources */,
 				29B7F93520ECA32B00A6F0D4 /* TickTableUpdate.m in Sources */,
 				29B7F99520ECA32B00A6F0D4 /* AccountSetting.m in Sources */,
 				29B7F91620ECA32B00A6F0D4 /* Connect.m in Sources */,
@@ -1714,8 +1769,6 @@
 				29B7F95720ECA32B00A6F0D4 /* SubscribeChart.m in Sources */,
 				29B7F90F20ECA32B00A6F0D4 /* Suspend.m in Sources */,
 				29B7F99920ECA32B00A6F0D4 /* RefreshToken.m in Sources */,
-				298CDDE420EE3F5300BFBB57 /* FDTTools.swift in Sources */,
-				298CDDE620EE3F7F00BFBB57 /* WebViewTools.swift in Sources */,
 				29B7F97120ECA32B00A6F0D4 /* GlobalSetting.m in Sources */,
 				29083C5A20E54CBE0074AC58 /* AppDelegate+Extension.swift in Sources */,
 				296A9A5720E370F500AA07DE /* FDTUIWindow.swift in Sources */,
@@ -1726,11 +1779,10 @@
 				29B7F91A20ECA32B00A6F0D4 /* EnableLog.m in Sources */,
 				29B7F94820ECA32B00A6F0D4 /* WmCalculateOrderUpdate.m in Sources */,
 				29B7F92D20ECA32B00A6F0D4 /* WmTradeUpdate.m in Sources */,
+				29E1185B20F46013006C366F /* UIImage+Frame.swift in Sources */,
 				29B7F9B420ECAF1900A6F0D4 /* BDCryptorError.m in Sources */,
-				296A9A6520E3973A00AA07DE /* FDTEnum.swift in Sources */,
 				29B7F91720ECA32B00A6F0D4 /* GuestTokenUpdate.m in Sources */,
 				29B7F91C20ECA32B00A6F0D4 /* JPacketSendBase.m in Sources */,
-				296A9A6E20E47A2300AA07DE /* FDTLog.swift in Sources */,
 				296A9A6320E393CA00AA07DE /* MineViewController.swift in Sources */,
 				29B7F96E20ECA32B00A6F0D4 /* SearchItem.m in Sources */,
 				29B7F92A20ECA32B00A6F0D4 /* TradeAlertUpdate.m in Sources */,
@@ -1741,6 +1793,7 @@
 				29B7F97D20ECA32B00A6F0D4 /* GetMaxOrderQtyAllow.m in Sources */,
 				2947DCBE20B7E126007BCAF4 /* FDTUITabFrame.swift in Sources */,
 				2912AFC620F368C200041031 /* UIView+Extension.swift in Sources */,
+				29E1185120F45FA1006C366F /* FDTEnum.swift in Sources */,
 				29B7F99320ECA32B00A6F0D4 /* WmCalculateOrder.m in Sources */,
 				29B7F91D20ECA32B00A6F0D4 /* GlobalSettingUpdate.m in Sources */,
 				29B7F91020ECA32B00A6F0D4 /* ConnectChallenge.m in Sources */,
@@ -1758,6 +1811,7 @@
 				2947DCC320B7F1DA007BCAF4 /* NavigationControllerBase.swift in Sources */,
 				2912AFBF20F3042B00041031 /* LoginViewController.swift in Sources */,
 				29ABCD0C20EE4AAB0040F5D8 /* DataCenter.swift in Sources */,
+				29E1184E20F45FA1006C366F /* BaseBarButtonItem.swift in Sources */,
 				296A9A7220E47F3400AA07DE /* MeInfoViewController.swift in Sources */,
 				29B7F92420ECA32B00A6F0D4 /* SymbolChangedUpdate.m in Sources */,
 				29B7F97C20ECA32B00A6F0D4 /* GetOrder.m in Sources */,
@@ -1767,8 +1821,10 @@
 				29B7F92620ECA32B00A6F0D4 /* WmQuoteAndRankUpdate.m in Sources */,
 				29B7F92520ECA32B00A6F0D4 /* SymbolListGroupsUpdate.m in Sources */,
 				29B7F98C20ECA32B00A6F0D4 /* EditFavoriteSymbol.m in Sources */,
+				29E1185520F45FD6006C366F /* AppDelegate+Frame.swift in Sources */,
 				29B7F98620ECA32B00A6F0D4 /* GetUserMapping.m in Sources */,
 				29B7F95620ECA32B00A6F0D4 /* SubscribeQuote.m in Sources */,
+				29E1185420F45FD6006C366F /* String+Frame.swift in Sources */,
 				29B7F7EC20ECA32100A6F0D4 /* GZIP.m in Sources */,
 				29B7F98420ECA32B00A6F0D4 /* UnionCreateLogin.m in Sources */,
 				29B7F7D720EC993300A6F0D4 /* Reachability.m in Sources */,

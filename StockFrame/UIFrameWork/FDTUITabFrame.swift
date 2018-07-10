@@ -70,7 +70,6 @@ class FDTUITabFrame: NSObject {
             
             popNavVC = NavigationControllerBase.init()
             popNavVC.setNavId(node.id, linkId: node.linkid, pagelist: node.pagelist)
-            popNavVC.isPopup = true
         }
         
 //        UITabBar.appearance().tintColor = UIColor.red
