@@ -212,6 +212,7 @@
 		29E1186620F4B6C4006C366F /* YYWeakProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 29E1186220F4B6C4006C366F /* YYWeakProxy.m */; };
 		29E1186720F4B6C4006C366F /* YYFPSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 29E1186420F4B6C4006C366F /* YYFPSLabel.m */; };
 		29E1186920F4B91B006C366F /* FPSLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E1186820F4B91B006C366F /* FPSLabel.swift */; };
+		29E1186B20F4DDA0006C366F /* UserDefaults+Frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E1186A20F4DDA0006C366F /* UserDefaults+Frame.swift */; };
 		29F3900420DC8D2E00E76165 /* NodeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F3900320DC8D2E00E76165 /* NodeManager.swift */; };
 		76ECA25D7FABFBE1DE3EC40B /* Pods_StockFrame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B56EA61C210A2315FDBF714D /* Pods_StockFrame.framework */; };
 /* End PBXBuildFile section */
@@ -596,6 +597,7 @@
 		29E1186420F4B6C4006C366F /* YYFPSLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYFPSLabel.m; sourceTree = "<group>"; };
 		29E1186520F4B6C4006C366F /* YYWeakProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYWeakProxy.h; sourceTree = "<group>"; };
 		29E1186820F4B91B006C366F /* FPSLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPSLabel.swift; sourceTree = "<group>"; };
+		29E1186A20F4DDA0006C366F /* UserDefaults+Frame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Frame.swift"; sourceTree = "<group>"; };
 		29F3900320DC8D2E00E76165 /* NodeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeManager.swift; sourceTree = "<group>"; };
 		555E1DC5B9168A94DF945015 /* Pods-StockFrame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockFrame.release.xcconfig"; path = "Pods/Target Support Files/Pods-StockFrame/Pods-StockFrame.release.xcconfig"; sourceTree = "<group>"; };
 		834AF762B77B599313483F71 /* Pods-StockFrameTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockFrameTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StockFrameTests/Pods-StockFrameTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -907,6 +909,7 @@
 				2990AA3420EDEA2300658277 /* NSData+Encrypt.m */,
 				2990AA3020EDB7DF00658277 /* NSString+FDT.h */,
 				2990AA3120EDB7DF00658277 /* NSString+FDT.m */,
+				29E1186A20F4DDA0006C366F /* UserDefaults+Frame.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1821,6 +1824,7 @@
 				29B7F99320ECA32B00A6F0D4 /* WmCalculateOrder.m in Sources */,
 				29B7F91D20ECA32B00A6F0D4 /* GlobalSettingUpdate.m in Sources */,
 				29B7F91020ECA32B00A6F0D4 /* ConnectChallenge.m in Sources */,
+				29E1186B20F4DDA0006C366F /* UserDefaults+Frame.swift in Sources */,
 				29B7F95020ECA32B00A6F0D4 /* UnionTokenUpdate.m in Sources */,
 				29B7F99420ECA32B00A6F0D4 /* WmSmsLogin.m in Sources */,
 				29B7F93820ECA32B00A6F0D4 /* SearchItemUpdate.m in Sources */,
