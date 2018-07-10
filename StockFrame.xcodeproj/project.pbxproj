@@ -209,6 +209,9 @@
 		29E1185B20F46013006C366F /* UIImage+Frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E1185720F46013006C366F /* UIImage+Frame.swift */; };
 		29E1185C20F46013006C366F /* UIView+Frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E1185820F46013006C366F /* UIView+Frame.swift */; };
 		29E1185D20F46013006C366F /* UIDevice+Frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E1185920F46013006C366F /* UIDevice+Frame.swift */; };
+		29E1186620F4B6C4006C366F /* YYWeakProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 29E1186220F4B6C4006C366F /* YYWeakProxy.m */; };
+		29E1186720F4B6C4006C366F /* YYFPSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 29E1186420F4B6C4006C366F /* YYFPSLabel.m */; };
+		29E1186920F4B91B006C366F /* FPSLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E1186820F4B91B006C366F /* FPSLabel.swift */; };
 		29F3900420DC8D2E00E76165 /* NodeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F3900320DC8D2E00E76165 /* NodeManager.swift */; };
 		76ECA25D7FABFBE1DE3EC40B /* Pods_StockFrame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B56EA61C210A2315FDBF714D /* Pods_StockFrame.framework */; };
 /* End PBXBuildFile section */
@@ -588,6 +591,11 @@
 		29E1185720F46013006C366F /* UIImage+Frame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Frame.swift"; sourceTree = "<group>"; };
 		29E1185820F46013006C366F /* UIView+Frame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Frame.swift"; sourceTree = "<group>"; };
 		29E1185920F46013006C366F /* UIDevice+Frame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIDevice+Frame.swift"; sourceTree = "<group>"; };
+		29E1186220F4B6C4006C366F /* YYWeakProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYWeakProxy.m; sourceTree = "<group>"; };
+		29E1186320F4B6C4006C366F /* YYFPSLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYFPSLabel.h; sourceTree = "<group>"; };
+		29E1186420F4B6C4006C366F /* YYFPSLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYFPSLabel.m; sourceTree = "<group>"; };
+		29E1186520F4B6C4006C366F /* YYWeakProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYWeakProxy.h; sourceTree = "<group>"; };
+		29E1186820F4B91B006C366F /* FPSLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPSLabel.swift; sourceTree = "<group>"; };
 		29F3900320DC8D2E00E76165 /* NodeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeManager.swift; sourceTree = "<group>"; };
 		555E1DC5B9168A94DF945015 /* Pods-StockFrame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockFrame.release.xcconfig"; path = "Pods/Target Support Files/Pods-StockFrame/Pods-StockFrame.release.xcconfig"; sourceTree = "<group>"; };
 		834AF762B77B599313483F71 /* Pods-StockFrameTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockFrameTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StockFrameTests/Pods-StockFrameTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -1318,6 +1326,7 @@
 		29E1184220F45F40006C366F /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				29E1186120F4B6C4006C366F /* FPS */,
 				29E1184320F45F40006C366F /* WebViewTools.swift */,
 				29E1184420F45F40006C366F /* FDTTools.swift */,
 			);
@@ -1349,6 +1358,18 @@
 				29E1184B20F45FA0006C366F /* FDTLog.swift */,
 			);
 			path = Log;
+			sourceTree = "<group>";
+		};
+		29E1186120F4B6C4006C366F /* FPS */ = {
+			isa = PBXGroup;
+			children = (
+				29E1186220F4B6C4006C366F /* YYWeakProxy.m */,
+				29E1186320F4B6C4006C366F /* YYFPSLabel.h */,
+				29E1186420F4B6C4006C366F /* YYFPSLabel.m */,
+				29E1186520F4B6C4006C366F /* YYWeakProxy.h */,
+				29E1186820F4B91B006C366F /* FPSLabel.swift */,
+			);
+			path = FPS;
 			sourceTree = "<group>";
 		};
 		29F38FFE20DC8C6400E76165 /* CommonUI */ = {
@@ -1721,6 +1742,7 @@
 				29B7F97520ECA32B00A6F0D4 /* WmGetJson.m in Sources */,
 				296A9A5F20E393A900AA07DE /* FinancialViewController.swift in Sources */,
 				29B7F91520ECA32B00A6F0D4 /* AliveStatus.m in Sources */,
+				29E1186920F4B91B006C366F /* FPSLabel.swift in Sources */,
 				29B7F97E20ECA32B00A6F0D4 /* GetFavoriteSymbol.m in Sources */,
 				29B7F91F20ECA32B00A6F0D4 /* SymbolStatus.m in Sources */,
 				29B7F93C20ECA32B00A6F0D4 /* UserMappingListUpdate.m in Sources */,
@@ -1765,6 +1787,7 @@
 				29B7F91620ECA32B00A6F0D4 /* Connect.m in Sources */,
 				29B7F91E20ECA32B00A6F0D4 /* PhoneUsageUpdate.m in Sources */,
 				29B7F7EB20ECA32100A6F0D4 /* JPacketHelper.m in Sources */,
+				29E1186720F4B6C4006C366F /* YYFPSLabel.m in Sources */,
 				29B7F93D20ECA32B00A6F0D4 /* AccountSettingUpdate.m in Sources */,
 				29B7F95720ECA32B00A6F0D4 /* SubscribeChart.m in Sources */,
 				29B7F90F20ECA32B00A6F0D4 /* Suspend.m in Sources */,
@@ -1785,6 +1808,7 @@
 				29B7F91C20ECA32B00A6F0D4 /* JPacketSendBase.m in Sources */,
 				296A9A6320E393CA00AA07DE /* MineViewController.swift in Sources */,
 				29B7F96E20ECA32B00A6F0D4 /* SearchItem.m in Sources */,
+				29E1186620F4B6C4006C366F /* YYWeakProxy.m in Sources */,
 				29B7F92A20ECA32B00A6F0D4 /* TradeAlertUpdate.m in Sources */,
 				29B7F91820ECA32B00A6F0D4 /* ErrorStatus.m in Sources */,
 				29B7F98E20ECA32B00A6F0D4 /* WmAmendOrder.m in Sources */,

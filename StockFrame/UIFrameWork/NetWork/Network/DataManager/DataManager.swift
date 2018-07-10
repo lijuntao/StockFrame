@@ -34,7 +34,7 @@ class DataManager: NSObject, ResponseDataHandler, NetworkConnectStatusDelegate, 
             let port = self.dh_getServerPortSender(loginDataHelper){
             self.loginDataHelper.connect(toRTServer: ip,
                                          onPort: Int32(port)!,
-                                    connectionStage: ConnectionServerStage_ByServerLoc)
+                                    connectionStage: .byServerLoc)
             self.loginDataHelper.dataAES_IV = "8765432112345678".data(using: String.Encoding.utf8)
         } else {
             FDTLog.logInfo("登录连接失败")
@@ -44,7 +44,7 @@ class DataManager: NSObject, ResponseDataHandler, NetworkConnectStatusDelegate, 
             let port = self.dh_getServerPortSender(quoteDataHelper){
             self.quoteDataHelper.connect(toRTServer: ip,
                                          onPort: Int32(port)!,
-                                         connectionStage: ConnectionServerStage_ByServerLoc)
+                                         connectionStage: .byServerLoc)
             self.loginDataHelper.dataAES_IV = "8765432112345678".data(using: String.Encoding.utf8)
         } else {
             FDTLog.logInfo("行情连接失败")
@@ -54,7 +54,7 @@ class DataManager: NSObject, ResponseDataHandler, NetworkConnectStatusDelegate, 
             let port = self.dh_getServerPortSender(tradeDateHelper){
             self.tradeDateHelper.connect(toRTServer: ip,
                                          onPort: Int32(port)!,
-                                         connectionStage: ConnectionServerStage_ByServerLoc)
+                                         connectionStage: .byServerLoc)
             self.tradeDateHelper.dataAES_IV = "8765432112345678".data(using: String.Encoding.utf8)
         } else {
             FDTLog.logInfo("交易连接失败")

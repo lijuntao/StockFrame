@@ -12,12 +12,15 @@
 //OC测试文件
 #import "TestObjc.h"
 
+
 //net
 #import "DataHelper.h"
 #import "NetworkDefinition.h"
 #import "JPacketReceiveBase.h"
 #import "JPacketSendBase.h"
 
+//tools
+#import "YYFPSLabel.h"
 #import "DLog.h"
 
 #import "GDataXMLNode.h"

@@ -41,4 +41,8 @@ class FDT_UI_Public_Proxy {
     class func GoToVCWithId(_ id: Int, params: Dictionary<String, AnyObject>?) {
         FDTUIFrameWork.sharedInstance.goToVCWithId(id, params: params)
     }
+    
+    class func showFPS() {
+        FPSLabel.show()
+    }
 }

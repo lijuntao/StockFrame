@@ -31,16 +31,15 @@ NSString *debugInfo = [NSString stringWithFormat:@"%@%@",info,message];\
 typedef NS_ENUM(NSInteger, ServerType)
 {
     ENUM_LOGINSERVER       = 0,
-    ENUM_QUOTESERVER     = 1,
-    ENUM_TRADESERVER        = 2
+    ENUM_QUOTESERVER       = 1,
+    ENUM_TRADESERVER       = 2
 };
 
+typedef NS_ENUM(NSInteger, ConnectionServerStage) {
+    ConnectionServerStage_ByServerLoc   = 1,
+    ConnectionServerStage_ByUserID      = 2,
+};
 
-typedef enum
-{
-    ConnectionServerStage_ByServerLoc = 1,
-    ConnectionServerStage_ByUserID = 2,
-} ConnectionServerStage;
 
 typedef enum
 {
