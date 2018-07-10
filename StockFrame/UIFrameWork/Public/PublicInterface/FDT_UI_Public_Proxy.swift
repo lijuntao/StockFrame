@@ -29,6 +29,10 @@ class FDT_UI_Public_Proxy {
         FDTUIFrameWork.sharedInstance.removePublicValue(forKey: key)
     }
     
+    class func getPopNavigationVC() -> NavigationControllerBase {
+        return FDTUIFrameWork.sharedInstance.getPopNavigationController()
+    }
+    
     // MARK: UI跳转
     class func GotoVCWithId(_ id: Int) {
         FDT_UI_Public_Proxy.GoToVCWithId(id, params: nil)

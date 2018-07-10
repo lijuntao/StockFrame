@@ -102,6 +102,7 @@ class ViewControllerBase: UIViewController {
     
     @objc func disAction() {
         self.navigationController?.dismiss(animated: true, completion: nil)
+//        FDT_UI_Public_Proxy.getPopNavigationVC().dismiss(animated: true, completion: nil)
     }
     /*
     // MARK: - Navigation
