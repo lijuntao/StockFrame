@@ -85,8 +85,9 @@ class FDTUITabFrame: NSObject {
         return popNavVC
     }
     func getCurNavigationController() -> NavigationControllerBase? {
-        
-        if ((mainTabBar.selectedViewController as? NavigationControllerBase) != nil) {
+        if (popNavVC.presentingViewController != nil) {
+            return popNavVC
+        } else if ((mainTabBar.selectedViewController as? NavigationControllerBase) != nil) {
             return (mainTabBar.selectedViewController as! NavigationControllerBase)
         }
         return nil
