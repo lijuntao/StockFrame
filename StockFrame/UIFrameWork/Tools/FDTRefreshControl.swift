@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol FDTRefreshControlProtocol {
+protocol FDTRefreshControlProtocol: NSObjectProtocol {
     func start() -> Void
     func stop() -> Void
 }
@@ -138,10 +138,16 @@ class FDTRefreshControlViewModel: BaseViewModel {
      */
     func startCounting() {
         if timer == nil {
-            timer = Timer.scheduledTimer(timeInterval: countingTime, target: self, selector: #selector(startProcess(_:)), userInfo: nil, repeats: false)
+//            timer = Timer.scheduledTimer(timeInterval: countingTime, target: self, selector: #selector(startProcess(_:)), userInfo: nil, repeats: false)
+            timer = Timer.scheduledTimer(withTimeInterval: countingTime, repeats: false, block: { [unowned self](_) in
+                self.startProcess(nil)
+            })
         }else {
-            timer?.invalidate()
-            timer = Timer.scheduledTimer(timeInterval: countingTime, target: self, selector: #selector(startProcess(_:)), userInfo: nil, repeats: false)
+//            timer?.invalidate()
+//            timer = Timer.scheduledTimer(timeInterval: countingTime, target: self, selector: #selector(startProcess(_:)), userInfo: nil, repeats: false)
+            timer = Timer.scheduledTimer(withTimeInterval: countingTime, repeats: false, block: { [unowned self](_) in
+                self.startProcess(nil)
+            })
         }
     }
     
