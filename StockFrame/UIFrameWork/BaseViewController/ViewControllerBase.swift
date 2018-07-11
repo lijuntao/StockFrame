@@ -83,7 +83,7 @@ class ViewControllerBase: UIViewController {
                 btn.setTitle("返回 ", for: UIControlState())
                 btn.titleLabel?.font = UIFont.systemFont(ofSize: 16);
                 btn.titleLabel?.textAlignment = NSTextAlignment.left
-                btn.setImage(UIImage.image("navbar_back_arrow"), for: UIControlState())
+                btn.setImage(UIImage.image("nav_backArrow"), for: UIControlState())
                 btn.sizeToFit()
                 btn.contentHorizontalAlignment = .left
                 btn.contentVerticalAlignment = .center
