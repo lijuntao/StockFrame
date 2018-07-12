@@ -28,6 +28,7 @@
 		292F2D82204F92B0005AF091 /* StockFrameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292F2D81204F92B0005AF091 /* StockFrameUITests.swift */; };
 		292F2D90204F92E3005AF091 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 292F2D8F204F92E3005AF091 /* Podfile */; };
 		293321E220F59FEE00B2826A /* Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293321E120F59FEE00B2826A /* Operator.swift */; };
+		29343EB320F7200500AFDBE0 /* FDTShowTips.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29343EB220F7200400AFDBE0 /* FDTShowTips.swift */; };
 		2947DCB620B7D999007BCAF4 /* FDTUIFrameWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2947DCB520B7D999007BCAF4 /* FDTUIFrameWork.swift */; };
 		2947DCBE20B7E126007BCAF4 /* FDTUITabFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2947DCBD20B7E126007BCAF4 /* FDTUITabFrame.swift */; };
 		2947DCC120B7F081007BCAF4 /* TabBarControllerBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2947DCC020B7F081007BCAF4 /* TabBarControllerBase.swift */; };
@@ -265,6 +266,7 @@
 		292F2D83204F92B0005AF091 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		292F2D8F204F92E3005AF091 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		293321E120F59FEE00B2826A /* Operator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operator.swift; sourceTree = "<group>"; };
+		29343EB220F7200400AFDBE0 /* FDTShowTips.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FDTShowTips.swift; sourceTree = "<group>"; };
 		2947DCB520B7D999007BCAF4 /* FDTUIFrameWork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FDTUIFrameWork.swift; sourceTree = "<group>"; };
 		2947DCBD20B7E126007BCAF4 /* FDTUITabFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FDTUITabFrame.swift; sourceTree = "<group>"; };
 		2947DCC020B7F081007BCAF4 /* TabBarControllerBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarControllerBase.swift; sourceTree = "<group>"; };
@@ -1342,6 +1344,7 @@
 				29E1184320F45F40006C366F /* WebViewTools.swift */,
 				29E1184420F45F40006C366F /* FDTTools.swift */,
 				29E1187320F59892006C366F /* FDTRefreshControl.swift */,
+				29343EB220F7200400AFDBE0 /* FDTShowTips.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -1690,6 +1693,7 @@
 				296A9A7820E47FF300AA07DE /* AccountInfoViewController.swift in Sources */,
 				29B7F93B20ECA32B00A6F0D4 /* ProfitUpdate.m in Sources */,
 				29B7F99E20ECA41500A6F0D4 /* FDUtility.m in Sources */,
+				29343EB320F7200500AFDBE0 /* FDTShowTips.swift in Sources */,
 				2924901520EF443D00205628 /* ServerConfig.swift in Sources */,
 				29B7F98D20ECA32B00A6F0D4 /* CancelOrder.m in Sources */,
 				29B7F95120ECA32B00A6F0D4 /* AlertStatus.m in Sources */,
