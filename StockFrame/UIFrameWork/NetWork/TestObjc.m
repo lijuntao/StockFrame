@@ -12,7 +12,7 @@
 
 - (void)test {
     for (int i = 0; i < 10000; i++) {
-        LogInfo(@"ljt -%@ -%@/%d",@"12121",@"8888",i);
+        LogDebug(@"ljt -%@ -%@/%d",@"12121",@"8888",i);
     }
 }
 @end
