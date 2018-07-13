@@ -687,13 +687,6 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
-		2912AFC720F3692C00041031 /* BaseClass */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = BaseClass;
-			sourceTree = "<group>";
-		};
 		2924901120EF43DB00205628 /* Config */ = {
 			isa = PBXGroup;
 			children = (
@@ -732,10 +725,7 @@
 			isa = PBXGroup;
 			children = (
 				296A9A5A20E3875E00AA07DE /* PageComponents */,
-				296A9A4C20E35E5F00AA07DE /* Common */,
 				29F3900120DC8C9400E76165 /* Extension */,
-				29F3900220DC8C9400E76165 /* Tools */,
-				29F38FFE20DC8C6400E76165 /* CommonUI */,
 				2947DCB420B7D975007BCAF4 /* UIFrameWork */,
 				292F2D61204F92B0005AF091 /* AppDelegate.swift */,
 				292F2D63204F92B0005AF091 /* ViewController.swift */,
@@ -825,15 +815,6 @@
 			path = XMLNode;
 			sourceTree = "<group>";
 		};
-		296A9A4C20E35E5F00AA07DE /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				2912AFC720F3692C00041031 /* BaseClass */,
-				296A9A6C20E47A2300AA07DE /* Log */,
-			);
-			path = Common;
-			sourceTree = "<group>";
-		};
 		296A9A5A20E3875E00AA07DE /* PageComponents */ = {
 			isa = PBXGroup;
 			children = (
@@ -888,13 +869,6 @@
 				296A9A7720E47FF300AA07DE /* AccountInfoViewController.swift */,
 			);
 			path = Transaction;
-			sourceTree = "<group>";
-		};
-		296A9A6C20E47A2300AA07DE /* Log */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Log;
 			sourceTree = "<group>";
 		};
 		298CDDDC20EDF9EB00BFBB57 /* Log */ = {
@@ -1390,13 +1364,6 @@
 			path = FPS;
 			sourceTree = "<group>";
 		};
-		29F38FFE20DC8C6400E76165 /* CommonUI */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = CommonUI;
-			sourceTree = "<group>";
-		};
 		29F3900120DC8C9400E76165 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -1408,13 +1375,6 @@
 				2912AFC520F368C200041031 /* UIView+Extension.swift */,
 			);
 			path = Extension;
-			sourceTree = "<group>";
-		};
-		29F3900220DC8C9400E76165 /* Tools */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Tools;
 			sourceTree = "<group>";
 		};
 		A12DF80AC0D920DF4CF09BA0 /* Frameworks */ = {
