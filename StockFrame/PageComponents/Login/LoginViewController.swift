@@ -27,7 +27,8 @@ class LoginViewController: ViewControllerBase {
     }
     
     @objc func btnAction(_ sender: Any) {
-        FDT_UI_Public_Proxy.GotoVCWithId(6202)
+//        FDT_UI_Public_Proxy.GotoVCWithId(6202)
+        FDT_UI_Public_Proxy.showTips(text: "ljt")
     }
 
     /*

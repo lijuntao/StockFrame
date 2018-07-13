@@ -45,4 +45,8 @@ class FDT_UI_Public_Proxy {
     class func showFPS() {
         FPSLabel.show()
     }
+    
+    class func showTips(text: String, showTime: Double = 2) {
+        FDTShowTips.showTipsAuto(text: text, showTime: showTime)
+    }
 }
