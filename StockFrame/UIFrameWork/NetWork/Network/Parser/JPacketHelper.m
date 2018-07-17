@@ -215,25 +215,19 @@ const static Byte MP_RAW32 = (Byte)0xdb;
     if (dicContentData && [dicContentData count] > 0)
         base = [self makeProtocol:dicContentData];
     
-
     if (bHeader)
     {
-#if DEBUG_MODE
-        DLog(@"dicContentData(%d): %@", pno, dicContentData);
+#if DEBUG
+        NSLog(@"received (%d %@): %@", base.pt, [base class], dicContentData);
 #endif
         *pOutPno = pno;
     }
     else
     {
-#if DEBUG_MODE
-        DLog(@"dicContentData: %@", dicContentData);
+#if DEBUG
+        NSLog(@"dicContentData: %@", dicContentData);
 #endif
     }
-    
-    
-    
-    
-
     return base;
 }
 

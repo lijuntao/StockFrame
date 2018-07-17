@@ -20,8 +20,8 @@ static int gSendSeq = 0;
 
 @interface JPacketSendBase : JPacketBase
 {
-    NSTimer *_timer;
 }
+@property (nonatomic, strong) NSTimer *timer;
 @property (nonatomic, strong, readonly) NSDictionary *dict;
 @property (nonatomic, weak) id<PacketTimeoutHandler> handlerTimeout;
 @property (nonatomic, assign) EnumPacketPT waitingPacket;

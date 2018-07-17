@@ -25,6 +25,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        let test = TestObjc.init()
 //        test.test()
         FDTEntry.sharedInstance.show()
+        DataCenter.sharedInstance.active()
+        DataCenter.sharedInstance.doConnect()
         
         FDT_UI_Public_Proxy.showFPS() //需要放在视图初始化后
         FDTLog.logDebug("启动时间:\(Date())")

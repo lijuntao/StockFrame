@@ -11,9 +11,10 @@ import UIKit
 protocol DataManagerDelegate: NSObjectProtocol {
     func getHostType(_ type: ServerType) -> String
     func getPortType(_ type: ServerType) -> String
+    
 }
 
-class DataManager: NSObject, ResponseDataHandler, NetworkConnectStatusDelegate, DataHelperServerInfoDelegate {
+class DataManager: NSObject, ResponseDataHandler, DataHelperConnectStatusDelegate, DataHelperServerInfoDelegate {
     
     static let ALIVE_TIMESPAN:TimeInterval = 30
     var loginDataHelper: DataHelper!
@@ -84,6 +85,13 @@ class DataManager: NSObject, ResponseDataHandler, NetworkConnectStatusDelegate, 
             } else {
                 tradeDateHelper.doAlive()
             }
+        } else if timer == loginDataHelper.timerAlive {
+            loginDataHelper.nAliveCheck += 1
+            if loginDataHelper.nAliveCheck > 1 {
+                loginDataHelper.disConnectRT(withKeepRunning: true, resetHost: false)
+            } else {
+                loginDataHelper.doAlive()
+            }
         }
     }
     
@@ -105,29 +113,50 @@ class DataManager: NSObject, ResponseDataHandler, NetworkConnectStatusDelegate, 
         FDTLog.logDebug("doResume")
     }
     
-    func startAliveForSender() {
-        //行情和交易
-        self.quoteDataHelper.nAliveCheck = 0
-        self.tradeDateHelper.nAliveCheck = 0
-        DispatchQueue.main.async {
-            self.quoteDataHelper.timerAlive?.invalidate()
-            self.quoteDataHelper.timerAlive = nil
-            self.quoteDataHelper.timerAlive = Timer.scheduledTimer(timeInterval: DataManager.ALIVE_TIMESPAN, target: self, selector: #selector(self.doAliveForSender(_:)), userInfo: nil, repeats: true)
-            
-            self.tradeDateHelper.timerAlive?.invalidate()
-            self.tradeDateHelper.timerAlive = nil
-            self.tradeDateHelper.timerAlive = Timer.scheduledTimer(timeInterval: DataManager.ALIVE_TIMESPAN, target: self, selector: #selector(self.doAliveForSender(_:)), userInfo: nil, repeats: true)
+    func startAliveForSender(_ sender: DataHelper?) {
+        if let dataHelper = sender {
+            dataHelper.nAliveCheck = 0
+            dataHelper.timerAlive?.invalidate()
+            dataHelper.timerAlive = nil
+            dataHelper.timerAlive = Timer.scheduledTimer(timeInterval: DataManager.ALIVE_TIMESPAN, target: self, selector: #selector(self.doAliveForSender(_:)), userInfo: nil, repeats: true)
+        } else {
+            //行情、交易、登录
+            self.quoteDataHelper.nAliveCheck = 0
+            self.tradeDateHelper.nAliveCheck = 0
+            self.loginDataHelper.nAliveCheck = 0
+            DispatchQueue.main.async {
+                self.quoteDataHelper.timerAlive?.invalidate()
+                self.quoteDataHelper.timerAlive = nil
+                self.quoteDataHelper.timerAlive = Timer.scheduledTimer(timeInterval: DataManager.ALIVE_TIMESPAN, target: self, selector: #selector(self.doAliveForSender(_:)), userInfo: nil, repeats: true)
+                
+                self.tradeDateHelper.timerAlive?.invalidate()
+                self.tradeDateHelper.timerAlive = nil
+                self.tradeDateHelper.timerAlive = Timer.scheduledTimer(timeInterval: DataManager.ALIVE_TIMESPAN, target: self, selector: #selector(self.doAliveForSender(_:)), userInfo: nil, repeats: true)
+                
+                self.loginDataHelper.timerAlive?.invalidate()
+                self.loginDataHelper.timerAlive = nil
+                self.loginDataHelper.timerAlive = Timer.scheduledTimer(timeInterval: DataManager.ALIVE_TIMESPAN, target: self, selector: #selector(self.doAliveForSender(_:)), userInfo: nil, repeats: true)
+            }
         }
     }
     
-    func stopAliveForSender() {
-        DispatchQueue.main.async {
-            self.quoteDataHelper.timerAlive?.invalidate()
-            self.quoteDataHelper.timerAlive = nil
-            
-            self.tradeDateHelper.timerAlive?.invalidate()
-            self.tradeDateHelper.timerAlive = nil
+    func stopAliveForSender(_ sender: DataHelper?) {
+        if let dataHelper = sender {
+            dataHelper.timerAlive?.invalidate()
+            dataHelper.timerAlive = nil
+        } else {
+            DispatchQueue.main.async {
+                self.quoteDataHelper.timerAlive?.invalidate()
+                self.quoteDataHelper.timerAlive = nil
+                
+                self.tradeDateHelper.timerAlive?.invalidate()
+                self.tradeDateHelper.timerAlive = nil
+                
+                self.loginDataHelper.timerAlive?.invalidate()
+                self.loginDataHelper.timerAlive = nil
+            }
         }
+        
     }
     func resetAliveForSender(_ sender: DataHelper) {
         if sender.nAliveCheck > 0 {
@@ -146,17 +175,17 @@ class DataManager: NSObject, ResponseDataHandler, NetworkConnectStatusDelegate, 
     private func initParams() {
         //登录连线
         loginDataHelper = DataHelper(dataMgr: self)
-        loginDataHelper.delegateNetworkConnect = self
+        loginDataHelper.delegateDataHelperConnect = self
         loginDataHelper.dataHelperServerInfoDelegate = self
         
         //行情连线
         quoteDataHelper = DataHelper(dataMgr: self)
-        quoteDataHelper.delegateNetworkConnect = self
+        quoteDataHelper.delegateDataHelperConnect = self
         quoteDataHelper.dataHelperServerInfoDelegate = self
         
         //交易连线
         tradeDateHelper = DataHelper(dataMgr: self)
-        tradeDateHelper.delegateNetworkConnect = self
+        tradeDateHelper.delegateDataHelperConnect = self
         tradeDateHelper.dataHelperServerInfoDelegate = self
     }
     
@@ -194,7 +223,22 @@ class DataManager: NSObject, ResponseDataHandler, NetworkConnectStatusDelegate, 
             //
             break
         case EnumPacketPT_ConnectChallenge:
+            self.handleConnectChallenge(packet, sender: sender)
+        case EnumPacketPT_Encrypt:
+            if sender == loginDataHelper {
+                if let unPackPacket = sender.unpackEncryptPacket(packet) {
+                    self.handleJPacket(unPackPacket, sender:sender)
+                }
+            } else {
+                self.handleEncryptPacket(packet, sender: sender)
+            }
+        case EnumPacketPT_ConnectStatus:
+            self.startAliveForSender(sender)
+            self.handleConnectStatus(packet, sender: sender)
+        case EnumPacketPT_MarketStatusUpdate:
             break
+        case EnumPacketPT_GuestTokenUpdate:
+            FDTLog.logDebug("\(EnumPacketPT_GuestTokenUpdate.rawValue) \(packet.classForCoder) 没有实现")
         default:
             break
         }
@@ -210,20 +254,41 @@ class DataManager: NSObject, ResponseDataHandler, NetworkConnectStatusDelegate, 
     }
     
     
-    //MARK NetworkConnectStatusDelegate
-    func handleConnect(_ status: Network_Status, obj: Any!, sender: Any!) {
-        //
+    //MARK DataHelperConnectStatusDelegate
+    func handleConnect(_ status: Network_Status, obj: Any!, sender: DataHelper) {
         switch status {
         case NetworkStatus_Connected:
+            if sender == loginDataHelper {
+                FDTLog.logDebug("登录连接成功")
+            } else if sender == quoteDataHelper {
+                FDTLog.logDebug("行情连接成功")
+            } else if sender == tradeDateHelper {
+                FDTLog.logDebug("交易连接成功")
+            } else {
+                FDTLog.logDebug("未知连接")
+            }
+            self.doAuthConnect(sender)
             break
+        case NetworkStatus_DisConnect:
+            // Stop Heartbeat
+            self.stopAliveForSender(sender)
+            
         default:
             break
         }
     }
-    
-    func handleDisconnectedSender(_ sender: Any!) {
+
+    func handleDisconnectedSender(_ sender: DataHelper) {
         //断开连接
+        if sender == loginDataHelper {
+            FDTLog.logDebug("登录断线")
+        } else if sender == quoteDataHelper {
+            FDTLog.logDebug("行情断线")
+        } else if sender == tradeDateHelper {
+            FDTLog.logDebug("交易断线")
+        } else {
+            FDTLog.logDebug("未知断线")
+        }
     }
-    
     
 }

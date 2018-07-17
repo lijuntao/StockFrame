@@ -91,7 +91,7 @@
 
 - (void)connectToRTServer:(NSString *)strRTHost onPort:(int)nPort connectionStage:(ConnectionServerStage)stage
 {
-    _serverStage = stage;
+    self.serverStage = stage;
     _bWorking = YES;
     self.strRTHost = strRTHost;
     self.nRTPort = nPort;
@@ -111,9 +111,11 @@
     //    [FDTOnlineLogger log:[NSString stringWithFormat:@"Socket Connect to \"%@\" on port %d ...", host, port] withCategory:ONLINE_LOGGER_INFO];
     
     
-    _statusRTConnection = NetworkStatus_Connecting;
+    self.statusRTConnection = NetworkStatus_Connecting;
+    @WeakObj(self);
     dispatch_async(dispatch_get_main_queue(), ^{
-        [self.delegateNetworkConnect handleConnectStatus:NetworkStatus_Connecting obj:@(_serverStage) sender:self];
+        @StrongObj(self);
+        [self.delegateNetworkConnect handleConnectStatus:NetworkStatus_Connecting obj:@(self.serverStage) sender:self];
     });
     
     if (![_socket connectToHost:host onPort:port withTimeout:CONNECT_TO_HOST_TIMEOUT error:&error])
@@ -122,13 +124,12 @@
     }
     else
     {
-        LogDebug(@"connecttohost");
         
         if (_socket.isConnected) {
             LogDebug(@"isConnected so change status to connected");;
-            _statusRTConnection = NetworkStatus_Connected;
+            self.statusRTConnection = NetworkStatus_Connected;
         }
-        LogDebug(@"isConnected so read data");;
+        LogDebug(@"开始连接 ip: %@ port: %hu",host,port);
         [_socket readDataWithTimeout:-1 tag:0];
     }
     
@@ -137,12 +138,12 @@
 - (void)doReConnect
 {
     if (_socket.isConnected) {
-        LogDebug(@"doReconnect but socket is connected, so do nothing");
+        LogDebug(@"重新连接..., socket 已连接，什么也不做");
         return;
     }
     
-    _statusRTConnection = NetworkStatus_DisConnect;
-    LogDebug(@"Networking - ReConnecting...");
+    self.statusRTConnection = NetworkStatus_DisConnect;
+    LogDebug(@"重新连接...");
     
     if (self.strRTHost == nil || self.nRTPort < 0)
     {
@@ -217,9 +218,9 @@
     
     // Set Timeout Timer
     [packet startSendoutTimer];
-#if DEBUG_MODE
+#if DEBUG
     // Send
-    LogDebug(@"PacketSend: %@ %@", packet, request);
+    LogDebug(@"PacketSend: %@", packet);
 #endif
     [_socket writeData:request withTimeout:5 tag:0];
     [_socket readDataWithTimeout:-1 tag:0];
@@ -233,17 +234,16 @@
 
 - (void)socket:(GCDAsyncSocket *)sock didConnectToHost:(NSString *)host port:(uint16_t)port
 {
-    //    [FDTOnlineLogger log:[NSString stringWithFormat:@"Socket Connected To %@:%i", host, port] withCategory:ONLINE_LOGGER_INFO];
-    
     _fReConnectInterval = RECONNECT_Interval;
-    _statusRTConnection = NetworkStatus_Connected;
+    self.statusRTConnection = NetworkStatus_Connected;
     self.nRetryTimes = 0;
     [sock readDataWithTimeout:-1 tag:0];
     
+    @WeakObj(self);
     dispatch_async(dispatch_get_main_queue(), ^{
-        [self.delegateNetworkConnect handleConnectStatus:NetworkStatus_Connected obj:@(_serverStage) sender:self];
+        @StrongObj(self);
+        [self.delegateNetworkConnect handleConnectStatus:NetworkStatus_Connected obj:@(self.serverStage) sender:self];
     });
-    
 }
 
 - (void)socketDidDisconnect:(GCDAsyncSocket *)sock withError:(NSError *) err
@@ -256,14 +256,14 @@
         _buffer = [NSMutableData new];
     }
     
-    Network_Status prvState = _statusRTConnection;
-    _statusRTConnection = NetworkStatus_DisConnect;
+    Network_Status prvState = self.statusRTConnection;
+    self.statusRTConnection = NetworkStatus_DisConnect;
     
     
-    //    dispatch_async(dispatch_get_main_queue(), ^{
-    [self.delegateNetworkConnect handleConnectStatus:NetworkStatus_DisConnect
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.delegateNetworkConnect handleConnectStatus:NetworkStatus_DisConnect
                                               obj:@[[NSString stringWithFormat:@"%d", NetworkStatus_DisConnect], ERROR_NETWORKING_DIDCONNECT, @(prvState)] sender:self];
-    //    });
+    });
     
     // 沒在用的連線斷了就算了
     if (!_isUsing) {
@@ -303,25 +303,18 @@
             else
             {
                 if (self.nRetryTimes >= nRetryConfig) {
-                    _statusRTConnection = NetworkStatus_DisConnectWihtReachedMaxCount;
+                    self.statusRTConnection = NetworkStatus_DisConnectWihtReachedMaxCount;
                 }
                 
                 [self disconnectWithKeepRunning:NO resetHost:NO];
-                
+                @WeakObj(self);
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    [self.delegateNetworkConnect handleConnectStatus:NetworkStatus_DisConnectWihtReachedMaxCount obj:@(_serverStage) sender:self];
+                    @StrongObj(self);
+                    [self.delegateNetworkConnect handleConnectStatus:NetworkStatus_DisConnectWihtReachedMaxCount obj:@(self.serverStage) sender:self];
                 });
             }
         }
-        
-        
     }
-    
-    
-    //    dispatch_async(dispatch_get_main_queue(), ^{
-    //        [_delegate_networkConnect handleConnectStatus:NetworkStatus_DisConnect
-    //                                                  obj:@[[NSString stringWithFormat:@"%d", NetworkStatus_DisConnect], ERROR_NETWORKING_DIDCONNECT, @(prvState)]];
-    //    });
     
 }
 

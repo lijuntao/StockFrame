@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0598E3316EE2FCE7B6CD35CC /* Pods_StockFrameTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A7DC487DE8AE5053834E01A /* Pods_StockFrameTests.framework */; };
+		290488E020FC9BB700B84F36 /* private_key.pem in Resources */ = {isa = PBXBuildFile; fileRef = 290488DF20FC9BB700B84F36 /* private_key.pem */; };
 		29083C5620E4A9BC0074AC58 /* FDT_UI_Public_Proxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29083C5520E4A9BC0074AC58 /* FDT_UI_Public_Proxy.swift */; };
 		29083C5820E4B8A60074AC58 /* NavigationController+UIExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29083C5720E4B8A60074AC58 /* NavigationController+UIExtension.swift */; };
 		29083C5A20E54CBE0074AC58 /* AppDelegate+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29083C5920E54CBE0074AC58 /* AppDelegate+Extension.swift */; };
@@ -194,7 +195,6 @@
 		29B7F99A20ECA32B00A6F0D4 /* UserChangePassword.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B7F90B20ECA32B00A6F0D4 /* UserChangePassword.m */; };
 		29B7F99E20ECA41500A6F0D4 /* FDUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B7F99D20ECA41500A6F0D4 /* FDUtility.m */; };
 		29B7F9A320ECAA6800A6F0D4 /* Networking.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B7F9A120ECAA6800A6F0D4 /* Networking.m */; };
-		29B7F9A920ECAD5F00A6F0D4 /* DataManager1.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B7F9A820ECAD5F00A6F0D4 /* DataManager1.m */; };
 		29B7F9B320ECAF1900A6F0D4 /* BDError.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B7F9AB20ECAF1900A6F0D4 /* BDError.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		29B7F9B420ECAF1900A6F0D4 /* BDCryptorError.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B7F9AD20ECAF1900A6F0D4 /* BDCryptorError.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		29B7F9B520ECAF1900A6F0D4 /* BDRSACryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B7F9B020ECAF1900A6F0D4 /* BDRSACryptor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -219,6 +219,8 @@
 		29E1187220F59854006C366F /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E1187120F59854006C366F /* BaseViewModel.swift */; };
 		29E1187420F59892006C366F /* FDTRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E1187320F59892006C366F /* FDTRefreshControl.swift */; };
 		29F3900420DC8D2E00E76165 /* NodeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F3900320DC8D2E00E76165 /* NodeManager.swift */; };
+		29FB69C720FDE3CD003C7022 /* DataManager+HouseKeeping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FB69C620FDE3CD003C7022 /* DataManager+HouseKeeping.swift */; };
+		29FB69C920FDE8A9003C7022 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FB69C820FDE8A9003C7022 /* Constant.swift */; };
 		76ECA25D7FABFBE1DE3EC40B /* Pods_StockFrame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B56EA61C210A2315FDBF714D /* Pods_StockFrame.framework */; };
 /* End PBXBuildFile section */
 
@@ -240,6 +242,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		290488DF20FC9BB700B84F36 /* private_key.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = private_key.pem; sourceTree = "<group>"; };
 		29083C5520E4A9BC0074AC58 /* FDT_UI_Public_Proxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FDT_UI_Public_Proxy.swift; sourceTree = "<group>"; };
 		29083C5720E4B8A60074AC58 /* NavigationController+UIExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NavigationController+UIExtension.swift"; sourceTree = "<group>"; };
 		29083C5920E54CBE0074AC58 /* AppDelegate+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Extension.swift"; sourceTree = "<group>"; };
@@ -577,8 +580,6 @@
 		29B7F99D20ECA41500A6F0D4 /* FDUtility.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDUtility.m; sourceTree = "<group>"; };
 		29B7F9A120ECAA6800A6F0D4 /* Networking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Networking.m; sourceTree = "<group>"; };
 		29B7F9A220ECAA6800A6F0D4 /* Networking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Networking.h; sourceTree = "<group>"; };
-		29B7F9A720ECAD5F00A6F0D4 /* DataManager1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataManager1.h; sourceTree = "<group>"; };
-		29B7F9A820ECAD5F00A6F0D4 /* DataManager1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataManager1.m; sourceTree = "<group>"; };
 		29B7F9AB20ECAF1900A6F0D4 /* BDError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDError.m; sourceTree = "<group>"; };
 		29B7F9AC20ECAF1900A6F0D4 /* BDRSACryptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDRSACryptor.h; sourceTree = "<group>"; };
 		29B7F9AD20ECAF1900A6F0D4 /* BDCryptorError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDCryptorError.m; sourceTree = "<group>"; };
@@ -609,6 +610,8 @@
 		29E1187120F59854006C366F /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		29E1187320F59892006C366F /* FDTRefreshControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FDTRefreshControl.swift; sourceTree = "<group>"; };
 		29F3900320DC8D2E00E76165 /* NodeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeManager.swift; sourceTree = "<group>"; };
+		29FB69C620FDE3CD003C7022 /* DataManager+HouseKeeping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataManager+HouseKeeping.swift"; sourceTree = "<group>"; };
+		29FB69C820FDE8A9003C7022 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		555E1DC5B9168A94DF945015 /* Pods-StockFrame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockFrame.release.xcconfig"; path = "Pods/Target Support Files/Pods-StockFrame/Pods-StockFrame.release.xcconfig"; sourceTree = "<group>"; };
 		834AF762B77B599313483F71 /* Pods-StockFrameTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockFrameTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StockFrameTests/Pods-StockFrameTests.debug.xcconfig"; sourceTree = "<group>"; };
 		863EB99F651FBCC656F4C49A /* Pods-StockFrame.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockFrame.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StockFrame/Pods-StockFrame.debug.xcconfig"; sourceTree = "<group>"; };
@@ -645,6 +648,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		290488DC20FC9BB700B84F36 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				290488DD20FC9BB700B84F36 /* GlobalResource */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		290488DD20FC9BB700B84F36 /* GlobalResource */ = {
+			isa = PBXGroup;
+			children = (
+				290488DE20FC9BB700B84F36 /* Authentication */,
+			);
+			path = GlobalResource;
+			sourceTree = "<group>";
+		};
+		290488DE20FC9BB700B84F36 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				290488DF20FC9BB700B84F36 /* private_key.pem */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
 		29083C5320E4A99C0074AC58 /* Public */ = {
 			isa = PBXGroup;
 			children = (
@@ -693,6 +720,7 @@
 				2924901220EF441800205628 /* ServerConfig.xml */,
 				2924901420EF443D00205628 /* ServerConfig.swift */,
 				2924901620EF447C00205628 /* ServerManager.swift */,
+				29FB69C820FDE8A9003C7022 /* Constant.swift */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -724,6 +752,7 @@
 		292F2D60204F92B0005AF091 /* StockFrame */ = {
 			isa = PBXGroup;
 			children = (
+				290488DC20FC9BB700B84F36 /* Resource */,
 				296A9A5A20E3875E00AA07DE /* PageComponents */,
 				29F3900120DC8C9400E76165 /* Extension */,
 				2947DCB420B7D975007BCAF4 /* UIFrameWork */,
@@ -1276,9 +1305,8 @@
 		29B7F99F20ECAA6800A6F0D4 /* DataManager */ = {
 			isa = PBXGroup;
 			children = (
-				29B7F9A720ECAD5F00A6F0D4 /* DataManager1.h */,
-				29B7F9A820ECAD5F00A6F0D4 /* DataManager1.m */,
 				2924901820EF547900205628 /* DataManager.swift */,
+				29FB69C620FDE3CD003C7022 /* DataManager+HouseKeeping.swift */,
 			);
 			name = DataManager;
 			path = Network/DataManager;
@@ -1514,6 +1542,7 @@
 				292F2D69204F92B0005AF091 /* Assets.xcassets in Resources */,
 				292F2D90204F92E3005AF091 /* Podfile in Resources */,
 				2924901320EF441800205628 /* ServerConfig.xml in Resources */,
+				290488E020FC9BB700B84F36 /* private_key.pem in Resources */,
 				292F2D67204F92B0005AF091 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1666,7 +1695,6 @@
 				2990137420D3AFE0009B914C /* NodeItem.swift in Sources */,
 				293321E220F59FEE00B2826A /* Operator.swift in Sources */,
 				29B7F96A20ECA32B00A6F0D4 /* GetLastTradeDate.m in Sources */,
-				29B7F9A920ECAD5F00A6F0D4 /* DataManager1.m in Sources */,
 				29B7F99020ECA32B00A6F0D4 /* WmUnionTokenLogin.m in Sources */,
 				29B7F9B320ECAF1900A6F0D4 /* BDError.m in Sources */,
 				29B7F97A20ECA32B00A6F0D4 /* GetTradeAlert.m in Sources */,
@@ -1677,6 +1705,7 @@
 				29B7F92020ECA32B00A6F0D4 /* AccountStateUpdate.m in Sources */,
 				29B7F93420ECA32B00A6F0D4 /* LastTradeDateQuoteUpdate.m in Sources */,
 				29B7F97920ECA32B00A6F0D4 /* SearchSymbol.m in Sources */,
+				29FB69C720FDE3CD003C7022 /* DataManager+HouseKeeping.swift in Sources */,
 				296A9A5920E3713200AA07DE /* FDTEntry.swift in Sources */,
 				29B7F95520ECA32B00A6F0D4 /* SubscribeChart2.m in Sources */,
 				29B7F94920ECA32B00A6F0D4 /* LightWeightRankUpdate.m in Sources */,
@@ -1764,6 +1793,7 @@
 				29B7F94520ECA32B00A6F0D4 /* WmExchangeRateUpdate.m in Sources */,
 				29E1185020F45FA1006C366F /* GlobalMacro.swift in Sources */,
 				29B7F93520ECA32B00A6F0D4 /* TickTableUpdate.m in Sources */,
+				29FB69C920FDE8A9003C7022 /* Constant.swift in Sources */,
 				29B7F99520ECA32B00A6F0D4 /* AccountSetting.m in Sources */,
 				29B7F91620ECA32B00A6F0D4 /* Connect.m in Sources */,
 				29B7F91E20ECA32B00A6F0D4 /* PhoneUsageUpdate.m in Sources */,
