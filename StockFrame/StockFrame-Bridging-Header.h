@@ -18,7 +18,7 @@
 #import "NetworkDefinition.h"
 #import "JPacketReceiveBase.h"
 #import "JPacketSendBase.h"
-
+#import "ConnectStatus.h"
 //tools
 #import "YYFPSLabel.h"
 #import "DLog.h"
