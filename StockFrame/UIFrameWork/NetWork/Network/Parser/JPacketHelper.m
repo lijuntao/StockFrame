@@ -225,7 +225,8 @@ const static Byte MP_RAW32 = (Byte)0xdb;
     else
     {
 #if DEBUG
-        NSLog(@"dicContentData: %@", dicContentData);
+        NSLog(@"received (%d %@): %@", base.pt, [base class], dicContentData);
+//        NSLog(@"dicContentData: %@", dicContentData);
 #endif
     }
     return base;
