@@ -73,6 +73,7 @@
 - (void)doAuthConnectResponse:(JPacketReceiveBase *)base
                       country:(NSString *)strCountry
                          lang:(NSString *)strLanguage;
+- (void)handleAuthConnectDone;
 - (void)handleEncryptPacket:(JPacketBase *)base;
 - (nullable JPacketReceiveBase *)unpackEncryptPacket:(JPacketBase *)base;
 @end

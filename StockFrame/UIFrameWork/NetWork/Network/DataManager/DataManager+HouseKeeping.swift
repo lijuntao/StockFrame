@@ -24,6 +24,14 @@ extension DataManager {
     
     func handleConnectStatus(_ packet:JPacketReceiveBase, sender: DataHelper) {
         let pkt = packet as! ConnectStatus
+        sender.handleAuthConnectDone()
         sender.dataAESKey = pkt.key
+    }
+    
+    // 更新server時間
+    func handleAliveStatus(_ packet:JPacketReceiveBase, sender: DataHelper){
+        // 更新server時間
+        let aliveStatus = packet as! AliveStatus;
+        FDTLog.logDebug("server timer \(aliveStatus.time!)")
     }
 }

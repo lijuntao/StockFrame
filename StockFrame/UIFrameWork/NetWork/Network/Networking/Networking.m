@@ -208,7 +208,6 @@
     {
         // 正在交握, 就等等八
         LogDebug(@"Packet Skiped: %@", packet);
-//        [DLog logDebug:[NSString stringWithFormat:@"Packet Skiped: %@", packet]];
         return nil;
     }
     

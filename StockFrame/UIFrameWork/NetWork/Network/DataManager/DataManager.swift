@@ -239,6 +239,10 @@ class DataManager: NSObject, ResponseDataHandler, DataHelperConnectStatusDelegat
         case EnumPacketPT_ConnectStatus:
             self.startAliveForSender(sender)
             self.handleConnectStatus(packet, sender: sender)
+        case EnumPacketPT_Alive:
+            fallthrough
+        case EnumPacketPT_AliveStatus:
+            self.handleAliveStatus(packet,sender: sender)
         case EnumPacketPT_MarketStatusUpdate:
             break
         case EnumPacketPT_GuestTokenUpdate:

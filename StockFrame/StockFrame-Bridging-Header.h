@@ -19,6 +19,7 @@
 #import "JPacketReceiveBase.h"
 #import "JPacketSendBase.h"
 #import "ConnectStatus.h"
+#import "AliveStatus.h"
 //tools
 #import "YYFPSLabel.h"
 #import "DLog.h"

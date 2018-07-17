@@ -228,6 +228,12 @@
     [_networkRT sendRequest:dataSend packet:(JPacketSendBase *)packetEncrypt authPhrase:YES];
 }
 
+- (void)handleAuthConnectDone
+{
+    // Set AuthDone to NetworkSvc, to allow ref packets
+    [_networkRT setAuthDone];
+}
+
 - (void)handleEncryptPacket:(JPacketBase *)base {
     EncryptPacket *packet = (EncryptPacket *)base;
     if (packet.type == EnumEncryptType_AES)
