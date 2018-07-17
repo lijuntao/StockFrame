@@ -24,8 +24,8 @@
 }
 - (void)dealloc
 {
-    [_timer invalidate];
-    _timer = nil;
+    [self.timer invalidate];
+    self.timer = nil;
 }
 
 + (int)getSeqIncreased
@@ -39,10 +39,11 @@
 - (void)startSendoutTimer
 {
     dispatch_async(dispatch_get_main_queue(), ^{
-        if ([_handlerTimeout respondsToSelector:@selector(handleJPacketTimeout:)])
+        if ([self.handlerTimeout respondsToSelector:@selector(handleJPacketTimeout:)])
         {
-            _timer = [NSTimer scheduledTimerWithTimeInterval:JPacket_SendTimeout
-                                                      target:_handlerTimeout
+            [self.timer invalidate];
+            self.timer = [NSTimer scheduledTimerWithTimeInterval:JPacket_SendTimeout
+                                                      target:self.handlerTimeout
                                                     selector:@selector(handleJPacketTimeout:)
                                                     userInfo:self
                                                      repeats:NO];
@@ -52,8 +53,8 @@
 - (void)stopSendoutTimer
 {
     dispatch_async(dispatch_get_main_queue(), ^{
-        [_timer invalidate];
-        _timer = nil;
+        [self.timer invalidate];
+        self.timer = nil;
     });
 }
 @end

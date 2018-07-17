@@ -23,6 +23,10 @@ NSString *debugInfo = [NSString stringWithFormat:@"%@%@",info,message];\
 [DLog logInfo:debugInfo];\
 } while(0);
 
+#define WeakObj(o) try{}@finally{} __weak typeof(o) o##Weak = o;
+#define StrongObj(o) autoreleasepool{} __strong typeof(o) o = o##Weak;
+
+
 #define ERROR_DISCONNECT                            @"You were disconnected."
 #define ERROR_ALL_SERVICE_DOWN                      @"All Service Connect Fail."
 #define ERROR_CANNOT_GET_SERVICE_LIST               @"Cannot Get AppSvc List."
@@ -82,11 +86,5 @@ typedef NS_ENUM(NSInteger, FDTNetworkFrequency)
     FDTNetworkFrequencyNormal     = 1,
     FDTNetworkFrequencyLow        = 2
 };
-
-@protocol NetworkConnectStatusDelegate <NSObject>
-
--(void) handleConnectStatus:(Network_Status)status obj:(id)obj sender:(id) sender;
--(void) handleDisconnectedSender:(id) sender;
-@end
 
 #endif /* NetworkDefinition_h */

@@ -25,13 +25,9 @@
     NSString *strClassName = [_dictPacketMapping objectForKey:numPT];
     if (strClassName == nil)
     {
-//        LogInfo(@"unknown packet: %@",numPT);
-        [DLog logInfo:[NSString stringWithFormat:@"unknown packet: %@",numPT]];
+        LogDebug(@"unknown packet: %@",numPT);
         return nil;
     }
-#if DEBUG_MODE
-    DLog(@"Packet received: %@ (%@)", strClassName, numPT);
-#endif
     JPacketReceiveBase *base = [[NSClassFromString(strClassName) alloc] init];
     [base fillData:dictData];
     
