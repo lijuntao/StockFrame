@@ -22,20 +22,26 @@ class DataCenter: NSObject, DataManagerDelegate {
         if dataManager == nil {
             dataManager = DataManager.init()
             dataManager.delegate = self
+            self.loadLoacalBundle()
         }
     }
     
+    func doConnect() {
+        if dataManager != nil {
+            dataManager.doConnect()
+        }
+    }
     func doSuspend() {
         if dataManager != nil {
             dataManager.doSuspend()
-            dataManager.stopAliveForSender()
+            dataManager.stopAliveForSender(nil)
         }
     }
     
     func doResume() {
         if dataManager != nil {
             dataManager.doResume()
-            dataManager.startAliveForSender()
+            dataManager.startAliveForSender(nil)
         }
         
     }

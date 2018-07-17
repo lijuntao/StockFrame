@@ -12,6 +12,7 @@
 
 @class JPacketHelper;
 @class DataHelper;
+@class JPacketBase;
 @class JPacketReceiveBase;
 @protocol PacketDataProtocol;
 @protocol NetworkConnectStatus;
@@ -31,6 +32,12 @@
 
 @end
 
+@protocol DataHelperConnectStatusDelegate <NSObject>
+
+-(void) handleConnectStatus:(Network_Status)status obj:(id)obj sender:(DataHelper *_Nonnull) sender;
+-(void) handleDisconnectedSender:(DataHelper *_Nonnull) sender;
+@end
+
 
 @interface DataHelper : NSObject<PacketDataProtocol,NetworkConnectStatusDelegate,NetworkingServerInfoDelegate> {
 }
@@ -42,7 +49,7 @@
 @property (nonatomic, strong, nullable) NSTimer *timerAlive;
 @property (nonatomic, assign) int nAliveCheck;
 
-@property (nonatomic, weak, readwrite) id<NetworkConnectStatusDelegate> delegateNetworkConnect;
+@property (nonatomic, weak, readwrite) id<DataHelperConnectStatusDelegate> delegateDataHelperConnect;
 @property (nonatomic, weak, readwrite) id<DataHelperServerInfoDelegate> dataHelperServerInfoDelegate;
 
 - (id)initWithDataMgr:(id<ResponseDataHandler>)dataMgr;
@@ -59,4 +66,13 @@
 - (void)doSuspend;
 - (void)doResume;
 
+// Authenticaion
+- (void)doAuthConnectWithClientID:(NSString *)strClientID
+                            appID:(NSString *)strAppID
+                              ver:(NSString *)strVer;
+- (void)doAuthConnectResponse:(JPacketReceiveBase *)base
+                      country:(NSString *)strCountry
+                         lang:(NSString *)strLanguage;
+- (void)handleEncryptPacket:(JPacketBase *)base;
+- (nullable JPacketReceiveBase *)unpackEncryptPacket:(JPacketBase *)base;
 @end

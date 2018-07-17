@@ -9,6 +9,7 @@
 #import "DataHelper.h"
 #import "JPacketHelper.h"
 #import "BDRSACryptor.h"
+#import "NSData+Encrypt.h"
 #import "JPacketDef.h"
 #import "JPacketSendBase.h"
 #import "JPacketReceiveBase.h"
@@ -16,6 +17,11 @@
 #import "Suspend.h"
 #import "Resume.h"
 #import "Alive.h"
+#import "Connect.h"
+#import "ConnectResponse.h"
+#import "ConnectChallenge.h"
+#import "EncryptPacket.h"
+
 
 #define MAX_PACKET_NUMBER 255
 @interface DataHelper ()<PacketTimeoutHandler>
@@ -61,6 +67,7 @@
         _nExpectPacketNumber = 0;
         _timerAlive = nil;
         _nAliveCheck = 0;
+        _dictJPacketSeq = [[NSMutableDictionary alloc] initWithCapacity:5];
         [self initRSAKey];
     }
     return self;
@@ -71,8 +78,9 @@
     // RSA
     // Load Private Key
     NSData *privateKey = nil;
-    NSString *prePath = [[NSBundle mainBundle].resourcePath stringByAppendingPathComponent:@"GlobalResource/Authentication"];
-    NSString *filePath = [NSString stringWithFormat:@"%@/%@", prePath, @"private_key.pem"];
+//    NSString *prePath = [[NSBundle mainBundle].resourcePath stringByAppendingPathComponent:@"GlobalResource/Authentication"];
+//    NSString *filePath = [NSString stringWithFormat:@"%@/%@", prePath, @"private_key.pem"];
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"private_key" ofType:@"pem"];
     privateKey = [NSData dataWithContentsOfFile:filePath];
     
     NSString *strPrivateKey = [[NSString alloc] initWithData:privateKey encoding:NSUTF8StringEncoding];
@@ -176,6 +184,85 @@
     [_networkRT sendRequest:data packet:packet authPhrase:NO];
 }
 
+- (void)doAuthConnectWithClientID:(NSString *)strClientID appID:(NSString *)strAppID ver:(NSString *)strVer
+{
+    Connect *packet = [[Connect alloc] initWithAppID:strAppID cliendID:strClientID ver:strVer];
+    [packet setHandlerTimeout:self];
+    [self setPacket:packet withSeq:@(packet.seq)];
+    
+    NSData *data = [_jPacketHelper doPackWithPacket:packet];
+    
+    NSData *dataSend = [_networkRT sendRequest:data packet:packet authPhrase:YES];;
+    
+    if (dataSend == nil)
+        [self delPacketWithSeq:@(packet.seq)];   // Remove Packet if send failed
+}
+
+- (void)doAuthConnectResponse:(JPacketReceiveBase *)base
+                      country:(NSString *)strCountry
+                         lang:(NSString *)strLanguage
+{
+    NSData *dataRandomByte = ((ConnectChallenge *)base).randomByte;
+    
+    FDTNetworkFrequency freq = [self getNetworkFrequency];
+    
+    ConnectResponse *packet = [[ConnectResponse alloc] initWithRandomBytes:dataRandomByte
+                                                                  snapshot:@(freq)
+                                                                   country:strCountry
+                                                                      lang:strLanguage];
+    [packet setHandlerTimeout:self];
+    
+    NSData *data = [_jPacketHelper doPackWithPacket:packet];
+    
+    if (_thePrivateKey == nil) {
+        NSAssert(NO, @"PrivateKey error");
+    }
+    
+    NSData *dataEncrypt = [data RSA_PKCS1Padding_SignWithPrivateKeyRef:_thePrivateKey];
+    
+    EncryptPacket *packetEncrypt = [[EncryptPacket alloc] initWithType:EnumEncryptType_RSA
+                                                         dataEncrypted:dataEncrypt
+                                                        originalPacket:packet];
+    NSData *dataSend = [_jPacketHelper doPackWithPacket:(JPacketSendBase *)packetEncrypt];
+    [self setPacket:packet withSeq:@(packet.seq)];
+    [_networkRT sendRequest:dataSend packet:(JPacketSendBase *)packetEncrypt authPhrase:YES];
+}
+
+- (void)handleEncryptPacket:(JPacketBase *)base {
+    EncryptPacket *packet = (EncryptPacket *)base;
+    if (packet.type == EnumEncryptType_AES)
+    {
+        // TODO:
+        NSData *data = [packet.encryptedData AES128_CBC_NoPadding_DecryptWithKey:self.dataAES_IV IV:self.dataAES_IV];
+        
+        [self handleJPacketRawData:data withHeader:NO];
+    }
+    else if (packet.type == EnumEncryptType_RSA)
+    {
+        // TODO:
+        NSData *data = [packet.encryptedData RSA_PKCS1Padding_DecryptWithPrivateKeyRef:[self getPrivateKey]];
+        
+        [self handleJPacketRawData:data withHeader:NO];
+    }
+}
+
+- (JPacketReceiveBase *)unpackEncryptPacket:(JPacketBase *)base
+{
+    EncryptPacket *packet = (EncryptPacket *)base;
+    
+    NSData *data;
+    
+    if (packet.type == EnumEncryptType_AES)
+    {
+        data = [packet.encryptedData AES128_CBC_NoPadding_DecryptWithKey:self.dataAES_IV IV:self.dataAES_IV];
+    }
+    else if (packet.type == EnumEncryptType_RSA)
+    {
+        data = [packet.encryptedData RSA_PKCS1Padding_DecryptWithPrivateKeyRef:_thePrivateKey];
+        
+    }
+    return [self getJPacketRawData:data withHeader:NO];
+}
 #pragma mark PacketTimeoutHandler
 - (void)handleJPacketTimeout:(NSTimer *)timer {
     JPacketSendBase *base = timer.userInfo;
@@ -183,20 +270,21 @@
         return;
     
     [self delPacketWithSeq:@(base.seq)];
-    
+    @WeakObj(self);
     dispatch_async(_dataSerialQueue, ^{
-        [_delegate handleJPacketTimeout:base sender:self];
+        @StrongObj(self);
+        [self.delegate handleJPacketTimeout:base sender:self];
     });
 }
 
 #pragma mark NetworkConnectStatusDelegate
 
 - (void)handleConnectStatus:(Network_Status)status obj:(id)obj sender:(id)sender {
-    [self.delegateNetworkConnect handleConnectStatus:status obj:obj sender:self];
+    [self.delegateDataHelperConnect handleConnectStatus:status obj:obj sender:self];
 }
 
 - (void)handleDisconnectedSender:(id)sender {
-    [self.delegateNetworkConnect handleDisconnectedSender:self];
+    [self.delegateDataHelperConnect handleDisconnectedSender:self];
 }
 
 
@@ -205,8 +293,10 @@
 {
     unsigned short pno = 0;
     JPacketReceiveBase *base = [_jPacketHelper doUnPackData:rawData withHeader:bHeader outPacketNumber:&pno];
-    if (base == nil)
+    if (base == nil) {
+        LogDebug(@"解析失败");
         return;
+    }
     // Check Packet Number Skip
     if (bHeader)
     {
@@ -235,7 +325,36 @@
     });
 }
 
-
+- (JPacketReceiveBase *)getJPacketRawData:(NSData *)rawData withHeader:(BOOL)bHeader
+{
+    unsigned short pno = 0;
+    JPacketReceiveBase *base = [_jPacketHelper doUnPackData:rawData withHeader:bHeader outPacketNumber:&pno];
+    if (base == nil)
+        return base;
+    
+    // Check Packet Number Skip
+    if (bHeader)
+    {
+        if (_nExpectPacketNumber != pno)
+        {
+            NSLog(@"Packet Number Skipped!");
+            //            assert(0);
+        }
+        if (pno == MAX_PACKET_NUMBER)
+            _nExpectPacketNumber = 0;
+        else
+            _nExpectPacketNumber = pno + 1;
+    }
+    
+    // A. Get Teg
+    id tag = [self getPacketTagWithSeq:@(base.seq)];
+    [base setTag:tag];
+    
+    // B. Check Seq
+    [self delPacketWithSeq:@(base.seq) receivePT:base.pt];
+    
+    return base;
+}
 - (void)setPacket:(JPacketSendBase *)packet withSeq:(NSNumber *)numSeq
 {
     @synchronized(_dictJPacketSeq)

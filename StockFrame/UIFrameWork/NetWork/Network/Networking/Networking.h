@@ -32,6 +32,12 @@
 
 @end
 
+@protocol NetworkConnectStatusDelegate <NSObject>
+
+-(void) handleConnectStatus:(Network_Status)status obj:(id)obj sender:(id) sender;
+-(void) handleDisconnectedSender:(id) sender;
+@end
+
 @interface Networking : NSObject
 {
 //    __weak id<PacketDataProtocol> _delegate;
@@ -39,7 +45,6 @@
     
     // Status
     BOOL _bWorking;
-    ConnectionServerStage _serverStage;
     BOOL _bAuthDone;
     
     // Queue
@@ -64,7 +69,8 @@
 @property (nonatomic, weak) id <NetworkingServerInfoDelegate> delegateNetworkServerInfo;
 @property (nonatomic, weak) id <NetworkConnectStatusDelegate> delegateNetworkConnect;
 
-@property (nonatomic, assign, readonly) Network_Status statusRTConnection;
+@property (nonatomic, assign) Network_Status statusRTConnection;
+@property (nonatomic, assign) ConnectionServerStage serverStage;
 
 @property (nonatomic) BOOL isUsing;;
 
