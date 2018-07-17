@@ -16,7 +16,7 @@ protocol DataManagerDelegate: NSObjectProtocol {
 
 class DataManager: NSObject, ResponseDataHandler, DataHelperConnectStatusDelegate, DataHelperServerInfoDelegate {
     
-    static let ALIVE_TIMESPAN:TimeInterval = 30
+    static let ALIVE_TIMESPAN:TimeInterval = 20
     var loginDataHelper: DataHelper!
     var quoteDataHelper: DataHelper!
     var tradeDateHelper: DataHelper!
@@ -116,9 +116,11 @@ class DataManager: NSObject, ResponseDataHandler, DataHelperConnectStatusDelegat
     func startAliveForSender(_ sender: DataHelper?) {
         if let dataHelper = sender {
             dataHelper.nAliveCheck = 0
-            dataHelper.timerAlive?.invalidate()
-            dataHelper.timerAlive = nil
-            dataHelper.timerAlive = Timer.scheduledTimer(timeInterval: DataManager.ALIVE_TIMESPAN, target: self, selector: #selector(self.doAliveForSender(_:)), userInfo: nil, repeats: true)
+            DispatchQueue.main.async {
+                dataHelper.timerAlive?.invalidate()
+                dataHelper.timerAlive = nil
+                dataHelper.timerAlive = Timer.scheduledTimer(timeInterval: DataManager.ALIVE_TIMESPAN, target: self, selector: #selector(self.doAliveForSender(_:)), userInfo: nil, repeats: true)
+            }
         } else {
             //行情、交易、登录
             self.quoteDataHelper.nAliveCheck = 0
@@ -142,8 +144,10 @@ class DataManager: NSObject, ResponseDataHandler, DataHelperConnectStatusDelegat
     
     func stopAliveForSender(_ sender: DataHelper?) {
         if let dataHelper = sender {
-            dataHelper.timerAlive?.invalidate()
-            dataHelper.timerAlive = nil
+            DispatchQueue.main.async {
+                dataHelper.timerAlive?.invalidate()
+                dataHelper.timerAlive = nil
+            }
         } else {
             DispatchQueue.main.async {
                 self.quoteDataHelper.timerAlive?.invalidate()
