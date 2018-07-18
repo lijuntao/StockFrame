@@ -16,7 +16,7 @@ protocol DataManagerDelegate: NSObjectProtocol {
 
 class DataManager: NSObject, ResponseDataHandler, DataHelperConnectStatusDelegate, DataHelperServerInfoDelegate {
     
-    static let ALIVE_TIMESPAN:TimeInterval = 20
+    static let ALIVE_TIMESPAN:TimeInterval = 30 //保活时间间隔
     var loginDataHelper: DataHelper!
     var quoteDataHelper: DataHelper!
     var tradeDateHelper: DataHelper!

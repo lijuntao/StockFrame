@@ -12,7 +12,8 @@
 #define JPacket_INVALID -1
 #define JPacket_SendTimeout 10
 #define JPacket_INVALID_STRING @"-"
-typedef enum
+
+typedef NS_ENUM(NSInteger, EnumPacketPT)
 {
     EnumPacketPT_None = -1,
     // HouseKeeping
@@ -78,8 +79,6 @@ typedef enum
     EnumPacketPT_UserMappingListStatus = 239,
     EnumPacketPT_GetPhoneUsage = 240,
     EnumPacketPT_UseCoin = 241,
-//    EnumPacketPT_GetSymbolListGroup = 242, //待删
-//    EnumPacketPT_SetSymbolListGroup = 243, //待删
     //new 自选
     EnumPacketPT_GetFavoriteSymbol = 2016,
     EnumPacketPT_EditFavoriteSymbol = 2015,
@@ -203,17 +202,14 @@ typedef enum
 
     //
     EnumPacketPT_Encrypt = 901,
-    
+};
 
-    
-} EnumPacketPT;
-
-typedef enum
-{
+typedef NS_ENUM(NSUInteger, EnumEncryptType) {
     EnumEncryptType_RSA = 0x00,
     EnumEncryptType_AES = 0x01
-    
-} EnumEncryptType;
+};
+
+//-------分割线----------
 
 typedef enum
 {
@@ -221,8 +217,6 @@ typedef enum
     EnumLoginType_Email = 1,
     EnumLoginType_Phone = 2,
     EnumLoginType_Token = 3,
-    //    EnumLoginType_Auto = 3,//compatible with old API
-    
 } EnumLoginType;
 
 typedef enum
@@ -240,7 +234,6 @@ typedef enum
     EnumOrderType_Limit = 2,
     //    EnumOrderType_Stop = 3,
     //    EnumOrderType_StopLimit = 4
-    
 } EnumOrderType;
 
 typedef enum
