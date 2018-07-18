@@ -12,6 +12,11 @@
 //OC测试文件
 #import "TestObjc.h"
 
+//tools
+#import "YYFPSLabel.h"
+#import "DLog.h"
+
+#import "GDataXMLNode.h"
 
 //net
 #import "DataHelper.h"
@@ -21,10 +26,5 @@
 #import "ConnectStatus.h"
 #import "AliveStatus.h"
 #import "MarketStatusUpdate.h"
-//tools
-#import "YYFPSLabel.h"
-#import "DLog.h"
-
-#import "GDataXMLNode.h"
 
 #endif /* StockFrame_Bridging_Header_h */

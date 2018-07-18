@@ -269,7 +269,7 @@ class DataManager: NSObject, ResponseDataHandler, DataHelperConnectStatusDelegat
     //MARK DataHelperConnectStatusDelegate
     func handleConnect(_ status: Network_Status, obj: Any!, sender: DataHelper) {
         switch status {
-        case NetworkStatus_Connected:
+        case .status_Connected:
             if sender == loginDataHelper {
                 FDTLog.logDebug("登录连接成功")
             } else if sender == quoteDataHelper {
@@ -281,7 +281,7 @@ class DataManager: NSObject, ResponseDataHandler, DataHelperConnectStatusDelegat
             }
             self.doAuthConnect(sender)
             break
-        case NetworkStatus_DisConnect:
+        case .status_Connected:
             // Stop Heartbeat
             self.stopAliveForSender(sender)
             

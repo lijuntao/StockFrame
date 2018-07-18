@@ -993,6 +993,7 @@
 		29B7F7ED20ECA32A00A6F0D4 /* JPackets */ = {
 			isa = PBXGroup;
 			children = (
+				29B7F90C20ECA32B00A6F0D4 /* JPacketDef.h */,
 				29B7F88420ECA32B00A6F0D4 /* JPacketReceiveBase.h */,
 				29B7F7EE20ECA32A00A6F0D4 /* JPacketReceiveBase.m */,
 				29B7F87A20ECA32B00A6F0D4 /* JPacketSendBase.h */,
@@ -1004,7 +1005,6 @@
 				29B7F87720ECA32B00A6F0D4 /* Other */,
 				29B7F87B20ECA32B00A6F0D4 /* Subscribe */,
 				29B7F88520ECA32B00A6F0D4 /* Request */,
-				29B7F90C20ECA32B00A6F0D4 /* JPacketDef.h */,
 			);
 			name = JPackets;
 			path = Network/JPackets;
