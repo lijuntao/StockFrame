@@ -221,6 +221,8 @@
 		29F3900420DC8D2E00E76165 /* NodeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F3900320DC8D2E00E76165 /* NodeManager.swift */; };
 		29FB69C720FDE3CD003C7022 /* DataManager+HouseKeeping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FB69C620FDE3CD003C7022 /* DataManager+HouseKeeping.swift */; };
 		29FB69C920FDE8A9003C7022 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FB69C820FDE8A9003C7022 /* Constant.swift */; };
+		29FB69CE20FE1AF5003C7022 /* DataManager+data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FB69CD20FE1AF5003C7022 /* DataManager+data.swift */; };
+		29FB69D020FE1B55003C7022 /* DataManger+QuoteUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FB69CF20FE1B55003C7022 /* DataManger+QuoteUpdate.swift */; };
 		76ECA25D7FABFBE1DE3EC40B /* Pods_StockFrame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B56EA61C210A2315FDBF714D /* Pods_StockFrame.framework */; };
 /* End PBXBuildFile section */
 
@@ -612,6 +614,8 @@
 		29F3900320DC8D2E00E76165 /* NodeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeManager.swift; sourceTree = "<group>"; };
 		29FB69C620FDE3CD003C7022 /* DataManager+HouseKeeping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataManager+HouseKeeping.swift"; sourceTree = "<group>"; };
 		29FB69C820FDE8A9003C7022 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		29FB69CD20FE1AF5003C7022 /* DataManager+data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataManager+data.swift"; sourceTree = "<group>"; };
+		29FB69CF20FE1B55003C7022 /* DataManger+QuoteUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataManger+QuoteUpdate.swift"; sourceTree = "<group>"; };
 		555E1DC5B9168A94DF945015 /* Pods-StockFrame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockFrame.release.xcconfig"; path = "Pods/Target Support Files/Pods-StockFrame/Pods-StockFrame.release.xcconfig"; sourceTree = "<group>"; };
 		834AF762B77B599313483F71 /* Pods-StockFrameTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockFrameTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StockFrameTests/Pods-StockFrameTests.debug.xcconfig"; sourceTree = "<group>"; };
 		863EB99F651FBCC656F4C49A /* Pods-StockFrame.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockFrame.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StockFrame/Pods-StockFrame.debug.xcconfig"; sourceTree = "<group>"; };
@@ -956,8 +960,8 @@
 		29B7F7D020EC993300A6F0D4 /* Reachability */ = {
 			isa = PBXGroup;
 			children = (
-				29B7F7D120EC993300A6F0D4 /* Reachability.m */,
 				29B7F7D220EC993300A6F0D4 /* Reachability.h */,
+				29B7F7D120EC993300A6F0D4 /* Reachability.m */,
 			);
 			path = Reachability;
 			sourceTree = "<group>";
@@ -974,13 +978,13 @@
 			isa = PBXGroup;
 			children = (
 				29B7F7E120ECA32100A6F0D4 /* GZIP.h */,
-				29B7F7E220ECA32100A6F0D4 /* PacketAnalyzer.m */,
-				29B7F7E320ECA32100A6F0D4 /* JPacketHelper+Protocol.m */,
-				29B7F7E420ECA32100A6F0D4 /* JPacketHelper.m */,
 				29B7F7E520ECA32100A6F0D4 /* GZIP.m */,
-				29B7F7E620ECA32100A6F0D4 /* JPacketHelper+Protocol.h */,
 				29B7F7E720ECA32100A6F0D4 /* PacketAnalyzer.h */,
+				29B7F7E220ECA32100A6F0D4 /* PacketAnalyzer.m */,
 				29B7F7E820ECA32100A6F0D4 /* JPacketHelper.h */,
+				29B7F7E420ECA32100A6F0D4 /* JPacketHelper.m */,
+				29B7F7E620ECA32100A6F0D4 /* JPacketHelper+Protocol.h */,
+				29B7F7E320ECA32100A6F0D4 /* JPacketHelper+Protocol.m */,
 			);
 			name = Parser;
 			path = Network/Parser;
@@ -989,18 +993,18 @@
 		29B7F7ED20ECA32A00A6F0D4 /* JPackets */ = {
 			isa = PBXGroup;
 			children = (
-				29B7F7EE20ECA32A00A6F0D4 /* JPacketReceiveBase.m */,
-				29B7F7EF20ECA32A00A6F0D4 /* HouseKeeping */,
-				29B7F80A20ECA32A00A6F0D4 /* JPacketSendBase.m */,
-				29B7F80B20ECA32A00A6F0D4 /* Update */,
-				29B7F87620ECA32B00A6F0D4 /* JPacketBase.m */,
-				29B7F87720ECA32B00A6F0D4 /* Other */,
-				29B7F87A20ECA32B00A6F0D4 /* JPacketSendBase.h */,
-				29B7F87B20ECA32B00A6F0D4 /* Subscribe */,
 				29B7F88420ECA32B00A6F0D4 /* JPacketReceiveBase.h */,
+				29B7F7EE20ECA32A00A6F0D4 /* JPacketReceiveBase.m */,
+				29B7F87A20ECA32B00A6F0D4 /* JPacketSendBase.h */,
+				29B7F80A20ECA32A00A6F0D4 /* JPacketSendBase.m */,
+				29B7F90D20ECA32B00A6F0D4 /* JPacketBase.h */,
+				29B7F87620ECA32B00A6F0D4 /* JPacketBase.m */,
+				29B7F7EF20ECA32A00A6F0D4 /* HouseKeeping */,
+				29B7F80B20ECA32A00A6F0D4 /* Update */,
+				29B7F87720ECA32B00A6F0D4 /* Other */,
+				29B7F87B20ECA32B00A6F0D4 /* Subscribe */,
 				29B7F88520ECA32B00A6F0D4 /* Request */,
 				29B7F90C20ECA32B00A6F0D4 /* JPacketDef.h */,
-				29B7F90D20ECA32B00A6F0D4 /* JPacketBase.h */,
 			);
 			name = JPackets;
 			path = Network/JPackets;
@@ -1009,32 +1013,32 @@
 		29B7F7EF20ECA32A00A6F0D4 /* HouseKeeping */ = {
 			isa = PBXGroup;
 			children = (
-				29B7F7F020ECA32A00A6F0D4 /* AliveStatus.h */,
-				29B7F7F120ECA32A00A6F0D4 /* ConnectResponse.h */,
-				29B7F7F220ECA32A00A6F0D4 /* Resume.h */,
-				29B7F7F320ECA32A00A6F0D4 /* DisconnectStatus.h */,
-				29B7F7F420ECA32A00A6F0D4 /* Suspend.m */,
-				29B7F7F520ECA32A00A6F0D4 /* ConnectChallenge.m */,
-				29B7F7F620ECA32A00A6F0D4 /* ErrorStatus.h */,
-				29B7F7F720ECA32A00A6F0D4 /* GuestTokenUpdate.h */,
-				29B7F7F820ECA32A00A6F0D4 /* Connect.h */,
 				29B7F7F920ECA32A00A6F0D4 /* Alive.h */,
-				29B7F7FA20ECA32A00A6F0D4 /* EnableLog.h */,
-				29B7F7FB20ECA32A00A6F0D4 /* ResumeStatus.m */,
-				29B7F7FC20ECA32A00A6F0D4 /* ConnectStatus.h */,
-				29B7F7FD20ECA32A00A6F0D4 /* Resume.m */,
-				29B7F7FE20ECA32A00A6F0D4 /* DisconnectStatus.m */,
-				29B7F7FF20ECA32A00A6F0D4 /* ConnectResponse.m */,
-				29B7F80020ECA32A00A6F0D4 /* AliveStatus.m */,
-				29B7F80120ECA32A00A6F0D4 /* Connect.m */,
-				29B7F80220ECA32A00A6F0D4 /* GuestTokenUpdate.m */,
-				29B7F80320ECA32A00A6F0D4 /* ErrorStatus.m */,
-				29B7F80420ECA32A00A6F0D4 /* Suspend.h */,
-				29B7F80520ECA32A00A6F0D4 /* ConnectChallenge.h */,
-				29B7F80620ECA32A00A6F0D4 /* ConnectStatus.m */,
-				29B7F80720ECA32A00A6F0D4 /* ResumeStatus.h */,
-				29B7F80820ECA32A00A6F0D4 /* EnableLog.m */,
 				29B7F80920ECA32A00A6F0D4 /* Alive.m */,
+				29B7F7F020ECA32A00A6F0D4 /* AliveStatus.h */,
+				29B7F80020ECA32A00A6F0D4 /* AliveStatus.m */,
+				29B7F7F820ECA32A00A6F0D4 /* Connect.h */,
+				29B7F80120ECA32A00A6F0D4 /* Connect.m */,
+				29B7F7F120ECA32A00A6F0D4 /* ConnectResponse.h */,
+				29B7F7FF20ECA32A00A6F0D4 /* ConnectResponse.m */,
+				29B7F7FC20ECA32A00A6F0D4 /* ConnectStatus.h */,
+				29B7F80620ECA32A00A6F0D4 /* ConnectStatus.m */,
+				29B7F80520ECA32A00A6F0D4 /* ConnectChallenge.h */,
+				29B7F7F520ECA32A00A6F0D4 /* ConnectChallenge.m */,
+				29B7F7F720ECA32A00A6F0D4 /* GuestTokenUpdate.h */,
+				29B7F80220ECA32A00A6F0D4 /* GuestTokenUpdate.m */,
+				29B7F7F320ECA32A00A6F0D4 /* DisconnectStatus.h */,
+				29B7F7FE20ECA32A00A6F0D4 /* DisconnectStatus.m */,
+				29B7F7F220ECA32A00A6F0D4 /* Resume.h */,
+				29B7F7FD20ECA32A00A6F0D4 /* Resume.m */,
+				29B7F80420ECA32A00A6F0D4 /* Suspend.h */,
+				29B7F7F420ECA32A00A6F0D4 /* Suspend.m */,
+				29B7F7F620ECA32A00A6F0D4 /* ErrorStatus.h */,
+				29B7F80320ECA32A00A6F0D4 /* ErrorStatus.m */,
+				29B7F7FB20ECA32A00A6F0D4 /* ResumeStatus.m */,
+				29B7F80720ECA32A00A6F0D4 /* ResumeStatus.h */,
+				29B7F7FA20ECA32A00A6F0D4 /* EnableLog.h */,
+				29B7F80820ECA32A00A6F0D4 /* EnableLog.m */,
 			);
 			path = HouseKeeping;
 			sourceTree = "<group>";
@@ -1155,13 +1159,13 @@
 			isa = PBXGroup;
 			children = (
 				29B7F87C20ECA32B00A6F0D4 /* SubscribeQuote.h */,
-				29B7F87D20ECA32B00A6F0D4 /* SubscribeStatus.m */,
-				29B7F87E20ECA32B00A6F0D4 /* SubscribeChart.h */,
-				29B7F87F20ECA32B00A6F0D4 /* SubscribeChart2.m */,
 				29B7F88020ECA32B00A6F0D4 /* SubscribeQuote.m */,
+				29B7F87D20ECA32B00A6F0D4 /* SubscribeStatus.m */,
 				29B7F88120ECA32B00A6F0D4 /* SubscribeStatus.h */,
+				29B7F87E20ECA32B00A6F0D4 /* SubscribeChart.h */,
 				29B7F88220ECA32B00A6F0D4 /* SubscribeChart.m */,
 				29B7F88320ECA32B00A6F0D4 /* SubscribeChart2.h */,
+				29B7F87F20ECA32B00A6F0D4 /* SubscribeChart2.m */,
 			);
 			path = Subscribe;
 			sourceTree = "<group>";
@@ -1307,6 +1311,8 @@
 			children = (
 				2924901820EF547900205628 /* DataManager.swift */,
 				29FB69C620FDE3CD003C7022 /* DataManager+HouseKeeping.swift */,
+				29FB69CD20FE1AF5003C7022 /* DataManager+data.swift */,
+				29FB69CF20FE1B55003C7022 /* DataManger+QuoteUpdate.swift */,
 			);
 			name = DataManager;
 			path = Network/DataManager;
@@ -1327,14 +1333,14 @@
 		29B7F9AA20ECAF1800A6F0D4 /* RSA */ = {
 			isa = PBXGroup;
 			children = (
+				29B7F9AF20ECAF1900A6F0D4 /* BDError.h */,
 				29B7F9AB20ECAF1900A6F0D4 /* BDError.m */,
 				29B7F9AC20ECAF1900A6F0D4 /* BDRSACryptor.h */,
+				29B7F9B020ECAF1900A6F0D4 /* BDRSACryptor.m */,
+				29B7F9B220ECAF1900A6F0D4 /* BDCryptorError.h */,
 				29B7F9AD20ECAF1900A6F0D4 /* BDCryptorError.m */,
 				29B7F9AE20ECAF1900A6F0D4 /* BDCryptor.h */,
-				29B7F9AF20ECAF1900A6F0D4 /* BDError.h */,
-				29B7F9B020ECAF1900A6F0D4 /* BDRSACryptor.m */,
 				29B7F9B120ECAF1900A6F0D4 /* BDCryptor.m */,
-				29B7F9B220ECAF1900A6F0D4 /* BDCryptorError.h */,
 			);
 			path = RSA;
 			sourceTree = "<group>";
@@ -1736,6 +1742,7 @@
 				29B7F96820ECA32B00A6F0D4 /* UnionLogin.m in Sources */,
 				29B7F96D20ECA32B00A6F0D4 /* GetChart.m in Sources */,
 				29B7F93720ECA32B00A6F0D4 /* ChangeUserPasswordUpdate.m in Sources */,
+				29FB69D020FE1B55003C7022 /* DataManger+QuoteUpdate.swift in Sources */,
 				29B7F99720ECA32B00A6F0D4 /* AmendOrder.m in Sources */,
 				29B7F96B20ECA32B00A6F0D4 /* UserStatus.m in Sources */,
 				29B7F95320ECA32B00A6F0D4 /* EncryptPacket.m in Sources */,
@@ -1858,6 +1865,7 @@
 				29B7F92620ECA32B00A6F0D4 /* WmQuoteAndRankUpdate.m in Sources */,
 				29B7F92520ECA32B00A6F0D4 /* SymbolListGroupsUpdate.m in Sources */,
 				29B7F98C20ECA32B00A6F0D4 /* EditFavoriteSymbol.m in Sources */,
+				29FB69CE20FE1AF5003C7022 /* DataManager+data.swift in Sources */,
 				29E1185520F45FD6006C366F /* AppDelegate+Frame.swift in Sources */,
 				29B7F98620ECA32B00A6F0D4 /* GetUserMapping.m in Sources */,
 				29B7F95620ECA32B00A6F0D4 /* SubscribeQuote.m in Sources */,

@@ -22,8 +22,14 @@ class DataManager: NSObject, ResponseDataHandler, DataHelperConnectStatusDelegat
     var tradeDateHelper: DataHelper!
     
     weak var delegate : DataManagerDelegate!
-    
     var isSuspended: Bool = false
+    
+    //保存server 返回数据
+    //创建一个队列专门处理写入 读出数据
+    let queue = DispatchQueue(label: "com.fdt.dataQueue",attributes:.concurrent)
+//    let queue = DispatchQueue(label: "com.fdt.dataQueue")
+
+    var marketStatueDic: [String:[String: Int]] = [:]
     override init() {
         super.init()
         self.initParams()
@@ -244,7 +250,7 @@ class DataManager: NSObject, ResponseDataHandler, DataHelperConnectStatusDelegat
         case EnumPacketPT_AliveStatus:
             self.handleAliveStatus(packet,sender: sender)
         case EnumPacketPT_MarketStatusUpdate:
-            break
+            self.handleMarketStatus(packet)
         case EnumPacketPT_GuestTokenUpdate:
             FDTLog.logDebug("\(EnumPacketPT_GuestTokenUpdate.rawValue) \(packet.classForCoder) 没有实现")
         default:
