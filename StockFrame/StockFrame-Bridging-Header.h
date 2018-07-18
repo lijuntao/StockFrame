@@ -20,6 +20,7 @@
 #import "JPacketSendBase.h"
 #import "ConnectStatus.h"
 #import "AliveStatus.h"
+#import "MarketStatusUpdate.h"
 //tools
 #import "YYFPSLabel.h"
 #import "DLog.h"
