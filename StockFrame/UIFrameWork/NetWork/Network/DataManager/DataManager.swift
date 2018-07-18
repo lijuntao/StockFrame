@@ -16,7 +16,7 @@ protocol DataManagerDelegate: NSObjectProtocol {
 
 class DataManager: NSObject, ResponseDataHandler, DataHelperConnectStatusDelegate, DataHelperServerInfoDelegate {
     
-    static let ALIVE_TIMESPAN:TimeInterval = 30 //保活时间间隔
+    static let ALIVE_TIMESPAN:TimeInterval = 25 //保活时间间隔
     var loginDataHelper: DataHelper!
     var quoteDataHelper: DataHelper!
     var tradeDateHelper: DataHelper!
@@ -229,12 +229,12 @@ class DataManager: NSObject, ResponseDataHandler, DataHelperConnectStatusDelegat
         self.resetAliveForSender(sender)
         
         switch packet.pt {
-        case EnumPacketPT_SymbolStatus:
+        case .symbolStatus:
             //
             break
-        case EnumPacketPT_ConnectChallenge:
+        case .connectChallenge:
             self.handleConnectChallenge(packet, sender: sender)
-        case EnumPacketPT_Encrypt:
+        case .encrypt:
             if sender == loginDataHelper {
                 if let unPackPacket = sender.unpackEncryptPacket(packet) {
                     self.handleJPacket(unPackPacket, sender:sender)
@@ -242,19 +242,17 @@ class DataManager: NSObject, ResponseDataHandler, DataHelperConnectStatusDelegat
             } else {
                 self.handleEncryptPacket(packet, sender: sender)
             }
-        case EnumPacketPT_ConnectStatus:
+        case .connectStatus:
             self.startAliveForSender(sender)
             self.handleConnectStatus(packet, sender: sender)
-        case EnumPacketPT_Alive:
+        case .alive:
             fallthrough
-        case EnumPacketPT_AliveStatus:
+        case .aliveStatus:
             self.handleAliveStatus(packet,sender: sender)
-        case EnumPacketPT_MarketStatusUpdate:
+        case .marketStatusUpdate:
             self.handleMarketStatus(packet)
-        case EnumPacketPT_GuestTokenUpdate:
-            FDTLog.logDebug("\(EnumPacketPT_GuestTokenUpdate.rawValue) \(packet.classForCoder) 没有实现")
         default:
-            break
+            FDTLog.logDebug("\(packet.pt.rawValue) \(packet.classForCoder) 没有实现")
         }
     }
     
