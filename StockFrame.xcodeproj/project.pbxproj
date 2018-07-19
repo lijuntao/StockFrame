@@ -58,6 +58,7 @@
 		2990AA3520EDEA2300658277 /* NSData+Encrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = 2990AA3420EDEA2300658277 /* NSData+Encrypt.m */; };
 		299426E520E7664700A67E94 /* PageIdDef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299426E420E7664700A67E94 /* PageIdDef.swift */; };
 		29A63FE621001BF700A02DD6 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A63FE521001BF700A02DD6 /* TestViewController.swift */; };
+		29A63FEF21003BB300A02DD6 /* DataCenter+PostNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A63FEE21003BB300A02DD6 /* DataCenter+PostNotification.swift */; };
 		29ABCD0C20EE4AAB0040F5D8 /* DataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29ABCD0B20EE4AAB0040F5D8 /* DataCenter.swift */; };
 		29ABCD1120EE4B490040F5D8 /* DataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 29ABCD1020EE4B490040F5D8 /* DataHelper.m */; };
 		29B7F7D720EC993300A6F0D4 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B7F7D120EC993300A6F0D4 /* Reachability.m */; };
@@ -309,6 +310,9 @@
 		2990AA3420EDEA2300658277 /* NSData+Encrypt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Encrypt.m"; sourceTree = "<group>"; };
 		299426E420E7664700A67E94 /* PageIdDef.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageIdDef.swift; sourceTree = "<group>"; };
 		29A63FE521001BF700A02DD6 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		29A63FEA21002CF500A02DD6 /* ObserverID.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObserverID.h; sourceTree = "<group>"; };
+		29A63FEB2100321500A02DD6 /* DataManagerDefinition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataManagerDefinition.h; sourceTree = "<group>"; };
+		29A63FEE21003BB300A02DD6 /* DataCenter+PostNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataCenter+PostNotification.swift"; sourceTree = "<group>"; };
 		29ABCD0B20EE4AAB0040F5D8 /* DataCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCenter.swift; sourceTree = "<group>"; };
 		29ABCD0F20EE4B490040F5D8 /* DataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataHelper.h; sourceTree = "<group>"; };
 		29ABCD1020EE4B490040F5D8 /* DataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataHelper.m; sourceTree = "<group>"; };
@@ -953,6 +957,7 @@
 			isa = PBXGroup;
 			children = (
 				29ABCD0B20EE4AAB0040F5D8 /* DataCenter.swift */,
+				29A63FEE21003BB300A02DD6 /* DataCenter+PostNotification.swift */,
 			);
 			path = DetaCenter;
 			sourceTree = "<group>";
@@ -979,6 +984,7 @@
 			isa = PBXGroup;
 			children = (
 				29B7F7DC20EC9C9E00A6F0D4 /* NetworkDefinition.h */,
+				29A63FEA21002CF500A02DD6 /* ObserverID.h */,
 			);
 			path = Inc;
 			sourceTree = "<group>";
@@ -1324,6 +1330,7 @@
 				29FB69C620FDE3CD003C7022 /* DataManager+HouseKeeping.swift */,
 				29FB69CD20FE1AF5003C7022 /* DataManager+data.swift */,
 				29FB69CF20FE1B55003C7022 /* DataManger+QuoteUpdate.swift */,
+				29A63FEB2100321500A02DD6 /* DataManagerDefinition.h */,
 			);
 			name = DataManager;
 			path = Network/DataManager;
@@ -1703,6 +1710,7 @@
 				2924901520EF443D00205628 /* ServerConfig.swift in Sources */,
 				29B7F98D20ECA32B00A6F0D4 /* CancelOrder.m in Sources */,
 				29A63FE621001BF700A02DD6 /* TestViewController.swift in Sources */,
+				29A63FEF21003BB300A02DD6 /* DataCenter+PostNotification.swift in Sources */,
 				29FB69E020FF882B003C7022 /* FDTRequest.swift in Sources */,
 				29B7F95120ECA32B00A6F0D4 /* AlertStatus.m in Sources */,
 				29E1185C20F46013006C366F /* UIView+Frame.swift in Sources */,

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DataCenter: NSObject, DataManagerDelegate {
+class DataCenter: NSObject, DataManagerDelegate, DataManagerPostNotificationDelegate {
     
     static let sharedInstance = DataCenter()
     
@@ -22,6 +22,7 @@ class DataCenter: NSObject, DataManagerDelegate {
         if dataManager == nil {
             dataManager = DataManager.init()
             dataManager.delegate = self
+            dataManager.postDelegate = self
             self.loadLoacalBundle()
         }
     }

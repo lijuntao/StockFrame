@@ -14,7 +14,7 @@ protocol DataManagerDelegate: NSObjectProtocol {
     
 }
 
-class DataManager: NSObject, ResponseDataHandler, DataHelperConnectStatusDelegate, DataHelperServerInfoDelegate {
+class DataManager: NSObject, ResponseDataHandler, DataHelperConnectStatusDelegate, DataHelperServerInfoDelegate, DataManagerPostNotificationDelegate {
     
     static let ALIVE_TIMESPAN:TimeInterval = 25 //保活时间间隔
     var loginDataHelper: DataHelper!
@@ -22,6 +22,7 @@ class DataManager: NSObject, ResponseDataHandler, DataHelperConnectStatusDelegat
     var tradeDateHelper: DataHelper!
     
     weak var delegate : DataManagerDelegate!
+    weak var postDelegate: DataManagerPostNotificationDelegate!
     var isSuspended: Bool = false
     
     //保存server 返回数据
