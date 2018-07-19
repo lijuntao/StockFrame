@@ -14,6 +14,19 @@ class TestViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        let mapTable = NSMapTable<AnyObject, AnyObject>.init(keyOptions: [.weakMemory], valueOptions: [.weakMemory], capacity: 5)
+        let man:Person = Man()
+        mapTable.setObject(man, forKey: man)
+        for obj in mapTable.keyEnumerator().allObjects {
+            if obj is Person {
+                
+                let test = obj as! Person
+                test.sex()
+                test.age()
+            }
+        }
+        print("\(String(describing: mapTable.object(forKey: man)))")
+        print("Keys: \(mapTable.keyEnumerator().allObjects)")
     }
 
     override func didReceiveMemoryWarning() {
