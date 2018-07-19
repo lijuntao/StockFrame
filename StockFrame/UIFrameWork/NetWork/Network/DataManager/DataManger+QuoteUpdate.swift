@@ -25,4 +25,14 @@ extension DataManager {
             self.marketStatueDic[pkt.ex] = dic
         }
     }
+    
+    
+    /// 榜单返回处理
+    ///
+    /// - Parameter packet: 数据包
+    func handleWmQuoteAndRankUpdate(_ packet:JPacketReceiveBase) {
+        let pkt = packet as! WmQuoteAndRankUpdate
+        var item = WmQuoteGroupRankingItem.init()
+        item.type = pkt.type
+    }
 }

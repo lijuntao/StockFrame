@@ -14,7 +14,7 @@ protocol DataManagerDelegate: NSObjectProtocol {
     
 }
 
-class DataManager: NSObject, ResponseDataHandler, DataHelperConnectStatusDelegate, DataHelperServerInfoDelegate, DataManagerPostNotificationDelegate {
+class DataManager: NSObject, ResponseDataHandler, DataHelperConnectStatusDelegate, DataHelperServerInfoDelegate {
     
     static let ALIVE_TIMESPAN:TimeInterval = 25 //保活时间间隔
     var loginDataHelper: DataHelper!
@@ -252,6 +252,8 @@ class DataManager: NSObject, ResponseDataHandler, DataHelperConnectStatusDelegat
             self.handleAliveStatus(packet,sender: sender)
         case .marketStatusUpdate:
             self.handleMarketStatus(packet)
+        case .wmQuoteAndRankUpdate:
+            self.handleWmQuoteAndRankUpdate(packet)
         default:
             FDTLog.logDebug("\(packet.pt.rawValue) \(packet.classForCoder) 没有实现")
         }

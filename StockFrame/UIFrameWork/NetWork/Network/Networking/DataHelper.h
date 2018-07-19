@@ -9,8 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "NetworkDefinition.h"
 #import "Networking.h"
+#import "JPacketHelper.h"
 
-@class JPacketHelper;
 @class DataHelper;
 @class JPacketBase;
 @class JPacketReceiveBase;
@@ -76,4 +76,14 @@
 - (void)handleAuthConnectDone;
 - (void)handleEncryptPacket:(JPacketBase *)base;
 - (nullable JPacketReceiveBase *)unpackEncryptPacket:(JPacketBase *)base;
+
+#pragma mark 榜单
+/**
+ 榜单行情
+ 
+ @param type 市场类别
+ @param categories 详细参数
+ */
+- (void) doWmGetQuoteAndRankWithType:(NSString *)type
+                          categories:(NSArray *)categories;
 @end

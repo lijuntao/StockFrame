@@ -9,4 +9,14 @@
 import Foundation
 
 extension DataManager {
+    
+    
+    /// 获取榜单
+    ///
+    /// - Parameters:
+    ///   - market: 市场
+    ///   - categories: 参数数组
+    func doGetQuoteAndRank(_ type:String, categories:[WmRankingCategoryItem]) {
+        self.quoteDataHelper.doWmGetQuoteAndRank(withType: type, categories: categories)
+    }
 }

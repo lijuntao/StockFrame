@@ -27,5 +27,7 @@
 #import "ConnectStatus.h"
 #import "AliveStatus.h"
 #import "MarketStatusUpdate.h"
-
+#import "WmRankingCategoryItem.h"
+#import "WmQuoteAndRankUpdate.h"
+#import "WmQuoteGroupRankingItem.h"
 #endif /* StockFrame_Bridging_Header_h */

@@ -59,6 +59,15 @@
 		299426E520E7664700A67E94 /* PageIdDef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299426E420E7664700A67E94 /* PageIdDef.swift */; };
 		29A63FE621001BF700A02DD6 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A63FE521001BF700A02DD6 /* TestViewController.swift */; };
 		29A63FEF21003BB300A02DD6 /* DataCenter+PostNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A63FEE21003BB300A02DD6 /* DataCenter+PostNotification.swift */; };
+		29A63FF12100533F00A02DD6 /* DataCenter+Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A63FF02100533F00A02DD6 /* DataCenter+Quote.swift */; };
+		29A63FF32100584D00A02DD6 /* DataEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A63FF22100584D00A02DD6 /* DataEnum.swift */; };
+		29A63FF821005AA500A02DD6 /* WmRankingCategoryItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 29A63FF621005AA400A02DD6 /* WmRankingCategoryItem.m */; };
+		29A63FF921005AA500A02DD6 /* WmRandomValueBaseItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 29A63FF721005AA400A02DD6 /* WmRandomValueBaseItem.m */; };
+		29A63FFF21005DB300A02DD6 /* WmGetQuoteAndRank.m in Sources */ = {isa = PBXBuildFile; fileRef = 29A63FFD21005DB300A02DD6 /* WmGetQuoteAndRank.m */; };
+		29A640032100631E00A02DD6 /* WmQuoteGroupRankingItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 29A640022100631E00A02DD6 /* WmQuoteGroupRankingItem.m */; };
+		29A640062100666000A02DD6 /* FDTValueFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 29A640052100665F00A02DD6 /* FDTValueFormatter.m */; };
+		29A64009210066C800A02DD6 /* NSDecimalNumber+Compare.m in Sources */ = {isa = PBXBuildFile; fileRef = 29A64008210066C800A02DD6 /* NSDecimalNumber+Compare.m */; };
+		29A6400F210067A900A02DD6 /* FDTOCTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 29A6400E210067A900A02DD6 /* FDTOCTools.m */; };
 		29ABCD0C20EE4AAB0040F5D8 /* DataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29ABCD0B20EE4AAB0040F5D8 /* DataCenter.swift */; };
 		29ABCD1120EE4B490040F5D8 /* DataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 29ABCD1020EE4B490040F5D8 /* DataHelper.m */; };
 		29B7F7D720EC993300A6F0D4 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B7F7D120EC993300A6F0D4 /* Reachability.m */; };
@@ -313,6 +322,22 @@
 		29A63FEA21002CF500A02DD6 /* ObserverID.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObserverID.h; sourceTree = "<group>"; };
 		29A63FEB2100321500A02DD6 /* DataManagerDefinition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataManagerDefinition.h; sourceTree = "<group>"; };
 		29A63FEE21003BB300A02DD6 /* DataCenter+PostNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataCenter+PostNotification.swift"; sourceTree = "<group>"; };
+		29A63FF02100533F00A02DD6 /* DataCenter+Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataCenter+Quote.swift"; sourceTree = "<group>"; };
+		29A63FF22100584D00A02DD6 /* DataEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataEnum.swift; sourceTree = "<group>"; };
+		29A63FF421005AA400A02DD6 /* WmRandomValueBaseItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WmRandomValueBaseItem.h; sourceTree = "<group>"; };
+		29A63FF521005AA400A02DD6 /* WmRankingCategoryItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WmRankingCategoryItem.h; sourceTree = "<group>"; };
+		29A63FF621005AA400A02DD6 /* WmRankingCategoryItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WmRankingCategoryItem.m; sourceTree = "<group>"; };
+		29A63FF721005AA400A02DD6 /* WmRandomValueBaseItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WmRandomValueBaseItem.m; sourceTree = "<group>"; };
+		29A63FFD21005DB300A02DD6 /* WmGetQuoteAndRank.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WmGetQuoteAndRank.m; sourceTree = "<group>"; };
+		29A63FFE21005DB300A02DD6 /* WmGetQuoteAndRank.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WmGetQuoteAndRank.h; sourceTree = "<group>"; };
+		29A640012100631E00A02DD6 /* WmQuoteGroupRankingItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WmQuoteGroupRankingItem.h; sourceTree = "<group>"; };
+		29A640022100631E00A02DD6 /* WmQuoteGroupRankingItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WmQuoteGroupRankingItem.m; sourceTree = "<group>"; };
+		29A640042100665F00A02DD6 /* FDTValueFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDTValueFormatter.h; sourceTree = "<group>"; };
+		29A640052100665F00A02DD6 /* FDTValueFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDTValueFormatter.m; sourceTree = "<group>"; };
+		29A64007210066C800A02DD6 /* NSDecimalNumber+Compare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDecimalNumber+Compare.h"; sourceTree = "<group>"; };
+		29A64008210066C800A02DD6 /* NSDecimalNumber+Compare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDecimalNumber+Compare.m"; sourceTree = "<group>"; };
+		29A6400D210067A900A02DD6 /* FDTOCTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDTOCTools.h; sourceTree = "<group>"; };
+		29A6400E210067A900A02DD6 /* FDTOCTools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDTOCTools.m; sourceTree = "<group>"; };
 		29ABCD0B20EE4AAB0040F5D8 /* DataCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCenter.swift; sourceTree = "<group>"; };
 		29ABCD0F20EE4B490040F5D8 /* DataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataHelper.h; sourceTree = "<group>"; };
 		29ABCD1020EE4B490040F5D8 /* DataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataHelper.m; sourceTree = "<group>"; };
@@ -958,6 +983,8 @@
 			children = (
 				29ABCD0B20EE4AAB0040F5D8 /* DataCenter.swift */,
 				29A63FEE21003BB300A02DD6 /* DataCenter+PostNotification.swift */,
+				29A63FF02100533F00A02DD6 /* DataCenter+Quote.swift */,
+				29A63FF22100584D00A02DD6 /* DataEnum.swift */,
 			);
 			path = DetaCenter;
 			sourceTree = "<group>";
@@ -1063,6 +1090,8 @@
 		29B7F80B20ECA32A00A6F0D4 /* Update */ = {
 			isa = PBXGroup;
 			children = (
+				29A640012100631E00A02DD6 /* WmQuoteGroupRankingItem.h */,
+				29A640022100631E00A02DD6 /* WmQuoteGroupRankingItem.m */,
 				29B7F80C20ECA32A00A6F0D4 /* AttachUnionIdUpdate.h */,
 				29B7F80E20ECA32A00A6F0D4 /* ProfitUpdate.h */,
 				29B7F80F20ECA32A00A6F0D4 /* GlobalSettingUpdate.m */,
@@ -1190,6 +1219,12 @@
 		29B7F88520ECA32B00A6F0D4 /* Request */ = {
 			isa = PBXGroup;
 			children = (
+				29A63FFE21005DB300A02DD6 /* WmGetQuoteAndRank.h */,
+				29A63FFD21005DB300A02DD6 /* WmGetQuoteAndRank.m */,
+				29A63FF421005AA400A02DD6 /* WmRandomValueBaseItem.h */,
+				29A63FF721005AA400A02DD6 /* WmRandomValueBaseItem.m */,
+				29A63FF521005AA400A02DD6 /* WmRankingCategoryItem.h */,
+				29A63FF621005AA400A02DD6 /* WmRankingCategoryItem.m */,
 				29B7F88620ECA32B00A6F0D4 /* GetEmailUsage.h */,
 				29B7F88720ECA32B00A6F0D4 /* UserLogout.m */,
 				29B7F88820ECA32B00A6F0D4 /* UserCreateLogin.m */,
@@ -1317,8 +1352,14 @@
 		29B7F99B20ECA40200A6F0D4 /* FDTUtility */ = {
 			isa = PBXGroup;
 			children = (
+				29A64007210066C800A02DD6 /* NSDecimalNumber+Compare.h */,
+				29A64008210066C800A02DD6 /* NSDecimalNumber+Compare.m */,
+				29A640042100665F00A02DD6 /* FDTValueFormatter.h */,
+				29A640052100665F00A02DD6 /* FDTValueFormatter.m */,
 				29B7F99C20ECA41500A6F0D4 /* FDUtility.h */,
 				29B7F99D20ECA41500A6F0D4 /* FDUtility.m */,
+				29A6400D210067A900A02DD6 /* FDTOCTools.h */,
+				29A6400E210067A900A02DD6 /* FDTOCTools.m */,
 			);
 			path = FDTUtility;
 			sourceTree = "<group>";
@@ -1701,6 +1742,7 @@
 				29B7F96F20ECA32B00A6F0D4 /* CloseOrder.m in Sources */,
 				29E1184520F45F40006C366F /* WebViewTools.swift in Sources */,
 				29B7F92B20ECA32B00A6F0D4 /* TokenUpdate.m in Sources */,
+				29A63FF32100584D00A02DD6 /* DataEnum.swift in Sources */,
 				29B7F95D20ECA32B00A6F0D4 /* WmUnionLogin.m in Sources */,
 				2912AFC120F332FD00041031 /* LoginInfoViewController.swift in Sources */,
 				296A9A7820E47FF300AA07DE /* AccountInfoViewController.swift in Sources */,
@@ -1738,6 +1780,7 @@
 				29B7F94920ECA32B00A6F0D4 /* LightWeightRankUpdate.m in Sources */,
 				29E1185A20F46013006C366F /* UIColor+Frame.swift in Sources */,
 				29B7F94720ECA32B00A6F0D4 /* QuoteUpdate.m in Sources */,
+				29A63FFF21005DB300A02DD6 /* WmGetQuoteAndRank.m in Sources */,
 				29B7F9A320ECAA6800A6F0D4 /* Networking.m in Sources */,
 				29B7F97320ECA32B00A6F0D4 /* GetUserPhone.m in Sources */,
 				29B7F92720ECA32B00A6F0D4 /* FavoriteSymbolUpdate.m in Sources */,
@@ -1747,6 +1790,7 @@
 				29B7F96220ECA32B00A6F0D4 /* WmEnterOrder.m in Sources */,
 				296A9A5020E362E700AA07DE /* String+Extension.swift in Sources */,
 				29B7F9B520ECAF1900A6F0D4 /* BDRSACryptor.m in Sources */,
+				29A6400F210067A900A02DD6 /* FDTOCTools.m in Sources */,
 				29B7F9B620ECAF1900A6F0D4 /* BDCryptor.m in Sources */,
 				29B7F94120ECA32B00A6F0D4 /* WmExchangeOrderUpdate.m in Sources */,
 				29B7F95920ECA32B00A6F0D4 /* UserCreateLogin.m in Sources */,
@@ -1799,7 +1843,9 @@
 				299426E520E7664700A67E94 /* PageIdDef.swift in Sources */,
 				29B7F94B20ECA32B00A6F0D4 /* UseCoinUpdate.m in Sources */,
 				292F2D64204F92B0005AF091 /* ViewController.swift in Sources */,
+				29A63FF821005AA500A02DD6 /* WmRankingCategoryItem.m in Sources */,
 				292F2D62204F92B0005AF091 /* AppDelegate.swift in Sources */,
+				29A63FF921005AA500A02DD6 /* WmRandomValueBaseItem.m in Sources */,
 				29083C5820E4B8A60074AC58 /* NavigationController+UIExtension.swift in Sources */,
 				2924901920EF547900205628 /* DataManager.swift in Sources */,
 				2947DCB620B7D999007BCAF4 /* FDTUIFrameWork.swift in Sources */,
@@ -1836,6 +1882,7 @@
 				29083C5A20E54CBE0074AC58 /* AppDelegate+Extension.swift in Sources */,
 				296A9A5720E370F500AA07DE /* FDTUIWindow.swift in Sources */,
 				29B7F98320ECA32B00A6F0D4 /* AccountReset.m in Sources */,
+				29A640062100666000A02DD6 /* FDTValueFormatter.m in Sources */,
 				29B7F95C20ECA32B00A6F0D4 /* GetPhoneUsage.m in Sources */,
 				29B7F98020ECA32B00A6F0D4 /* WmGetOrderHistory.m in Sources */,
 				29083C5620E4A9BC0074AC58 /* FDT_UI_Public_Proxy.swift in Sources */,
@@ -1873,6 +1920,7 @@
 				29B7F98220ECA32B00A6F0D4 /* CreateUser.m in Sources */,
 				29B7F98A20ECA32B00A6F0D4 /* UserMappingDetachStatus.m in Sources */,
 				29B7F96920ECA32B00A6F0D4 /* GetUserMappingList.m in Sources */,
+				29A64009210066C800A02DD6 /* NSDecimalNumber+Compare.m in Sources */,
 				298CDDE220EE222700BFBB57 /* TestObjc.m in Sources */,
 				2947DCC320B7F1DA007BCAF4 /* NavigationControllerBase.swift in Sources */,
 				2912AFBF20F3042B00041031 /* LoginViewController.swift in Sources */,
@@ -1880,6 +1928,7 @@
 				29E1184E20F45FA1006C366F /* BaseBarButtonItem.swift in Sources */,
 				296A9A7220E47F3400AA07DE /* MeInfoViewController.swift in Sources */,
 				29B7F92420ECA32B00A6F0D4 /* SymbolChangedUpdate.m in Sources */,
+				29A640032100631E00A02DD6 /* WmQuoteGroupRankingItem.m in Sources */,
 				29B7F97C20ECA32B00A6F0D4 /* GetOrder.m in Sources */,
 				29B7F92220ECA32B00A6F0D4 /* SymbolListUpdate.m in Sources */,
 				29B7F95220ECA32B00A6F0D4 /* JPacketBase.m in Sources */,
@@ -1888,6 +1937,7 @@
 				29B7F92520ECA32B00A6F0D4 /* SymbolListGroupsUpdate.m in Sources */,
 				29B7F98C20ECA32B00A6F0D4 /* EditFavoriteSymbol.m in Sources */,
 				29FB69CE20FE1AF5003C7022 /* DataManager+Extension.swift in Sources */,
+				29A63FF12100533F00A02DD6 /* DataCenter+Quote.swift in Sources */,
 				29E1185520F45FD6006C366F /* AppDelegate+Frame.swift in Sources */,
 				29B7F98620ECA32B00A6F0D4 /* GetUserMapping.m in Sources */,
 				29B7F95620ECA32B00A6F0D4 /* SubscribeQuote.m in Sources */,

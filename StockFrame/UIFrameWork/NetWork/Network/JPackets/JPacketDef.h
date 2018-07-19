@@ -17,6 +17,25 @@ typedef NS_ENUM(NSUInteger, EnumEncryptType) {
     EnumEncryptType_AES = 0x01
 };
 
+typedef NS_ENUM(NSUInteger, EnumQuoteStale) {
+    EnumQuoteStale_None = 0,
+    EnumQuoteStale_Invalid = 1
+};
+
+typedef NS_ENUM(NSUInteger, EnumQuoteStatus)
+{
+    EnumQuoteStatus_Normal = 0,
+    EnumQuoteStatus_StopWithCancel = 8,
+    EnumQuoteStatus_Stop = 9,
+    EnumQuoteStatus_NotReady = 99
+    
+};
+
+typedef NS_ENUM(NSUInteger, EnumSymbolLanguageType) {
+    EnumSymbolLanguageType_EN = 1,
+    EnumSymbolLanguageType_CN = 2,
+    EnumSymbolLanguageType_TW = 3
+};
 //-------分割线----------
 
 typedef enum
@@ -100,14 +119,6 @@ typedef enum
 
 typedef enum
 {
-    EnumSymbolLanguageType_EN = 1,
-    EnumSymbolLanguageType_CN = 2,
-    EnumSymbolLanguageType_TW = 3
-    
-} EnumSymbolLanguageType;
-
-typedef enum
-{
     EnumSearchSymbolCat_None = 0,
     EnumSearchSymbolCat_All = 1,
     EnumSearchSymbolCat_Volatile = 2,
@@ -115,23 +126,6 @@ typedef enum
     EnumSearchSymbolCat_NightTrade = 4
     
 } EnumSearchSymbolCat;
-
-typedef enum
-{
-    EnumQuoteStale_None = 0,
-    EnumQuoteStale_Invalid = 1
-    
-} EnumQuoteStale;
-
-
-typedef enum
-{
-    EnumQuoteStatus_Normal = 0,
-    EnumQuoteStatus_StopWithCancel = 8,
-    EnumQuoteStatus_Stop = 9,
-    EnumQuoteStatus_NotReady = 99
-    
-} EnumQuoteStatus;
 
 typedef NS_ENUM(NSInteger, EnumWMOrderType) {
     EnumWMOrderType_Buy = 0,

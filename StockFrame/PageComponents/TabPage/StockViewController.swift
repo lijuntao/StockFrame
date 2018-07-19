@@ -26,7 +26,20 @@ class StockViewController: ViewControllerBase {
         // Dispose of any resources that can be recreated.
     }
 
+    func getRankInfo() -> ([(category:RankingCategory, sort:FDTSortType)]?) {
+        //todo check up down
+        return [(RankingCategory.Amt, FDTSortType.descending),
+                    (RankingCategory.SH, FDTSortType.descending),
+                    (RankingCategory.Down, FDTSortType.ascending)]
+    }
     @objc func btnAction(_ sender: Any) {
+        
+        if let rankInfo = getRankInfo() {
+            for info in rankInfo {
+                DataCenter.sharedInstance.doGetQuoteAndRank("SH", categories: [info])
+            }
+        }
+        
         FDT_UI_Public_Proxy.GotoVCWithId(PAGE_ID_STOCK_INFO)
         FDTLog.logDebug("点击按钮")
     }
