@@ -6,8 +6,8 @@
 //  Copyright (c) 2014年 HKFDT. All rights reserved.
 //
 
-#ifndef MasterDataManager_JPacketDef_h
-#define MasterDataManager_JPacketDef_h
+#ifndef JPacketDef_h
+#define JPacketDef_h
 
 #define JPacket_INVALID -1
 #define JPacket_SendTimeout 10
@@ -199,10 +199,11 @@ typedef NS_ENUM(NSInteger, EnumPacketPT)
     
     EnumPacketPT_WmJsonUpdate = 607,
     EnumPacketPT_WmExchangeOrderUpdate = 608,
-
     //
     EnumPacketPT_Encrypt = 901,
 };
+
+NSDictionary *dict = @{@"key1":@"value1",@"key2":@"value2",@"key3":@10};
 
 typedef NS_ENUM(NSUInteger, EnumEncryptType) {
     EnumEncryptType_RSA = 0x00,

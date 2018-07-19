@@ -57,6 +57,7 @@
 		2990AA3220EDB7DF00658277 /* NSString+FDT.m in Sources */ = {isa = PBXBuildFile; fileRef = 2990AA3120EDB7DF00658277 /* NSString+FDT.m */; };
 		2990AA3520EDEA2300658277 /* NSData+Encrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = 2990AA3420EDEA2300658277 /* NSData+Encrypt.m */; };
 		299426E520E7664700A67E94 /* PageIdDef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299426E420E7664700A67E94 /* PageIdDef.swift */; };
+		29A63FE621001BF700A02DD6 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A63FE521001BF700A02DD6 /* TestViewController.swift */; };
 		29ABCD0C20EE4AAB0040F5D8 /* DataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29ABCD0B20EE4AAB0040F5D8 /* DataCenter.swift */; };
 		29ABCD1120EE4B490040F5D8 /* DataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 29ABCD1020EE4B490040F5D8 /* DataHelper.m */; };
 		29B7F7D720EC993300A6F0D4 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B7F7D120EC993300A6F0D4 /* Reachability.m */; };
@@ -223,6 +224,8 @@
 		29FB69C920FDE8A9003C7022 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FB69C820FDE8A9003C7022 /* Constant.swift */; };
 		29FB69CE20FE1AF5003C7022 /* DataManager+data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FB69CD20FE1AF5003C7022 /* DataManager+data.swift */; };
 		29FB69D020FE1B55003C7022 /* DataManger+QuoteUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FB69CF20FE1B55003C7022 /* DataManger+QuoteUpdate.swift */; };
+		29FB69D920FF40E3003C7022 /* JPacketPTMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 29FB69D820FF40E3003C7022 /* JPacketPTMap.m */; };
+		29FB69E020FF882B003C7022 /* FDTRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FB69DF20FF882B003C7022 /* FDTRequest.swift */; };
 		76ECA25D7FABFBE1DE3EC40B /* Pods_StockFrame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B56EA61C210A2315FDBF714D /* Pods_StockFrame.framework */; };
 /* End PBXBuildFile section */
 
@@ -305,6 +308,7 @@
 		2990AA3320EDEA2300658277 /* NSData+Encrypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Encrypt.h"; sourceTree = "<group>"; };
 		2990AA3420EDEA2300658277 /* NSData+Encrypt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Encrypt.m"; sourceTree = "<group>"; };
 		299426E420E7664700A67E94 /* PageIdDef.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageIdDef.swift; sourceTree = "<group>"; };
+		29A63FE521001BF700A02DD6 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		29ABCD0B20EE4AAB0040F5D8 /* DataCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCenter.swift; sourceTree = "<group>"; };
 		29ABCD0F20EE4B490040F5D8 /* DataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataHelper.h; sourceTree = "<group>"; };
 		29ABCD1020EE4B490040F5D8 /* DataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataHelper.m; sourceTree = "<group>"; };
@@ -616,6 +620,9 @@
 		29FB69C820FDE8A9003C7022 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		29FB69CD20FE1AF5003C7022 /* DataManager+data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataManager+data.swift"; sourceTree = "<group>"; };
 		29FB69CF20FE1B55003C7022 /* DataManger+QuoteUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataManger+QuoteUpdate.swift"; sourceTree = "<group>"; };
+		29FB69D720FF40E3003C7022 /* JPacketPTMap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JPacketPTMap.h; sourceTree = "<group>"; };
+		29FB69D820FF40E3003C7022 /* JPacketPTMap.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JPacketPTMap.m; sourceTree = "<group>"; };
+		29FB69DF20FF882B003C7022 /* FDTRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FDTRequest.swift; sourceTree = "<group>"; };
 		555E1DC5B9168A94DF945015 /* Pods-StockFrame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockFrame.release.xcconfig"; path = "Pods/Target Support Files/Pods-StockFrame/Pods-StockFrame.release.xcconfig"; sourceTree = "<group>"; };
 		834AF762B77B599313483F71 /* Pods-StockFrameTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockFrameTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StockFrameTests/Pods-StockFrameTests.debug.xcconfig"; sourceTree = "<group>"; };
 		863EB99F651FBCC656F4C49A /* Pods-StockFrame.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockFrame.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StockFrame/Pods-StockFrame.debug.xcconfig"; sourceTree = "<group>"; };
@@ -688,6 +695,7 @@
 			isa = PBXGroup;
 			children = (
 				29083C5520E4A9BC0074AC58 /* FDT_UI_Public_Proxy.swift */,
+				29FB69DF20FF882B003C7022 /* FDTRequest.swift */,
 			);
 			path = PublicInterface;
 			sourceTree = "<group>";
@@ -767,6 +775,7 @@
 				292F2D6A204F92B0005AF091 /* LaunchScreen.storyboard */,
 				292F2D6D204F92B0005AF091 /* Info.plist */,
 				2947DCD820B80BEE007BCAF4 /* StockFrame-Bridging-Header.h */,
+				29A63FE521001BF700A02DD6 /* TestViewController.swift */,
 			);
 			path = StockFrame;
 			sourceTree = "<group>";
@@ -1000,6 +1009,8 @@
 				29B7F80A20ECA32A00A6F0D4 /* JPacketSendBase.m */,
 				29B7F90D20ECA32B00A6F0D4 /* JPacketBase.h */,
 				29B7F87620ECA32B00A6F0D4 /* JPacketBase.m */,
+				29FB69D720FF40E3003C7022 /* JPacketPTMap.h */,
+				29FB69D820FF40E3003C7022 /* JPacketPTMap.m */,
 				29B7F7EF20ECA32A00A6F0D4 /* HouseKeeping */,
 				29B7F80B20ECA32A00A6F0D4 /* Update */,
 				29B7F87720ECA32B00A6F0D4 /* Other */,
@@ -1691,6 +1702,8 @@
 				29343EB320F7200500AFDBE0 /* FDTShowTips.swift in Sources */,
 				2924901520EF443D00205628 /* ServerConfig.swift in Sources */,
 				29B7F98D20ECA32B00A6F0D4 /* CancelOrder.m in Sources */,
+				29A63FE621001BF700A02DD6 /* TestViewController.swift in Sources */,
+				29FB69E020FF882B003C7022 /* FDTRequest.swift in Sources */,
 				29B7F95120ECA32B00A6F0D4 /* AlertStatus.m in Sources */,
 				29E1185C20F46013006C366F /* UIView+Frame.swift in Sources */,
 				29B7F93E20ECA32B00A6F0D4 /* UserMappingUpdate.m in Sources */,
@@ -1796,6 +1809,7 @@
 				29B7F91420ECA32B00A6F0D4 /* ConnectResponse.m in Sources */,
 				29B7F94320ECA32B00A6F0D4 /* AccountStatus.m in Sources */,
 				29B7F97420ECA32B00A6F0D4 /* UserMappingStatus.m in Sources */,
+				29FB69D920FF40E3003C7022 /* JPacketPTMap.m in Sources */,
 				296A9A6120E393BC00AA07DE /* TransactionViewController.swift in Sources */,
 				29B7F94520ECA32B00A6F0D4 /* WmExchangeRateUpdate.m in Sources */,
 				29E1185020F45FA1006C366F /* GlobalMacro.swift in Sources */,

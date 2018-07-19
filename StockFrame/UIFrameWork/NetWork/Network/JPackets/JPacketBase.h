@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "JPacketDef.h"
+#import "JPacketPTMap.h"
 
 @interface JPacketBase : NSObject
 

@@ -13,7 +13,6 @@
 
 @interface JPacketHelper : NSObject
 {
-    NSDictionary *_dictPacketMapping;
     NSDecimalNumberHandler *_handler;
 }
 - (JPacketReceiveBase *)doUnPackData:(NSData *)data withHeader:(BOOL)bHeader outPacketNumber:(unsigned short *)pOutPno;

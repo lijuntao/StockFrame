@@ -10,6 +10,7 @@
 #import "JPacketHelper+Protocol.h"
 #import "JPacketReceiveBase.h"
 #import "NetworkDefinition.h"
+#import "JPacketPTMap.h"
 
 @implementation JPacketHelper (Protocol)
 
@@ -21,8 +22,7 @@
     NSNumber *numPT = [dictData objectForKey:@(1)];
     if (numPT == nil)
         return nil;
-    
-    NSString *strClassName = [_dictPacketMapping objectForKey:numPT];
+    NSString *strClassName = [[JPacketPTMap sharedInstance] getPacketReceiveClassName:numPT];
     if (strClassName == nil)
     {
         LogDebug(@"unknown packet: %@",numPT);
