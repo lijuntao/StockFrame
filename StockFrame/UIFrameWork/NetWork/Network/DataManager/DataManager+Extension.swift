@@ -1,5 +1,5 @@
 //
-//  DataManager+data.swift
+//  DataManager+Extension.swift
 //  StockFrame
 //
 //  Created by fdt on 2018/7/17.

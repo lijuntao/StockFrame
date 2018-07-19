@@ -21,6 +21,7 @@
 //net
 #import "DataHelper.h"
 #import "NetworkDefinition.h"
+#import "DataManagerDefinition.h"
 #import "JPacketReceiveBase.h"
 #import "JPacketSendBase.h"
 #import "ConnectStatus.h"

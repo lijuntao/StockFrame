@@ -8,6 +8,22 @@
 
 import UIKit
 
+class Person {
+    func who() {
+        print("person")
+    }
+}
+
+class Man: Person {
+    override func who() {
+        print("man")
+    }
+    
+    func age() {
+        print("man age")
+    }
+}
+
 class TestViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -15,13 +31,13 @@ class TestViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         let mapTable = NSMapTable<AnyObject, AnyObject>.init(keyOptions: [.weakMemory], valueOptions: [.weakMemory], capacity: 5)
-        let man:Person = Man()
+        let man:Man = Man()
         mapTable.setObject(man, forKey: man)
         for obj in mapTable.keyEnumerator().allObjects {
             if obj is Person {
                 
-                let test = obj as! Person
-                test.sex()
+                let test = obj as! Man
+                test.who()
                 test.age()
             }
         }
