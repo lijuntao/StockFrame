@@ -11,6 +11,6 @@
 
 @interface FDTOCTools : NSObject
 
-+ (EnumSymbolLanguageType)getCurrentLanguage;
++ (EnumSymbolLanguageType)getDeviceLanguage;
 
 @end

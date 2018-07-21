@@ -10,6 +10,10 @@ import Foundation
 
 extension String {
     
+    var length: Int {
+        return self.count
+    }
+    
     //字符串转Int
     var integer: Int {
         get {

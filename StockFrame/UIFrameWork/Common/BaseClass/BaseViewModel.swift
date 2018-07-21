@@ -8,6 +8,27 @@
 
 import UIKit
 
-class BaseViewModel: NSObject {
+protocol ViewModelProtocol: NSObjectProtocol {
+    func refreshUI()
+}
 
+class BaseViewModel: NSObject {
+    
+    weak var delegate: ViewModelProtocol?
+    
+    override init() {
+        super.init()
+    }
+    
+    func active() {
+        preconditionFailure("This method must be overridden")
+    }
+    
+    func deactive() {
+        preconditionFailure("This method must be overridden")
+    }
+    
+    func notifiToUI () {
+        delegate?.refreshUI()
+    }
 }

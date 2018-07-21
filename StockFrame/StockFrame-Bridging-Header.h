@@ -15,6 +15,7 @@
 //tools
 #import "YYFPSLabel.h"
 #import "DLog.h"
+#import "FDTOCTools.h"
 
 #import "GDataXMLNode.h"
 

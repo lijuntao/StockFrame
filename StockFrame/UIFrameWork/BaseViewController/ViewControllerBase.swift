@@ -20,10 +20,11 @@ class ViewControllerBase: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.view.backgroundColor = FDTWMColor.statusBarColor.color
+        self.view.backgroundColor = FDTWMColor.backgroundColor.color
         self.setNavigationBar()
         self.setNavTitle()
         self.configuraLeftNavigationItem()
+        self.configuraRightNavigationItem()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -51,7 +52,7 @@ class ViewControllerBase: UIViewController {
         
         self.navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.navigationBar.barTintColor = FDTWMColor.navigationColor.color
-        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: FDTWMColor.statusBarColor.color]
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: FDTWMColor.whiteColor.color]
     }
 
     func configuraLeftNavigationItem() {
@@ -83,7 +84,7 @@ class ViewControllerBase: UIViewController {
                 btn.setTitle("返回 ", for: UIControlState())
                 btn.titleLabel?.font = UIFont.systemFont(ofSize: 16);
                 btn.titleLabel?.textAlignment = NSTextAlignment.left
-                btn.setImage(UIImage.image("nav_backArrow"), for: UIControlState())
+                btn.setImage(UIImage.Asset.Nav_backArrow.image, for: UIControlState())
                 btn.sizeToFit()
                 btn.contentHorizontalAlignment = .left
                 btn.contentVerticalAlignment = .center
@@ -94,6 +95,10 @@ class ViewControllerBase: UIViewController {
                 self.navigationItem.leftBarButtonItems = [leftItem];
             }
         }
+    }
+    
+    func configuraRightNavigationItem() {
+        //
     }
     
     @objc func popAction() {

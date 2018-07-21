@@ -11,8 +11,8 @@ import UIKit
 class BaseBarButtonItem: UIBarButtonItem {
     override init() {
         super.init()
-        self.setTitleTextAttributes([NSAttributedStringKey.foregroundColor: FDTWMColor.statusBarColor.color], for: UIControlState())
-        self.setBarButtonItemTitleColor(FDTWMColor.statusBarColor.color)
+        self.setTitleTextAttributes([NSAttributedStringKey.foregroundColor: FDTWMColor.whiteColor.color], for: UIControlState())
+        self.setBarButtonItemTitleColor(FDTWMColor.whiteColor.color)
     }
     
     required init?(coder aDecoder: NSCoder) {
