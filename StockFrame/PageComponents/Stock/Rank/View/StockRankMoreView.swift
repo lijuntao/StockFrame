@@ -1,23 +1,23 @@
 //
-//  StockRankView.swift
+//  StockRankMoreView.swift
 //  StockFrame
 //
-//  Created by fdt on 2018/7/19.
+//  Created by fdt on 2018/7/22.
 //  Copyright © 2018年 ljt. All rights reserved.
 //
 
 import UIKit
 
-class StockRankView: BaseView, UITableViewDataSource, UITableViewDelegate, ViewModelProtocol, NomalSectionViewProtocol {
-
-    var viewModel: StockRankViewModel!
+class StockRankMoreView: BaseView, UITableViewDataSource, UITableViewDelegate, ViewModelProtocol, StockNomalSortSectionProtocol {
     
+    var viewModel: StockRankMoreViewModel!
     var tableView: UITableView!
     var emptyView: StockEmptyView!
     
-    init(frame: CGRect, viewModel: StockRankViewModel) {
+    
+    init(frame: CGRect, category: RankingCategory, marketType: MarketType) {
         super.init(frame: frame)
-        self.viewModel = viewModel
+        self.viewModel = StockRankMoreViewModel(category: category, marketType: marketType)
         self.viewModel.delegate = self
         self.initView()
     }
@@ -66,12 +66,10 @@ class StockRankView: BaseView, UITableViewDataSource, UITableViewDelegate, ViewM
         tableView.isHidden = true
         
         tableView.register(StockNomalTableViewCell.classForCoder(), forCellReuseIdentifier: StockNomalTableViewCell.CELL_ID)
-        tableView.register(StockSimpleTableViewCell.classForCoder(), forCellReuseIdentifier: StockSimpleTableViewCell.CELL_ID)
         tableView.register(StockAHTableViewCell.classForCoder(), forCellReuseIdentifier: StockAHTableViewCell.CELL_ID)
         
         let _ = self + tableView
     }
-    
     
     override func updateConstraints() {
         
@@ -85,57 +83,34 @@ class StockRankView: BaseView, UITableViewDataSource, UITableViewDelegate, ViewM
         super.updateConstraints()
     }
     
-    // MARK: NomalSectionViewProtocol
-    func tapFoldedSection(_ section: Int) {
-        self.viewModel.setSectionFolded(section)
-        UIView.setAnimationsEnabled(false)
-        self.tableView.beginUpdates()
-        tableView.reloadSections([section], with: .none)
-        self.tableView.endUpdates()
-        UIView.setAnimationsEnabled(true)
+    // MARK: StockNomalSortSectionProtocol
+    func lastSortAction() {
+        self.viewModel.sortBy()
+        FDTLog.logDebug("最后一列点击")
     }
     
-    func moreButtonSection(_ section: Int) {
-        FDTLog.logInfo("更多")
-        let params = [TITLE_KEY:self.viewModel.getSectionTitle(section),
-                      MARKET_KEY: self.viewModel.getSectionMarketType(section),
-                      CATEGORY_KEY: self.viewModel.getSectionCatagary(section)] as [String : Any]
-        FDT_UI_Public_Proxy.GoToVCWithId(PAGE_ID_STOCK_MORE_RANK, params: params)
-    }
-    
-    func toastButtonSection(_ section: Int) {
-        FDTLog.logInfo("toast")
-    }
-
     //MARK: UITableViewDataSource
     func numberOfSections(in tableView: UITableView) -> Int {
-        return self.viewModel.sectionArray.count
+        return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.viewModel.getCellCount(section)
+        return self.viewModel.cellArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellType = self.viewModel.getCellType(indexPath.section)
-        switch cellType {
-        case .simple:
-            let cell = tableView.dequeueReusableCell(withIdentifier: StockSimpleTableViewCell.CELL_ID) as! StockSimpleTableViewCell
-            let vm = self.viewModel.getCellViewModel(indexPath.section, row: indexPath.row) as! StockRankCellViewModel
-            cell.setDataFromViewModel(vm)
-            return cell
-        case .normal:
-            let cell = tableView.dequeueReusableCell(withIdentifier: StockNomalTableViewCell.CELL_ID) as! StockNomalTableViewCell
-            let vm = self.viewModel.getCellViewModel(indexPath.section, row: indexPath.row) as! StockRankCellViewModel
-            cell.setDataFromViewModel(vm)
-            return cell
-        case .ah:
+        let cellType = self.viewModel.category
+        if cellType == .AH {
             let cell = tableView.dequeueReusableCell(withIdentifier: StockAHTableViewCell.CELL_ID) as! StockAHTableViewCell
-            let vm = self.viewModel.getCellViewModel(indexPath.section, row: indexPath.row) as! StockRankAHCellViewModel
+            let vm = self.viewModel.cellArray[indexPath.row] as! StockRankAHCellViewModel
+            cell.setDataFromViewModel(vm)
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: StockNomalTableViewCell.CELL_ID) as! StockNomalTableViewCell
+            let vm = self.viewModel.cellArray[indexPath.row] as! StockRankCellViewModel
             cell.setDataFromViewModel(vm)
             return cell
         }
-        
     }
     
     //MARK: UITableViewDelegate
@@ -144,10 +119,13 @@ class StockRankView: BaseView, UITableViewDataSource, UITableViewDelegate, ViewM
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = StockNomalSecitonView(title: self.viewModel.getSectionTitle(section),
-                                               style: self.viewModel.getSectionViewStyle(section),
-                                               folded: self.viewModel.getSectionFolded(section),
-                                               section: section)
+//        let headerView = StockNomalSecitonView(title: self.viewModel.getSectionTitle(section),
+//                                               style: self.viewModel.getSectionViewStyle(section),
+//                                               folded: self.viewModel.getSectionFolded(section),
+//                                               section: section)
+//        headerView.delegate = self
+        let headerView = StockNomalSortSectionView(titles: self.viewModel.getSectionTitles(),
+                                                   sort: self.viewModel.getSortType())
         headerView.delegate = self
         return headerView
     }
@@ -158,5 +136,12 @@ class StockRankView: BaseView, UITableViewDataSource, UITableViewDelegate, ViewM
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return Layout.ui.regularCellHeight
     }
-    
+    /*
+    // Only override draw() if you perform custom drawing.
+    // An empty implementation adversely affects performance during animation.
+    override func draw(_ rect: CGRect) {
+        // Drawing code
+    }
+    */
+
 }

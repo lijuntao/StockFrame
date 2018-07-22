@@ -10,7 +10,7 @@ import UIKit
 
 extension NavigationControllerBase {
     
-    func gotoPageWithNodeItem(_ nodeItem: NodeItem, params: Dictionary<String,AnyObject>?) {
+    func gotoPageWithNodeItem(_ nodeItem: NodeItem, params: Dictionary<String, Any>?) {
         
         let curPageId = (self.topViewController as! ViewControllerBase).pageId
         let curNodeItem = NodeManager.sharedInstance.getNodeItemWithId(curPageId)
@@ -30,6 +30,7 @@ extension NavigationControllerBase {
             let module = Bundle.main.infoDictionary!["CFBundleExecutable"] as! String
             let typeViewController = NSClassFromString(module + "." + className) as! ViewControllerBase.Type
             let newViewController = typeViewController.init()
+            newViewController.pageData = params
             newViewController.navTitle = nodeItem.value
             newViewController.beloneStackId = naviId
             newViewController.pageId = newPageId
@@ -47,6 +48,7 @@ extension NavigationControllerBase {
             let module = Bundle.main.infoDictionary!["CFBundleExecutable"] as! String
             let typeViewController = NSClassFromString(module + "." + className) as! ViewControllerBase.Type
             let newViewController = typeViewController.init()
+            newViewController.pageData = params
             newViewController.navTitle = nodeItem.value
             newViewController.beloneStackId = naviId
             newViewController.pageId = newPageId
@@ -63,6 +65,7 @@ extension NavigationControllerBase {
                     let module = Bundle.main.infoDictionary!["CFBundleExecutable"] as! String
                     let typeViewController = NSClassFromString(module + "." + className) as! ViewControllerBase.Type
                     let newViewController = typeViewController.init()
+                    newViewController.pageData = params
                     newViewController.navTitle = nodeItem.value
                     newViewController.beloneStackId = naviId
                     newViewController.pageId = newPageId
@@ -97,6 +100,7 @@ extension NavigationControllerBase {
                     let module = Bundle.main.infoDictionary!["CFBundleExecutable"] as! String
                     let typeViewController = NSClassFromString(module + "." + className) as! ViewControllerBase.Type
                     let newViewController = typeViewController.init()
+                    newViewController.pageData = params
                     newViewController.navTitle = nodeItem.value
                     newViewController.beloneStackId = naviId
                     newViewController.pageId = newPageId
@@ -113,6 +117,7 @@ extension NavigationControllerBase {
                     let module = Bundle.main.infoDictionary!["CFBundleExecutable"] as! String
                     let typeViewController = NSClassFromString(module + "." + className) as! ViewControllerBase.Type
                     let newViewController = typeViewController.init()
+                    newViewController.pageData = params
                     newViewController.navTitle = nodeItem.value
                     newViewController.beloneStackId = naviId
                     newViewController.pageId = newPageId

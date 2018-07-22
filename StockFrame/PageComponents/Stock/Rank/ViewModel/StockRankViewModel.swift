@@ -93,6 +93,18 @@ class StockRankViewModel: BaseViewModel {
         return sectionArray[section][StockRankViewModel.SECTION_CELL_TYPE] as! TableViewCellType
     }
     
+    func getSectionCatagary(_ section: Int) -> RankingCategory {
+        let category = self.sectionArray[section][StockRankViewModel.SECTION_CATEGORY] as! String
+        return RankingCategory(rawValue: category)!
+    }
+    
+    func getSectionMarketType(_ section: Int) -> MarketType {
+        if let marketType = self.sectionArray[section][StockRankViewModel.SECTION_MARKET] as? MarketType {
+            return marketType
+        }
+        return .SH
+    }
+    
     func getCellViewModel(_ section: Int, row: Int) -> BaseViewModel
     {
         let cells = self.sectionArray[section][StockRankViewModel.SECTION_CELL] as! Array<BaseViewModel>
@@ -104,16 +116,24 @@ class StockRankViewModel: BaseViewModel {
     }
     
     func getSectionTitle(_ section: Int) -> String {
-        let marketType = self.sectionArray[section][StockRankViewModel.SECTION_MARKET] as! MarketType
-        let category = self.sectionArray[section][StockRankViewModel.SECTION_CATEGORY] as! String
-        return RankingCategory(rawValue: category)!.title(marketType)
+        let marketType = self.getSectionMarketType(section)
+        let category = self.getSectionCatagary(section)
+        return category.title(marketType)
     }
     
     func getSectionViewStyle(_ section: Int) -> NomalSectionViewStyle {
-        let category = self.sectionArray[section][StockRankViewModel.SECTION_CATEGORY] as! String
-        if RankingCategory(rawValue: category)! == .ETF {
+        
+        let marketType = self.getSectionMarketType(section)
+        let category = self.getSectionCatagary(section)
+        
+        if marketType == .Globle {
+            return .noMore
+        }
+        
+        if category == .ETF {
             return .toast
         }
+        
         return .normal
     }
     

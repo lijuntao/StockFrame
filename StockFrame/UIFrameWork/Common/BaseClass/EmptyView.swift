@@ -14,7 +14,7 @@ class StockEmptyView: BaseView
     fileprivate let offset_top: CGFloat =  25.0
     
     var imageView: UIImageView! = UIImageView(image: UIImage.Asset.Market_empty.image)
-    var titleLabel: BaseLabel.LabelTextAlignmentCenter! = BaseLabel.LabelTextAlignmentCenter()
+    var titleLabel = BaseLabel.LabelTextAlignmentCenter()
     
     init() {
         super.init(frame: CGRect.zero)

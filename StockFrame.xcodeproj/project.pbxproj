@@ -70,6 +70,11 @@
 		2990AA3220EDB7DF00658277 /* NSString+FDT.m in Sources */ = {isa = PBXBuildFile; fileRef = 2990AA3120EDB7DF00658277 /* NSString+FDT.m */; };
 		2990AA3520EDEA2300658277 /* NSData+Encrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = 2990AA3420EDEA2300658277 /* NSData+Encrypt.m */; };
 		299426E520E7664700A67E94 /* PageIdDef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299426E420E7664700A67E94 /* PageIdDef.swift */; };
+		2996E2C1210434C800FE4303 /* StockRankMoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2996E2C0210434C800FE4303 /* StockRankMoreViewController.swift */; };
+		2996E2C32104368800FE4303 /* StockRankMoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2996E2C22104368800FE4303 /* StockRankMoreView.swift */; };
+		2996E2C5210437FC00FE4303 /* StockRankMoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2996E2C4210437FC00FE4303 /* StockRankMoreViewModel.swift */; };
+		2996E2C72104422B00FE4303 /* ConstantKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2996E2C62104422B00FE4303 /* ConstantKey.swift */; };
+		2996E2C92104503A00FE4303 /* StockNomalSortSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2996E2C82104503A00FE4303 /* StockNomalSortSectionView.swift */; };
 		29A63FE621001BF700A02DD6 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A63FE521001BF700A02DD6 /* TestViewController.swift */; };
 		29A63FEF21003BB300A02DD6 /* DataCenter+PostNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A63FEE21003BB300A02DD6 /* DataCenter+PostNotification.swift */; };
 		29A63FF12100533F00A02DD6 /* DataCenter+Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A63FF02100533F00A02DD6 /* DataCenter+Quote.swift */; };
@@ -360,6 +365,11 @@
 		2990AA3320EDEA2300658277 /* NSData+Encrypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Encrypt.h"; sourceTree = "<group>"; };
 		2990AA3420EDEA2300658277 /* NSData+Encrypt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Encrypt.m"; sourceTree = "<group>"; };
 		299426E420E7664700A67E94 /* PageIdDef.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageIdDef.swift; sourceTree = "<group>"; };
+		2996E2C0210434C800FE4303 /* StockRankMoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockRankMoreViewController.swift; sourceTree = "<group>"; };
+		2996E2C22104368800FE4303 /* StockRankMoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockRankMoreView.swift; sourceTree = "<group>"; };
+		2996E2C4210437FC00FE4303 /* StockRankMoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockRankMoreViewModel.swift; sourceTree = "<group>"; };
+		2996E2C62104422B00FE4303 /* ConstantKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantKey.swift; sourceTree = "<group>"; };
+		2996E2C82104503A00FE4303 /* StockNomalSortSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockNomalSortSectionView.swift; sourceTree = "<group>"; };
 		29A63FE521001BF700A02DD6 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		29A63FEA21002CF500A02DD6 /* ObserverID.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObserverID.h; sourceTree = "<group>"; };
 		29A63FEB2100321500A02DD6 /* DataManagerDefinition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataManagerDefinition.h; sourceTree = "<group>"; };
@@ -890,6 +900,7 @@
 				29DF0A752102E03600168002 /* TabsSegment.swift */,
 				29DF0A8421037B3500168002 /* StockNomalSecitonView.swift */,
 				29DF0A88210398F200168002 /* StockAHTableViewCell.swift */,
+				2996E2C82104503A00FE4303 /* StockNomalSortSectionView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -970,6 +981,7 @@
 				29DF0A802102FD8F00168002 /* StockRankUSViewModel.swift */,
 				29DF0A822102FDC700168002 /* StockRankGLViewModel.swift */,
 				29DF0A862103969900168002 /* StockRankAHCellViewModel.swift */,
+				2996E2C4210437FC00FE4303 /* StockRankMoreViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -978,6 +990,7 @@
 			isa = PBXGroup;
 			children = (
 				296A0DDB210087FC00919C58 /* StockRankView.swift */,
+				2996E2C22104368800FE4303 /* StockRankMoreView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1090,13 +1103,23 @@
 			isa = PBXGroup;
 			children = (
 				299426E420E7664700A67E94 /* PageIdDef.swift */,
+				2996E2C62104422B00FE4303 /* ConstantKey.swift */,
 			);
 			path = Config;
+			sourceTree = "<group>";
+		};
+		2996E2BF210434A200FE4303 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2996E2C0210434C800FE4303 /* StockRankMoreViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		29A640102100841F00A02DD6 /* Rank */ = {
 			isa = PBXGroup;
 			children = (
+				2996E2BF210434A200FE4303 /* ViewController */,
 				296A0DD8210087C300919C58 /* Model */,
 				296A0DDA210087C300919C58 /* View */,
 				296A0DD9210087C300919C58 /* ViewModel */,
@@ -1912,12 +1935,14 @@
 				29B7F96A20ECA32B00A6F0D4 /* GetLastTradeDate.m in Sources */,
 				29B7F99020ECA32B00A6F0D4 /* WmUnionTokenLogin.m in Sources */,
 				29B7F9B320ECAF1900A6F0D4 /* BDError.m in Sources */,
+				2996E2C5210437FC00FE4303 /* StockRankMoreViewModel.swift in Sources */,
 				29B7F97A20ECA32B00A6F0D4 /* GetTradeAlert.m in Sources */,
 				2947DCC120B7F081007BCAF4 /* TabBarControllerBase.swift in Sources */,
 				29B7F92320ECA32B00A6F0D4 /* EmailUsageUpdate.m in Sources */,
 				296A0DF12100985500919C58 /* StockRankViewModel.swift in Sources */,
 				2947DCD520B8068E007BCAF4 /* GDataXMLNode.m in Sources */,
 				29B7F97720ECA32B00A6F0D4 /* WmGetOrder.m in Sources */,
+				2996E2C72104422B00FE4303 /* ConstantKey.swift in Sources */,
 				29B7F92020ECA32B00A6F0D4 /* AccountStateUpdate.m in Sources */,
 				296A0DE0210090D300919C58 /* BaseLabel.swift in Sources */,
 				29B7F93420ECA32B00A6F0D4 /* LastTradeDateQuoteUpdate.m in Sources */,
@@ -2008,7 +2033,9 @@
 				298CDDDF20EDFA3600BFBB57 /* DLog.m in Sources */,
 				2990137220D3AFC9009B914C /* ViewControllerBase.swift in Sources */,
 				29B7F95E20ECA32B00A6F0D4 /* GetQuote.m in Sources */,
+				2996E2C32104368800FE4303 /* StockRankMoreView.swift in Sources */,
 				29B7F97B20ECA32B00A6F0D4 /* WmGetTrade.m in Sources */,
+				2996E2C1210434C800FE4303 /* StockRankMoreViewController.swift in Sources */,
 				29B7F91320ECA32B00A6F0D4 /* DisconnectStatus.m in Sources */,
 				29B7F94D20ECA32B00A6F0D4 /* WmSmsLoginUpdate.m in Sources */,
 				29B7F95820ECA32B00A6F0D4 /* UserLogout.m in Sources */,
@@ -2073,6 +2100,7 @@
 				29B7F99420ECA32B00A6F0D4 /* WmSmsLogin.m in Sources */,
 				29B7F93820ECA32B00A6F0D4 /* SearchItemUpdate.m in Sources */,
 				293A9A3F210249D500749AB6 /* StockNomalTableViewCell.swift in Sources */,
+				2996E2C92104503A00FE4303 /* StockNomalSortSectionView.swift in Sources */,
 				2924901720EF447C00205628 /* ServerManager.swift in Sources */,
 				29B7F93F20ECA32B00A6F0D4 /* AccountResetUpdate.m in Sources */,
 				29DF0A89210398F200168002 /* StockAHTableViewCell.swift in Sources */,

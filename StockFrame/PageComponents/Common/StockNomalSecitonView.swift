@@ -11,6 +11,7 @@ import UIKit
 enum NomalSectionViewStyle {
     case normal
     case toast
+    case noMore
 }
 
 protocol NomalSectionViewProtocol: NSObjectProtocol {
@@ -79,7 +80,12 @@ class StockNomalSecitonView: BaseView {
         toastButtom = BaseButton(type: .custom)
         toastButtom.setImage(UIImage.Asset.Toast.image, for: .normal)
         toastButtom.addTarget(self, action: #selector(toastButtonAction(_:)), for: .touchUpInside)
-        if style == .normal{
+        if style == .normal {
+            toastButtom.isHidden = true
+        }
+        
+        if style == .noMore {
+            moreButton.isHidden = true
             toastButtom.isHidden = true
         }
         

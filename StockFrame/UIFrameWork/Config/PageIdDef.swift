@@ -16,7 +16,7 @@ let PAGE_ID_FINANCIAL = 4000                    //理财
 let PAGE_ID_TRANSATION = 5000                   //交易
 let PAGE_ID_MINE = 6000                         //我的
 
-let PAGE_ID_STOCK_INFO = 3002                   //股票详情
+let PAGE_ID_STOCK_MORE_RANK = 3002              //二级榜单
 let PAGE_ID_FINANCIAL_INFO = 4002               //理财详情
 let PAGE_ID_TRANSATION_INFO = 5002              //交易详情
 let PAGE_ID_MINE_INFO = 6002                    //我的详情

@@ -12,10 +12,10 @@ class FDTUIFrameWork: NSObject {
     static let sharedInstance = FDTUIFrameWork.init()
     
     var g_UITabFrame:FDTUITabFrame!
-    var publicValues:Dictionary<String,AnyObject>! //公共数据存储
+    var publicValues:Dictionary<String, Any>! //公共数据存储
     
     override init() {
-        publicValues = Dictionary<String, AnyObject>()
+        publicValues = Dictionary<String, Any>()
     }
     
     deinit {
@@ -35,14 +35,14 @@ class FDTUIFrameWork: NSObject {
     }
     
     // UI跳转
-    func goToVCWithId(_ id: Int, params: Dictionary<String,AnyObject>?) {
+    func goToVCWithId(_ id: Int, params: Dictionary<String, Any>?) {
         //根据id获取节点详细信息
         let nodeItem = NodeManager.sharedInstance.getNodeItemWithId(id)
         
         self.gotoRealVCWithNodeItem(nodeItem, params: params)
     }
     
-    func gotoRealVCWithNodeItem(_ nodeItem: NodeItem, params: Dictionary<String,AnyObject>?) {
+    func gotoRealVCWithNodeItem(_ nodeItem: NodeItem, params: Dictionary<String, Any>?) {
         FDTLog.logDebug("跳转：\(nodeItem.id)-\(nodeItem.vcName)")
         //获取tabbar视图
         let mainTabbar = self.shareingUIFramework().getMainTabBar()
@@ -93,11 +93,11 @@ class FDTUIFrameWork: NSObject {
         return self.shareingUIFramework().getPopNavControler()
     }
     // MARK: 全局字典
-    func setPublicValue(forKey key: String, value:AnyObject) {
+    func setPublicValue(forKey key: String, value:Any) {
         publicValues.updateValue(value, forKey: key)
     }
     
-    func getPublicValue(forKey: String) -> AnyObject? {
+    func getPublicValue(forKey: String) -> Any? {
         return publicValues[forKey]
     }
     

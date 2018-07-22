@@ -27,7 +27,7 @@ class StockInfoViewController: ViewControllerBase {
     }
     
     @objc func btnAction(_ sender: Any) {
-        FDT_UI_Public_Proxy.GotoVCWithId(PAGE_ID_STOCK_INFO)
+        FDT_UI_Public_Proxy.GotoVCWithId(PAGE_ID_STOCK_MORE_RANK)
     }
 
     /*

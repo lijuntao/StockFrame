@@ -50,6 +50,8 @@ extension UIImage {
         case List_bottom = "list_bottom"
         case More_dot = "more_dot"
         case Toast = "toast"
+        case Sort_arrowbottom = "sort_arrowbottom"
+        case Sort_arrowtop = "sort_arrowtop"
         //--------分割线
         /*
         case LoginImage = "LoginImage"

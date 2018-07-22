@@ -179,13 +179,6 @@ class StockViewController: ViewControllerBase, UIScrollViewDelegate, TabsSegment
         refreshControlGl.applyNavBarConstraints(size: CGSize(width: 32, height: 32))
     }
     
-    func getRankInfo() -> ([(category:RankingCategory, sort:FDTSortType)]?) {
-        //todo check up down
-        return [(RankingCategory.Amt, FDTSortType.descending),
-                    (RankingCategory.SH, FDTSortType.descending),
-                    (RankingCategory.Down, FDTSortType.ascending)]
-    }
-    
     //MARK: UIScrollViewDelegate
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         //
@@ -197,7 +190,6 @@ class StockViewController: ViewControllerBase, UIScrollViewDelegate, TabsSegment
     
     //MAKR: TabsSegmentProtocol
     func tabsActiveIndex(_ index: Int) {
-        FDTLog.logDebug("点击\(index)")
         currentStockRankView.deactiveViewModel()
         switch index {
         case 0:

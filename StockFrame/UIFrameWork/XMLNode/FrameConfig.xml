@@ -35,7 +35,7 @@
 
 	<!-- 行情 -->
 	<page id="3000" name="行情" type="frame" stackLevel="0" vcname="StockViewController"/>
-	<page id="3002" name="股票详情" type="frame" stackLevel="30" vcname="StockInfoViewController"/>
+	<page id="3002" name="二级榜单" type="frame" stackLevel="10" vcname="StockRankMoreViewController"/>
 
 	<!-- 理财 -->
 	<page id="4000" name="理财" type="frame" stackLevel="0" vcname="FinancialViewController"/>

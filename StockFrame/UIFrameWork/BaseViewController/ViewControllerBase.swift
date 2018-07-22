@@ -12,7 +12,7 @@ class ViewControllerBase: UIViewController {
 
     var navTitle: String?
     
-    var pageData: Dictionary<String,AnyObject>? //跳转页面时携带的参数
+    var pageData: Dictionary<String, Any>? //跳转页面时携带的参数
     
     var beloneStackId = 0 //属于的栈 id
     var pageId = 0 ////当前显示的页面id
