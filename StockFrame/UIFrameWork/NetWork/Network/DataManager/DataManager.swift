@@ -30,7 +30,10 @@ class DataManager: NSObject, ResponseDataHandler, DataHelperConnectStatusDelegat
     let queue = DispatchQueue(label: "com.fdt.dataQueue",attributes:.concurrent)
 //    let queue = DispatchQueue(label: "com.fdt.dataQueue")
 
-    var marketStatueDic: [String:[String: Int]] = [:]
+    //市场状态字典
+    var marketStatueDic: [String: [String: Int]] = [:]
+    //quote数组，key为symbol
+    var quoteListDic: [String: JQuoteItem] = [:]
     override init() {
         super.init()
         self.initParams()
@@ -254,6 +257,8 @@ class DataManager: NSObject, ResponseDataHandler, DataHelperConnectStatusDelegat
             self.handleMarketStatus(packet)
         case .wmQuoteAndRankUpdate:
             self.handleWmQuoteAndRankUpdate(packet)
+        case .quoteUpdate:
+            self.handleQuoteUpdate(packet)
         default:
             FDTLog.logDebug("\(packet.pt.rawValue) \(packet.classForCoder) 没有实现")
         }

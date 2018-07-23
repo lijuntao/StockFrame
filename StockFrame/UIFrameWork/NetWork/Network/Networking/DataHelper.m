@@ -21,6 +21,8 @@
 #import "ConnectChallenge.h"
 #import "EncryptPacket.h"
 #import "WmGetQuoteAndRank.h"
+#import "SubscribeQuote.h"
+#import "GetQuote.h"
 
 
 #define MAX_PACKET_NUMBER 255
@@ -285,6 +287,103 @@
     NSData *dataSend = [_networkRT sendRequest:data packet:getOrder authPhrase:NO];
     if (dataSend == nil)
         [self delPacketWithSeq:@(getOrder.seq)];   // Remove Packet if send failed
+}
+
+- (void)doQuoteRef: (NSArray *)arrSymbolId
+                fs: (NSInteger)fs
+                ch: (NSInteger)ch
+{
+    if (arrSymbolId == nil || [arrSymbolId count] == 0)
+        return;
+    
+    if (!_networkRT.isConnected) {
+        NSLog(@"socket is not connected but do quote ref");
+    }
+        
+    // A. Make Packet
+    SubscribeQuote *quote = [[SubscribeQuote alloc] initWithRefSymbolIDs:arrSymbolId
+                                                          unrefSymbolIDs:nil
+                                                                clearAll:NO
+                                                                      fs:fs
+                                                                      ch:ch];
+        
+        
+    // B. Store it
+    [self setPacket:quote withSeq:@(quote.seq)];
+        
+    // C. Packet -> MsgPack
+    NSData *data = [_jPacketHelper doPackWithPacket:quote];
+        
+    // TODO:
+    // D. MsgPack -> Network
+    NSData *dataSend = [_networkRT sendRequest:data packet:quote authPhrase:NO];
+    if (dataSend == nil)
+        [self delPacketWithSeq:@(quote.seq)];   // Remove Packet if send failed
+
+}
+
+- (void)doQuoteUnRef:(NSArray *)arrSymbolId fs:(NSInteger)fs ch:(NSInteger)ch {
+    if (arrSymbolId == nil || [arrSymbolId count] == 0)
+        return;
+    
+    if (!_networkRT.isConnected) {
+        NSLog(@"socket is not connected but do quote ref");
+    }
+    
+    // A. Make Packet
+    SubscribeQuote *quote = [[SubscribeQuote alloc] initWithRefSymbolIDs:nil
+                                                          unrefSymbolIDs:arrSymbolId
+                                                                clearAll:NO
+                                                                      fs:fs
+                                                                      ch:ch];
+    
+    
+    // B. Store it
+    [self setPacket:quote withSeq:@(quote.seq)];
+    
+    // C. Packet -> MsgPack
+    NSData *data = [_jPacketHelper doPackWithPacket:quote];
+    
+    // TODO:
+    // D. MsgPack -> Network
+    NSData *dataSend = [_networkRT sendRequest:data packet:quote authPhrase:NO];
+    if (dataSend == nil)
+        [self delPacketWithSeq:@(quote.seq)];   // Remove Packet if send failed
+}
+
+- (void)doGetQuote:(NSArray *)arrSymbolId fields:(NSArray *)arrField
+{
+    if (!_networkRT.isConnected) {
+        NSLog(@"socket is not connected but do quote ref");
+    }
+    
+    NSString *strSymbolID = nil;
+    if ([arrSymbolId count] > 0)
+    {
+        strSymbolID = [[arrSymbolId valueForKey:@"description"] componentsJoinedByString:@";"];
+    }
+    
+    NSString *strField = nil;
+    if ([arrField count] > 0)
+    {
+        strField = [[arrField valueForKey:@"description"] componentsJoinedByString:@";"];
+    }
+    
+    // A. Make Packet
+    GetQuote *packet = [[GetQuote alloc] initWithSymbolIDs:strSymbolID fields:strField];
+    
+    
+    // B. Store it
+    [self setPacket:packet withSeq:@(packet.seq)];
+    
+    // C. Packet -> MsgPack
+    NSData *data = [_jPacketHelper doPackWithPacket:packet];
+    
+    // TODO:
+    // D. MsgPack -> Network
+    NSData *dataSend = [_networkRT sendRequest:data packet:packet authPhrase:NO];
+    if (dataSend == nil)
+        [self delPacketWithSeq:@(packet.seq)];   // Remove Packet if send failed
 }
 
 #pragma mark PacketTimeoutHandler

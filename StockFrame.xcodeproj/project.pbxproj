@@ -86,6 +86,12 @@
 		29A640062100666000A02DD6 /* FDTValueFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 29A640052100665F00A02DD6 /* FDTValueFormatter.m */; };
 		29A64009210066C800A02DD6 /* NSDecimalNumber+Compare.m in Sources */ = {isa = PBXBuildFile; fileRef = 29A64008210066C800A02DD6 /* NSDecimalNumber+Compare.m */; };
 		29A6400F210067A900A02DD6 /* FDTOCTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 29A6400E210067A900A02DD6 /* FDTOCTools.m */; };
+		29AAB4982105DDC1008D6BBC /* ChartUpdate.m in Sources */ = {isa = PBXBuildFile; fileRef = 29AAB4962105DDC0008D6BBC /* ChartUpdate.m */; };
+		29AAB4992105DDC1008D6BBC /* ChartUpdate2.m in Sources */ = {isa = PBXBuildFile; fileRef = 29AAB4972105DDC0008D6BBC /* ChartUpdate2.m */; };
+		29AAB49C2105DE30008D6BBC /* JQuoteItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 29AAB49B2105DE30008D6BBC /* JQuoteItem.m */; };
+		29AAB49F2105DE79008D6BBC /* QuoteFieldItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 29AAB49E2105DE79008D6BBC /* QuoteFieldItem.m */; };
+		29AAB4A22105DEBA008D6BBC /* ChartKItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 29AAB4A12105DEBA008D6BBC /* ChartKItem.m */; };
+		29AAB4A52105DEE3008D6BBC /* ChartLineItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 29AAB4A42105DEE3008D6BBC /* ChartLineItem.m */; };
 		29ABCD0C20EE4AAB0040F5D8 /* DataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29ABCD0B20EE4AAB0040F5D8 /* DataCenter.swift */; };
 		29ABCD1120EE4B490040F5D8 /* DataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 29ABCD1020EE4B490040F5D8 /* DataHelper.m */; };
 		29B7F7D720EC993300A6F0D4 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B7F7D120EC993300A6F0D4 /* Reachability.m */; };
@@ -390,6 +396,19 @@
 		29A64008210066C800A02DD6 /* NSDecimalNumber+Compare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDecimalNumber+Compare.m"; sourceTree = "<group>"; };
 		29A6400D210067A900A02DD6 /* FDTOCTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDTOCTools.h; sourceTree = "<group>"; };
 		29A6400E210067A900A02DD6 /* FDTOCTools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDTOCTools.m; sourceTree = "<group>"; };
+		29AAB4932105C3C0008D6BBC /* FieldID.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FieldID.h; sourceTree = "<group>"; };
+		29AAB4942105DDC0008D6BBC /* ChartUpdate2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartUpdate2.h; sourceTree = "<group>"; };
+		29AAB4952105DDC0008D6BBC /* ChartUpdate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartUpdate.h; sourceTree = "<group>"; };
+		29AAB4962105DDC0008D6BBC /* ChartUpdate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartUpdate.m; sourceTree = "<group>"; };
+		29AAB4972105DDC0008D6BBC /* ChartUpdate2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartUpdate2.m; sourceTree = "<group>"; };
+		29AAB49A2105DE2F008D6BBC /* JQuoteItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQuoteItem.h; sourceTree = "<group>"; };
+		29AAB49B2105DE30008D6BBC /* JQuoteItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQuoteItem.m; sourceTree = "<group>"; };
+		29AAB49D2105DE79008D6BBC /* QuoteFieldItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuoteFieldItem.h; sourceTree = "<group>"; };
+		29AAB49E2105DE79008D6BBC /* QuoteFieldItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuoteFieldItem.m; sourceTree = "<group>"; };
+		29AAB4A02105DEB9008D6BBC /* ChartKItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartKItem.h; sourceTree = "<group>"; };
+		29AAB4A12105DEBA008D6BBC /* ChartKItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartKItem.m; sourceTree = "<group>"; };
+		29AAB4A32105DEE2008D6BBC /* ChartLineItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartLineItem.h; sourceTree = "<group>"; };
+		29AAB4A42105DEE3008D6BBC /* ChartLineItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartLineItem.m; sourceTree = "<group>"; };
 		29ABCD0B20EE4AAB0040F5D8 /* DataCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCenter.swift; sourceTree = "<group>"; };
 		29ABCD0F20EE4B490040F5D8 /* DataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataHelper.h; sourceTree = "<group>"; };
 		29ABCD1020EE4B490040F5D8 /* DataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataHelper.m; sourceTree = "<group>"; };
@@ -1161,6 +1180,7 @@
 			children = (
 				29B7F7DC20EC9C9E00A6F0D4 /* NetworkDefinition.h */,
 				29A63FEA21002CF500A02DD6 /* ObserverID.h */,
+				29AAB4932105C3C0008D6BBC /* FieldID.h */,
 			);
 			path = Inc;
 			sourceTree = "<group>";
@@ -1239,6 +1259,18 @@
 		29B7F80B20ECA32A00A6F0D4 /* Update */ = {
 			isa = PBXGroup;
 			children = (
+				29AAB4A32105DEE2008D6BBC /* ChartLineItem.h */,
+				29AAB4A42105DEE3008D6BBC /* ChartLineItem.m */,
+				29AAB4A02105DEB9008D6BBC /* ChartKItem.h */,
+				29AAB4A12105DEBA008D6BBC /* ChartKItem.m */,
+				29AAB49D2105DE79008D6BBC /* QuoteFieldItem.h */,
+				29AAB49E2105DE79008D6BBC /* QuoteFieldItem.m */,
+				29AAB49A2105DE2F008D6BBC /* JQuoteItem.h */,
+				29AAB49B2105DE30008D6BBC /* JQuoteItem.m */,
+				29AAB4952105DDC0008D6BBC /* ChartUpdate.h */,
+				29AAB4962105DDC0008D6BBC /* ChartUpdate.m */,
+				29AAB4942105DDC0008D6BBC /* ChartUpdate2.h */,
+				29AAB4972105DDC0008D6BBC /* ChartUpdate2.m */,
 				29A640012100631E00A02DD6 /* WmQuoteGroupRankingItem.h */,
 				29A640022100631E00A02DD6 /* WmQuoteGroupRankingItem.m */,
 				29B7F80C20ECA32A00A6F0D4 /* AttachUnionIdUpdate.h */,
@@ -1803,6 +1835,7 @@
 				"${BUILT_PRODUCTS_DIR}/CocoaAsyncSocket/CocoaAsyncSocket.framework",
 				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
@@ -1813,6 +1846,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaAsyncSocket.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaLumberjack.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
@@ -1869,6 +1903,7 @@
 				"${BUILT_PRODUCTS_DIR}/CocoaAsyncSocket/CocoaAsyncSocket.framework",
 				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
@@ -1879,6 +1914,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaAsyncSocket.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaLumberjack.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
@@ -1902,6 +1938,7 @@
 				29B7F96C20ECA32B00A6F0D4 /* UserLogin.m in Sources */,
 				296A9A5520E366B400AA07DE /* UIImage+Extension.swift in Sources */,
 				296A9A7420E47F8E00AA07DE /* FunInfoViewController.swift in Sources */,
+				29AAB4A22105DEBA008D6BBC /* ChartKItem.m in Sources */,
 				29B7F96F20ECA32B00A6F0D4 /* CloseOrder.m in Sources */,
 				29E1184520F45F40006C366F /* WebViewTools.swift in Sources */,
 				29B7F92B20ECA32B00A6F0D4 /* TokenUpdate.m in Sources */,
@@ -1920,6 +1957,7 @@
 				29DF0A872103969900168002 /* StockRankAHCellViewModel.swift in Sources */,
 				29A63FE621001BF700A02DD6 /* TestViewController.swift in Sources */,
 				29A63FEF21003BB300A02DD6 /* DataCenter+PostNotification.swift in Sources */,
+				29AAB4A52105DEE3008D6BBC /* ChartLineItem.m in Sources */,
 				29FB69E020FF882B003C7022 /* FDTRequest.swift in Sources */,
 				29C5C9692100CF9F00B4E491 /* FDTWMUiUtility.swift in Sources */,
 				29B7F95120ECA32B00A6F0D4 /* AlertStatus.m in Sources */,
@@ -1948,6 +1986,7 @@
 				29B7F93420ECA32B00A6F0D4 /* LastTradeDateQuoteUpdate.m in Sources */,
 				29B7F97920ECA32B00A6F0D4 /* SearchSymbol.m in Sources */,
 				29FB69C720FDE3CD003C7022 /* DataManager+HouseKeeping.swift in Sources */,
+				29AAB4982105DDC1008D6BBC /* ChartUpdate.m in Sources */,
 				296A9A5920E3713200AA07DE /* FDTEntry.swift in Sources */,
 				29B7F95520ECA32B00A6F0D4 /* SubscribeChart2.m in Sources */,
 				29B7F94920ECA32B00A6F0D4 /* LightWeightRankUpdate.m in Sources */,
@@ -2009,6 +2048,7 @@
 				29B7F98720ECA32B00A6F0D4 /* WmGetTradeHistory.m in Sources */,
 				29B7F93120ECA32B00A6F0D4 /* UserMappingDetachUpdate.m in Sources */,
 				29B7F7EA20ECA32100A6F0D4 /* JPacketHelper+Protocol.m in Sources */,
+				29AAB49F2105DE79008D6BBC /* QuoteFieldItem.m in Sources */,
 				29B7F93020ECA32B00A6F0D4 /* CloseOrderUpdate.m in Sources */,
 				296A9A5D20E3938700AA07DE /* StockViewController.swift in Sources */,
 				29B7F92C20ECA32B00A6F0D4 /* WmOrderUpdate.m in Sources */,
@@ -2019,6 +2059,7 @@
 				296A0DF52100B0EB00919C58 /* StockRankHSViewModel.swift in Sources */,
 				29B7F96420ECA32B00A6F0D4 /* GetPriceAlert.m in Sources */,
 				29DF0A762102E03600168002 /* TabsSegment.swift in Sources */,
+				29AAB4992105DDC1008D6BBC /* ChartUpdate2.m in Sources */,
 				29083C5F20E550400074AC58 /* UIDevice+Extension.swift in Sources */,
 				299426E520E7664700A67E94 /* PageIdDef.swift in Sources */,
 				29B7F94B20ECA32B00A6F0D4 /* UseCoinUpdate.m in Sources */,
@@ -2047,6 +2088,7 @@
 				293A9A3E210249D500749AB6 /* StockSimpleTableViewCell.swift in Sources */,
 				29B7F94320ECA32B00A6F0D4 /* AccountStatus.m in Sources */,
 				29B7F97420ECA32B00A6F0D4 /* UserMappingStatus.m in Sources */,
+				29AAB49C2105DE30008D6BBC /* JQuoteItem.m in Sources */,
 				29FB69D920FF40E3003C7022 /* JPacketPTMap.m in Sources */,
 				296A9A6120E393BC00AA07DE /* TransactionViewController.swift in Sources */,
 				29B7F94520ECA32B00A6F0D4 /* WmExchangeRateUpdate.m in Sources */,

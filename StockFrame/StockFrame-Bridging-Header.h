@@ -23,6 +23,7 @@
 #import "DataHelper.h"
 #import "NetworkDefinition.h"
 #import "DataManagerDefinition.h"
+#import "FieldID.h"
 #import "JPacketReceiveBase.h"
 #import "JPacketSendBase.h"
 #import "ConnectStatus.h"
@@ -31,4 +32,6 @@
 #import "WmRankingCategoryItem.h"
 #import "WmQuoteAndRankUpdate.h"
 #import "WmQuoteGroupRankingItem.h"
+#import "QuoteUpdate.h"
+#import "JQuoteItem.h"
 #endif /* StockFrame_Bridging_Header_h */

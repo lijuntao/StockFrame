@@ -28,4 +28,16 @@ extension DataCenter {
         }
         self.dataManager.doGetQuoteAndRank(market, categories: categoriesArray)
     }
+    
+    func doQuoteRef(_ symbolId: [String]) {
+        self.dataManager.doQuoteRef(symbolId)
+    }
+    
+    func doQuoteUnRef(_ symbolId: [String]) {
+        self.dataManager.doQuoteUnRef(symbolId)
+    }
+    
+    func doGetQuote(_ symbolId: [String]) {
+        self.dataManager.doGetQuote(symbolId)
+    }
 }

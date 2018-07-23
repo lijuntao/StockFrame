@@ -86,4 +86,18 @@
  */
 - (void) doWmGetQuoteAndRankWithType:(NSString *)type
                           categories:(NSArray *)categories;
+
+#pragma mark quote
+//订阅
+- (void)doQuoteRef: (NSArray *)arrSymbolId
+                fs: (NSInteger)fs
+                ch: (NSInteger)ch;
+//解订阅
+- (void)doQuoteUnRef: (NSArray *)arrSymbolId
+                fs: (NSInteger)fs
+                ch: (NSInteger)ch;
+
+- (void)doGetQuote:(NSArray *)arrSymbolId
+            fields:(NSArray *)arrField;
+
 @end

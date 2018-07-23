@@ -27,6 +27,9 @@ NSString *debugInfo = [NSString stringWithFormat:@"%@%@",info,message];\
 #define StrongObj(o) autoreleasepool{} __strong typeof(o) o = o##Weak;
 
 
+#define PRICE_INVAID_DASH   @"-"
+#define PRICE_INVAID_DASH2  @"--"
+
 #define ERROR_DISCONNECT                            @"You were disconnected."
 #define ERROR_ALL_SERVICE_DOWN                      @"All Service Connect Fail."
 #define ERROR_CANNOT_GET_SERVICE_LIST               @"Cannot Get AppSvc List."

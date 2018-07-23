@@ -36,6 +36,12 @@ typedef NS_ENUM(NSUInteger, EnumSymbolLanguageType) {
     EnumSymbolLanguageType_CN = 2,
     EnumSymbolLanguageType_TW = 3
 };
+
+typedef NS_ENUM(NSInteger, KLINE_MODE) {
+    KLINE_MODE_EX_RIGHT = 0,
+    KLINE_MODE_BACKWARD_RIGHT,
+    KLINE_MODE_FORWARD_RIGHT,
+};
 //-------分割线----------
 
 typedef enum
