@@ -32,7 +32,6 @@ class StockViewController: ViewControllerBase, UIScrollViewDelegate, TabsSegment
 
         // Do any additional setup after loading the view.
         self.initView()
-        self.initRefreshControl()
     }
 
     override func didReceiveMemoryWarning() {
@@ -42,6 +41,7 @@ class StockViewController: ViewControllerBase, UIScrollViewDelegate, TabsSegment
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.initRefreshControl()
         self.activeView()
     }
     
@@ -85,7 +85,7 @@ class StockViewController: ViewControllerBase, UIScrollViewDelegate, TabsSegment
         let _ = self.view + mainScrollView
     }
     
-    override func configuraRightNavigationItem() {
+    override func configureRightNavigationItem() {
         self.initRefreshControl()
         switch currentStockRankView {
         case stockRankViewHS:
@@ -163,20 +163,11 @@ class StockViewController: ViewControllerBase, UIScrollViewDelegate, TabsSegment
         guard let _ = currentStockRankView else {
             return
         }
-        refreshControlHS.setIndicatorType(.white)
-        refreshControlHK.setIndicatorType(.white)
-        refreshControlUS.setIndicatorType(.white)
-        refreshControlGl.setIndicatorType(.white)
         
         refreshControlHS.bindViewModel(stockRankViewHS.viewModel.refreshVM)
         refreshControlHK.bindViewModel(stockRankViewHK.viewModel.refreshVM)
         refreshControlUS.bindViewModel(stockRankViewUS.viewModel.refreshVM)
         refreshControlGl.bindViewModel(stockRankViewGL.viewModel.refreshVM)
-        
-        refreshControlHS.applyNavBarConstraints(size: CGSize(width: 32, height: 32))
-        refreshControlHK.applyNavBarConstraints(size: CGSize(width: 32, height: 32))
-        refreshControlUS.applyNavBarConstraints(size: CGSize(width: 32, height: 32))
-        refreshControlGl.applyNavBarConstraints(size: CGSize(width: 32, height: 32))
     }
     
     //MARK: UIScrollViewDelegate
@@ -203,7 +194,7 @@ class StockViewController: ViewControllerBase, UIScrollViewDelegate, TabsSegment
         default:
             break
         }
-        self.configuraRightNavigationItem() //activeViewModel之前，重新绑定refreshModel关系
+        self.configureRightNavigationItem() //activeViewModel之前，重新绑定refreshModel关系
         currentStockRankView.activeViewModel()
         
         

@@ -67,7 +67,7 @@ class StockRankMoreViewController: ViewControllerBase {
         refreshControl.applyNavBarConstraints(size: CGSize(width: 32, height: 32))
     }
     
-    override func configuraRightNavigationItem() {
+    override func configureRightNavigationItem() {
         self.navigationItem.rightBarButtonItems = [BaseBarButtonItem(customView: refreshControl)]
     }
 

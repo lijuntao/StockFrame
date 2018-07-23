@@ -21,10 +21,10 @@ class ViewControllerBase: UIViewController {
 
         // Do any additional setup after loading the view.
         self.view.backgroundColor = FDTWMColor.backgroundColor.color
-        self.setNavigationBar()
-        self.setNavTitle()
-        self.configuraLeftNavigationItem()
-        self.configuraRightNavigationItem()
+        self.configureNavigationBar()
+        self.configureNavigationTitle()
+        self.configureLeftNavigationItem()
+        self.configureRightNavigationItem()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -40,22 +40,26 @@ class ViewControllerBase: UIViewController {
         FDTLog.logDebug("\(pageId) 释放")
     }
     
-    func setNavTitle() {
-        if let title = navTitle {
+    func configureNavigationTitle() {
+        if let data = pageData, data.keys.contains(TITLE_KEY) {
+            if let title = data[TITLE_KEY] as? String {
+                self.navigationItem.title = title
+            }
+        }else if let title = navTitle { //框架自身title
             self.navigationItem.title = title
         } else {
             self.navigationItem.title = "--"
         }
     }
     
-    func setNavigationBar() {
+    func configureNavigationBar() {
         
         self.navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.navigationBar.barTintColor = FDTWMColor.navigationColor.color
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: FDTWMColor.whiteColor.color]
     }
 
-    func configuraLeftNavigationItem() {
+    func configureLeftNavigationItem() {
         
         guard let navigationVC = self.navigationController as? NavigationControllerBase else {
             return
@@ -97,7 +101,7 @@ class ViewControllerBase: UIViewController {
         }
     }
     
-    func configuraRightNavigationItem() {
+    func configureRightNavigationItem() {
         //
     }
     

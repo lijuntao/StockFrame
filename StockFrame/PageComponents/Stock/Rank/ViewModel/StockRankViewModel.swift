@@ -15,7 +15,8 @@ class StockRankViewModel: BaseViewModel {
     static let SECTION_CATEGORY = "section_category"
     static let SECTION_CELL_TYPE = "section_cell_type"
     
-    var _refreshVM: FDTRefreshControlViewModel!
+    //viewModel 内部使用
+    fileprivate var _refreshVM: FDTRefreshControlViewModel!
     var refreshVM: FDTRefreshControlViewModel {
         get {
             _refreshVM = createRefreshViewModel()

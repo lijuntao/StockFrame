@@ -15,7 +15,7 @@ protocol FDTRefreshControlProtocol: NSObjectProtocol {
 
 class FDTRefreshControl: BaseView, FDTRefreshControlProtocol {
     var button = UIButton(type: UIButtonType.custom)
-    var indicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+    var indicator = UIActivityIndicatorView(activityIndicatorStyle: .white)
     var imageSize: CGFloat = 22
     var indicatorOffset: CGFloat = 0
     var viewModel: FDTRefreshControlViewModel!
@@ -29,6 +29,8 @@ class FDTRefreshControl: BaseView, FDTRefreshControlProtocol {
         
         self.clipsToBounds = true
         let _ = self + [indicator, button]
+        
+        self.applyNavBarConstraints(size: CGSize(width: 32, height: 32))
     }
     
     required init?(coder aDecoder: NSCoder) {
