@@ -16,14 +16,21 @@ protocol DataManagerDelegate: NSObjectProtocol {
 
 class DataManager: NSObject, ResponseDataHandler, DataHelperConnectStatusDelegate, DataHelperServerInfoDelegate {
     
-    static let ALIVE_TIMESPAN:TimeInterval = 20
+    static let ALIVE_TIMESPAN:TimeInterval = 25 //保活时间间隔
     var loginDataHelper: DataHelper!
     var quoteDataHelper: DataHelper!
     var tradeDateHelper: DataHelper!
     
     weak var delegate : DataManagerDelegate!
-    
+    weak var postDelegate: DataManagerPostNotificationDelegate!
     var isSuspended: Bool = false
+    
+    //保存server 返回数据
+    //创建一个队列专门处理写入 读出数据
+    let queue = DispatchQueue(label: "com.fdt.dataQueue",attributes:.concurrent)
+//    let queue = DispatchQueue(label: "com.fdt.dataQueue")
+
+    var marketStatueDic: [String:[String: Int]] = [:]
     override init() {
         super.init()
         self.initParams()
@@ -223,12 +230,12 @@ class DataManager: NSObject, ResponseDataHandler, DataHelperConnectStatusDelegat
         self.resetAliveForSender(sender)
         
         switch packet.pt {
-        case EnumPacketPT_SymbolStatus:
+        case .symbolStatus:
             //
             break
-        case EnumPacketPT_ConnectChallenge:
+        case .connectChallenge:
             self.handleConnectChallenge(packet, sender: sender)
-        case EnumPacketPT_Encrypt:
+        case .encrypt:
             if sender == loginDataHelper {
                 if let unPackPacket = sender.unpackEncryptPacket(packet) {
                     self.handleJPacket(unPackPacket, sender:sender)
@@ -236,19 +243,19 @@ class DataManager: NSObject, ResponseDataHandler, DataHelperConnectStatusDelegat
             } else {
                 self.handleEncryptPacket(packet, sender: sender)
             }
-        case EnumPacketPT_ConnectStatus:
+        case .connectStatus:
             self.startAliveForSender(sender)
             self.handleConnectStatus(packet, sender: sender)
-        case EnumPacketPT_Alive:
+        case .alive:
             fallthrough
-        case EnumPacketPT_AliveStatus:
+        case .aliveStatus:
             self.handleAliveStatus(packet,sender: sender)
-        case EnumPacketPT_MarketStatusUpdate:
-            break
-        case EnumPacketPT_GuestTokenUpdate:
-            FDTLog.logDebug("\(EnumPacketPT_GuestTokenUpdate.rawValue) \(packet.classForCoder) 没有实现")
+        case .marketStatusUpdate:
+            self.handleMarketStatus(packet)
+        case .wmQuoteAndRankUpdate:
+            self.handleWmQuoteAndRankUpdate(packet)
         default:
-            break
+            FDTLog.logDebug("\(packet.pt.rawValue) \(packet.classForCoder) 没有实现")
         }
     }
     
@@ -265,7 +272,7 @@ class DataManager: NSObject, ResponseDataHandler, DataHelperConnectStatusDelegat
     //MARK DataHelperConnectStatusDelegate
     func handleConnect(_ status: Network_Status, obj: Any!, sender: DataHelper) {
         switch status {
-        case NetworkStatus_Connected:
+        case .status_Connected:
             if sender == loginDataHelper {
                 FDTLog.logDebug("登录连接成功")
             } else if sender == quoteDataHelper {
@@ -277,7 +284,7 @@ class DataManager: NSObject, ResponseDataHandler, DataHelperConnectStatusDelegat
             }
             self.doAuthConnect(sender)
             break
-        case NetworkStatus_DisConnect:
+        case .status_Connected:
             // Stop Heartbeat
             self.stopAliveForSender(sender)
             

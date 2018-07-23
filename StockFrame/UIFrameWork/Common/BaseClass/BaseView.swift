@@ -10,6 +10,30 @@ import UIKit
 
 class BaseView: UIView {
 
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.backgroundColor = FDTWMColor.whiteColor.color
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    override class var requiresConstraintBasedLayout : Bool {
+        return true;
+    }
+    
+    func activeViewModel() {
+        preconditionFailure("This method must be overridden")
+    }
+    
+    func deactiveViewModel() {
+        preconditionFailure("This method must be overridden")
+    }
     /*
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.

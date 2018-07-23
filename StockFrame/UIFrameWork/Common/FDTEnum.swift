@@ -8,14 +8,73 @@
 
 import UIKit
 
+enum CurrencyType:String {
+    case USD = "USD"
+    case HKD = "HKD"
+    case CNY = "CNY"
+    case SZ = "SZ"
+    
+    var marketColor: UIColor {
+        switch self {
+        case .USD:
+            return FDTWMColor.symbolUSColor.color
+        case .HKD:
+            return FDTWMColor.symbolHKColor.color
+        case .CNY:
+            return FDTWMColor.activeColor.color
+        case .SZ:
+            return FDTWMColor.szColor.color;
+        }
+    }
+    
+    var marketCode: String {
+        switch self {
+        case .USD:
+            return "US"
+        case .HKD:
+            return "HK"
+        case .CNY:
+            return "SH"
+        case .SZ:
+            return "SZ";
+        }
+    }
+    
+    static func getType(_ code: String) -> CurrencyType {
+        switch code {
+        case CurrencyType.USD.marketCode:
+            return CurrencyType.USD
+        case CurrencyType.HKD.marketCode:
+            return CurrencyType.HKD
+        case CurrencyType.CNY.marketCode:
+            return CurrencyType.CNY
+        case CurrencyType.SZ.marketCode:
+            return CurrencyType.SZ
+        default:
+            return CurrencyType.CNY
+        }
+    }
+}
+
 enum FDTWMColor: NSNumber {
     
-    case backColor = 0xEFEFEF
-    case navigationColor = 0x34353a
-    case statusBarColor = 0xFFFFFF
+    case redtest = 0xFF0000
     
-//    case goldColor = 0xBE9862
-//    case szColor = 0xC84845 //深股的背景色
+    case backgroundColor = 0xEFEFEF
+    case navigationColor = 0x34353a
+    case whiteColor = 0xFFFFFF
+    case activeColor = 0xBE9862
+    case defalueTextColor = 0xaaa69c
+    case mainTextColor = 0x1E1E1E
+    case unchangeColor = 0x007AFF
+    case valueRiseColor = 0xE14440
+    case valueFallColor = 0x1EAC3E
+    case marketCloseColor = 0x808080
+    case szColor = 0xC84845 //深股的背景色
+    case symbolHKColor = 0xE07D46
+    case symbolUSColor = 0x2387DF
+    
+    //-----分割线-------
 //    case goldNewColor = 0xe8c082
 //    case goldNewColor1 = 0xBA9560
 //    case grayNewColor = 0x72727a
@@ -74,3 +133,5 @@ enum FDTWMColor: NSNumber {
         return UIColor(wmColor: self, alpha: alpha)
     }
 }
+
+

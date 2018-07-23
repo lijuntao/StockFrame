@@ -7,6 +7,7 @@
 //
 
 #import "JPacketReceiveBase.h"
+#import "DataManagerDefinition.h"
 
 @interface LightWeightCategoryDataCore : NSObject
 /**

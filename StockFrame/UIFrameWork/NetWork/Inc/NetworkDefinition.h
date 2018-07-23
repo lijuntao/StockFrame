@@ -45,17 +45,17 @@ typedef NS_ENUM(NSInteger, ConnectionServerStage) {
 };
 
 
-typedef enum
+typedef NS_ENUM(NSInteger, Network_Status)
 {
-    NetworkStatus_Connecting = 6100,
-    NetworkStatus_Connected = 6101,
-    NetworkStatus_DisConnect = 6102,
-    NetworkStatus_ConnectedWithGuestToken = 6103,
+    NetworkStatus_Connecting                    = 6100,
+    NetworkStatus_Connected                     = 6101,
+    NetworkStatus_DisConnect                    = 6102,
+    NetworkStatus_ConnectedWithGuestToken       = 6103,
     NetworkStatus_DisConnectWihtReachedMaxCount = 6104,
-    NetworkStatus_AllServiceDown = 6105,
-} Network_Status;
+    NetworkStatus_AllServiceDown                = 6105,
+} ;
 
-typedef enum
+typedef NS_ENUM(NSInteger, SysErrorStatus)
 {
     
     Timeout_Login = 4001,
@@ -77,7 +77,7 @@ typedef enum
     PopupAttributedAlert = 5001,
     PopupToast = 5002,
     
-} SysErrorStatus;
+};
 
 
 typedef NS_ENUM(NSInteger, FDTNetworkFrequency)

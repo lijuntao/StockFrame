@@ -12,7 +12,7 @@ class ViewControllerBase: UIViewController {
 
     var navTitle: String?
     
-    var pageData: Dictionary<String,AnyObject>? //跳转页面时携带的参数
+    var pageData: Dictionary<String, Any>? //跳转页面时携带的参数
     
     var beloneStackId = 0 //属于的栈 id
     var pageId = 0 ////当前显示的页面id
@@ -20,10 +20,11 @@ class ViewControllerBase: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.view.backgroundColor = FDTWMColor.statusBarColor.color
-        self.setNavigationBar()
-        self.setNavTitle()
-        self.configuraLeftNavigationItem()
+        self.view.backgroundColor = FDTWMColor.backgroundColor.color
+        self.configureNavigationBar()
+        self.configureNavigationTitle()
+        self.configureLeftNavigationItem()
+        self.configureRightNavigationItem()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -39,22 +40,26 @@ class ViewControllerBase: UIViewController {
         FDTLog.logDebug("\(pageId) 释放")
     }
     
-    func setNavTitle() {
-        if let title = navTitle {
+    func configureNavigationTitle() {
+        if let data = pageData, data.keys.contains(TITLE_KEY) {
+            if let title = data[TITLE_KEY] as? String {
+                self.navigationItem.title = title
+            }
+        }else if let title = navTitle { //框架自身title
             self.navigationItem.title = title
         } else {
             self.navigationItem.title = "--"
         }
     }
     
-    func setNavigationBar() {
+    func configureNavigationBar() {
         
         self.navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.navigationBar.barTintColor = FDTWMColor.navigationColor.color
-        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: FDTWMColor.statusBarColor.color]
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: FDTWMColor.whiteColor.color]
     }
 
-    func configuraLeftNavigationItem() {
+    func configureLeftNavigationItem() {
         
         guard let navigationVC = self.navigationController as? NavigationControllerBase else {
             return
@@ -83,7 +88,7 @@ class ViewControllerBase: UIViewController {
                 btn.setTitle("返回 ", for: UIControlState())
                 btn.titleLabel?.font = UIFont.systemFont(ofSize: 16);
                 btn.titleLabel?.textAlignment = NSTextAlignment.left
-                btn.setImage(UIImage.image("nav_backArrow"), for: UIControlState())
+                btn.setImage(UIImage.Asset.Nav_backArrow.image, for: UIControlState())
                 btn.sizeToFit()
                 btn.contentHorizontalAlignment = .left
                 btn.contentVerticalAlignment = .center
@@ -94,6 +99,10 @@ class ViewControllerBase: UIViewController {
                 self.navigationItem.leftBarButtonItems = [leftItem];
             }
         }
+    }
+    
+    func configureRightNavigationItem() {
+        //
     }
     
     @objc func popAction() {

@@ -7,7 +7,6 @@
 //
 
 #import "DataHelper.h"
-#import "JPacketHelper.h"
 #import "BDRSACryptor.h"
 #import "NSData+Encrypt.h"
 #import "JPacketDef.h"
@@ -21,6 +20,7 @@
 #import "ConnectResponse.h"
 #import "ConnectChallenge.h"
 #import "EncryptPacket.h"
+#import "WmGetQuoteAndRank.h"
 
 
 #define MAX_PACKET_NUMBER 255
@@ -269,6 +269,24 @@
     }
     return [self getJPacketRawData:data withHeader:NO];
 }
+
+#pragma mark 榜单
+
+- (void) doWmGetQuoteAndRankWithType:(NSString *)type
+                          categories:(NSArray *)categories{
+    // A. Make Packet
+    WmGetQuoteAndRank *getOrder = [[WmGetQuoteAndRank alloc] initWithType:type categories:categories timestamp:-1];
+    
+    [getOrder setHandlerTimeout:self];
+    [self setPacket:getOrder withSeq:@(getOrder.seq)];
+    
+    NSData *data = [_jPacketHelper doPackWithPacket:getOrder];
+    
+    NSData *dataSend = [_networkRT sendRequest:data packet:getOrder authPhrase:NO];
+    if (dataSend == nil)
+        [self delPacketWithSeq:@(getOrder.seq)];   // Remove Packet if send failed
+}
+
 #pragma mark PacketTimeoutHandler
 - (void)handleJPacketTimeout:(NSTimer *)timer {
     JPacketSendBase *base = timer.userInfo;

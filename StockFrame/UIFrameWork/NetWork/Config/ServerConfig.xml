@@ -2,12 +2,12 @@
 <root>
 	<menu type="test">
 		<i ip="61.152.93.137" port="8888">login</i>
-		<i ip="61.152.93.141" port="7009">quote</i>	
+		<i ip="118.178.110.14" port="80">quote</i>
 		<i ip="61.152.93.141" port="8881">trade</i>
 	</menu>
-	<menu type="test">
+	<menu type="prod">
 		<i ip="61.152.93.137" port="8888">login</i>
-		<i ip="61.152.93.141" port="7009">quote</i>	
+		<i ip="118.178.110.14" port="80">quote</i>
 		<i ip="61.152.93.141" port="8881">trade</i>
 	</menu>
 </root>

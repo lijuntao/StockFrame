@@ -14,20 +14,23 @@ protocol FDTRefreshControlProtocol: NSObjectProtocol {
 }
 
 class FDTRefreshControl: BaseView, FDTRefreshControlProtocol {
-    fileprivate lazy var button = UIButton(type: UIButtonType.custom)
-    fileprivate lazy var indicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
-    fileprivate var imageSize: CGFloat = 22
-    fileprivate var indicatorOffset: CGFloat = 0
-    fileprivate var viewModel: FDTRefreshControlViewModel!
+    var button = UIButton(type: UIButtonType.custom)
+    var indicator = UIActivityIndicatorView(activityIndicatorStyle: .white)
+    var imageSize: CGFloat = 22
+    var indicatorOffset: CGFloat = 0
+    var viewModel: FDTRefreshControlViewModel!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        self.backgroundColor = FDTWMColor.navigationColor.color
         indicator.isHidden = true
-        button.setImage(UIImage.image("nav_refresh"), for: .normal)
+        button.setImage(UIImage.Asset.Nav_refresh.image, for: .normal)
         button.addTarget(self, action: #selector(startProcess(_:)), for: .touchUpInside)
         
         self.clipsToBounds = true
         let _ = self + [indicator, button]
+        
+        self.applyNavBarConstraints(size: CGSize(width: 32, height: 32))
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -81,7 +84,7 @@ class FDTRefreshControl: BaseView, FDTRefreshControlProtocol {
     
     func bindViewModel(_ vm: FDTRefreshControlViewModel) {
         self.viewModel = vm
-        self.viewModel.delegate = self
+        self.viewModel.delegateRefresh = self
     }
     
     //MARK: FDTRefreshControlProtocol
@@ -92,13 +95,8 @@ class FDTRefreshControl: BaseView, FDTRefreshControlProtocol {
     func stop() {
         self.stopProcess()
     }
-    //布局
-    override func needsUpdateConstraints() -> Bool {
-        return true
-    }
     
     override func updateConstraints() {
-        super.updateConstraints()
         
         indicator.snp.updateConstraints { (make) in
             make.width.height.equalTo(32)
@@ -109,6 +107,8 @@ class FDTRefreshControl: BaseView, FDTRefreshControlProtocol {
             make.width.height.equalTo(32)
             make.left.top.equalTo(self)
         }
+        
+        super.updateConstraints()
     }
 }
 
@@ -116,7 +116,7 @@ class FDTRefreshControl: BaseView, FDTRefreshControlProtocol {
 class FDTRefreshControlViewModel: BaseViewModel {
     
     
-    weak var delegate: FDTRefreshControlProtocol?
+    weak var delegateRefresh: FDTRefreshControlProtocol?
     
     fileprivate var timer: Timer?
     
@@ -126,11 +126,11 @@ class FDTRefreshControlViewModel: BaseViewModel {
     var processClosure:((_ manul: Bool)->())?
     
     @objc func startProcess(_ sender: Any?) {
-        delegate?.start()
+        delegateRefresh?.start()
     }
     
     func stopProcess() {
-        delegate?.stop()
+        delegateRefresh?.stop()
     }
     
     /**
@@ -139,14 +139,14 @@ class FDTRefreshControlViewModel: BaseViewModel {
     func startCounting() {
         if timer == nil {
 //            timer = Timer.scheduledTimer(timeInterval: countingTime, target: self, selector: #selector(startProcess(_:)), userInfo: nil, repeats: false)
-            timer = Timer.scheduledTimer(withTimeInterval: countingTime, repeats: false, block: { [unowned self](_) in
-                self.startProcess(nil)
+            timer = Timer.scheduledTimer(withTimeInterval: countingTime, repeats: false, block: { [weak self] _ in
+                self?.startProcess(nil)
             })
         }else {
-//            timer?.invalidate()
+            timer?.invalidate()
 //            timer = Timer.scheduledTimer(timeInterval: countingTime, target: self, selector: #selector(startProcess(_:)), userInfo: nil, repeats: false)
-            timer = Timer.scheduledTimer(withTimeInterval: countingTime, repeats: false, block: { [unowned self](_) in
-                self.startProcess(nil)
+            timer = Timer.scheduledTimer(withTimeInterval: countingTime, repeats: false, block: { [weak self](_) in
+                self?.startProcess(nil)
             })
         }
     }
@@ -164,6 +164,7 @@ class FDTRefreshControlViewModel: BaseViewModel {
         self.setCountingMode(false)
         self.stopProcess()
         self.stopCounting()
+        processClosure = nil
     }
     
     // MARK: Setter
