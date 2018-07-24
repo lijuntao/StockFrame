@@ -13,7 +13,7 @@
 @property (nonatomic, strong, readonly) NSArray *refSymbolIDs;
 @property (nonatomic, strong, readonly) NSArray *unrefSymbolIDs;
 @property (nonatomic, assign, readonly) BOOL clearAll;
-@property (nonatomic, assign, readonly) EnumTickType ctype;
+@property (nonatomic, assign, readonly) EnumChartType ctype;
 @property (nonatomic, strong, readonly) NSString *freq;
 @property (nonatomic, strong, readonly) NSString *period;
 @property (nonatomic, assign, readonly) NSInteger count;
@@ -26,7 +26,7 @@
 - (id)initWithRefSymbolIDs:(NSArray *)arrRefSymbolID
             unrefSymbolIDs:(NSArray *)arrUnrefSymbolID
                   clearAll:(BOOL)bClearAll
-                     ctype:(EnumTickType)ctype
+                     ctype:(EnumChartType)ctype
                       freq:(NSString *)strFreq
                     period:(NSString *)strPeriod
                      count:(NSInteger)nCount

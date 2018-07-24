@@ -28,14 +28,17 @@ class FinancialViewController: ViewControllerBase {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        DataCenter.sharedInstance.doQuoteRef(["603000.SH.WM"])
-        DataCenter.sharedInstance.doQuoteRef(["HSI.HK.WM"])
+//        DataCenter.sharedInstance.doQuoteRef(["BABA.US.WM"])
+//        DataCenter.sharedInstance.doQuoteRef(["000002.SZ.WM"])
+//        DataCenter.sharedInstance.doQuoteRef(["HSI.HK.WM"])
+        DataCenter.sharedInstance.doTickRef(["BABA.US.WM"], period: .DC)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-//        DataCenter.sharedInstance.doQuoteUnRef(["603000.SH.WM"])
-        DataCenter.sharedInstance.doQuoteRef(["HSI.HK.WM"])
+//        DataCenter.sharedInstance.doQuoteUnRef(["BABA.US.WM"])
+//        DataCenter.sharedInstance.doQuoteUnRef(["000002.SZ.WM"])
+//        DataCenter.sharedInstance.doQuoteRef(["HSI.HK.WM"])
     }
     @objc func btnAction(_ sender: Any) {
         FDT_UI_Public_Proxy.GotoVCWithId(PAGE_ID_MINE)

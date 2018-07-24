@@ -11,7 +11,7 @@
 @interface GetChart : JPacketSendBase
 
 @property (nonatomic, strong, readonly) NSArray *symbolIDs;
-@property (nonatomic, assign, readonly) EnumTickType ctype;
+@property (nonatomic, assign, readonly) EnumChartType ctype;
 @property (nonatomic, strong, readonly) NSString *freq;
 @property (nonatomic, assign, readonly) NSInteger count;
 @property (nonatomic, strong, readonly) NSString *period;
@@ -21,7 +21,7 @@
 @property (nonatomic, assign, readonly) NSNumber *time;
 
 - (id)initWithSymbolIDs:(NSArray *)arrSymbolID
-                  ctype:(EnumTickType)ctype
+                  ctype:(EnumChartType)ctype
                    freq:(NSString *)strFreq
                  period:(NSString *)strPeriod
                   count:(int)nCount
@@ -30,7 +30,7 @@
                    time:(NSNumber *)time;
 
 - (id)initWithSymbolIDs:(NSArray *)arrSymbolID
-                  ctype:(EnumTickType)ctype
+                  ctype:(EnumChartType)ctype
                    freq:(NSString *)strFreq
                  period:(NSString *)strPeriod
                   count:(int)count;

@@ -13,4 +13,13 @@
 
 + (EnumSymbolLanguageType)getDeviceLanguage;
 
+
+/**
+ 获取实际的chart period
+
+ @param period 枚举
+ @return server 所需字符串
+ */
++ (NSString *)getEnumChartPeriod:(EnumChartPeriod)period;
+
 @end

@@ -13,7 +13,7 @@
 - (id)initWithRefSymbolIDs:(NSArray *)arrRefSymbolID
             unrefSymbolIDs:(NSArray *)arrUnrefSymbolID
                   clearAll:(BOOL)bClearAll
-                     ctype:(EnumTickType)ctype
+                     ctype:(EnumChartType)ctype
                       freq:(NSString *)strFreq
                     period:(NSString *)strPeriod
                      count:(NSInteger)nCount
@@ -106,12 +106,12 @@
 {
     NSMutableString *strRet = [NSMutableString new];
     [strRet appendString:@"{\n\t"];
-    [strRet appendFormat:@"pt: SubscribeChart2 (%d)\n\t", EnumPacketPT_SubscribeChart2];
+    [strRet appendFormat:@"pt: SubscribeChart2 (%ld)\n\t", (long)EnumPacketPT_SubscribeChart2];
     [strRet appendFormat:@"seq: %ld\n\t", (long)self.seq];
     
     if (self.strSubribe)
         [strRet appendFormat:@"id: %@\n\t", self.strSubribe];
-    [strRet appendFormat:@"ctype: %d\n\t", self.ctype];
+    [strRet appendFormat:@"ctype: %lu\n\t", (unsigned long)self.ctype];
     if (self.freq)
         [strRet appendFormat:@"freq: %@\n\t", self.freq];
     if (self.period)

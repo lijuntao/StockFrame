@@ -58,6 +58,13 @@ typedef NS_ENUM(NSInteger, Network_Status)
     NetworkStatus_AllServiceDown                = 6105,
 } ;
 
+typedef NS_ENUM(NSInteger, FDTNetworkFrequency)
+{
+    FDTNetworkFrequencyHigh       = 0,
+    FDTNetworkFrequencyNormal     = 1,
+    FDTNetworkFrequencyLow        = 2
+};
+
 typedef NS_ENUM(NSInteger, SysErrorStatus)
 {
     
@@ -79,15 +86,6 @@ typedef NS_ENUM(NSInteger, SysErrorStatus)
     PopupAlert = 5000,
     PopupAttributedAlert = 5001,
     PopupToast = 5002,
-    
-};
-
-
-typedef NS_ENUM(NSInteger, FDTNetworkFrequency)
-{
-    FDTNetworkFrequencyHigh       = 0,
-    FDTNetworkFrequencyNormal     = 1,
-    FDTNetworkFrequencyLow        = 2
 };
 
 #endif /* NetworkDefinition_h */

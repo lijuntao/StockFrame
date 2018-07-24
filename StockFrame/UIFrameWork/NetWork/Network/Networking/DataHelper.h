@@ -10,6 +10,7 @@
 #import "NetworkDefinition.h"
 #import "Networking.h"
 #import "JPacketHelper.h"
+#import "JPacketDef.h"
 
 @class DataHelper;
 @class JPacketBase;
@@ -100,4 +101,17 @@
 - (void)doGetQuote:(NSArray *)arrSymbolId
             fields:(NSArray *)arrField;
 
+#pragma mark chart
+- (void)doTickRef:(NSArray *)arrSymbolID
+           period:(EnumChartPeriod)period
+            count:(int)nCount;
+
+- (void)doTickUnRef:(NSArray *)arrSymbolID
+             period:(EnumChartPeriod)period;
+
+- (void)doGetTickData:(NSArray *)arrSymbolID
+               period:(EnumChartPeriod)period
+                count:(int)nCount;
+- (void)doUnGetTickData:(NSArray *)arrSymbolID
+                 period:(EnumChartPeriod)period;
 @end

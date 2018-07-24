@@ -7,9 +7,9 @@
 //
 
 #import "DataHelper.h"
+#import "FDTOCTools.h"
 #import "BDRSACryptor.h"
 #import "NSData+Encrypt.h"
-#import "JPacketDef.h"
 #import "JPacketSendBase.h"
 #import "JPacketReceiveBase.h"
 //数据包
@@ -23,6 +23,8 @@
 #import "WmGetQuoteAndRank.h"
 #import "SubscribeQuote.h"
 #import "GetQuote.h"
+#import "GetChart.h"
+#import "SubscribeChart.h"
 
 
 #define MAX_PACKET_NUMBER 255
@@ -222,7 +224,7 @@
     
     NSData *dataEncrypt = [data RSA_PKCS1Padding_SignWithPrivateKeyRef:_thePrivateKey];
     
-    EncryptPacket *packetEncrypt = [[EncryptPacket alloc] initWithType:EnumEncryptType_RSA
+    EncryptPacket *packetEncrypt = [[EncryptPacket alloc] initWithType:RSA
                                                          dataEncrypted:dataEncrypt
                                                         originalPacket:packet];
     NSData *dataSend = [_jPacketHelper doPackWithPacket:(JPacketSendBase *)packetEncrypt];
@@ -238,14 +240,14 @@
 
 - (void)handleEncryptPacket:(JPacketBase *)base {
     EncryptPacket *packet = (EncryptPacket *)base;
-    if (packet.type == EnumEncryptType_AES)
+    if (packet.type == AES)
     {
         // TODO:
         NSData *data = [packet.encryptedData AES128_CBC_NoPadding_DecryptWithKey:self.dataAES_IV IV:self.dataAES_IV];
         
         [self handleJPacketRawData:data withHeader:NO];
     }
-    else if (packet.type == EnumEncryptType_RSA)
+    else if (packet.type == RSA)
     {
         // TODO:
         NSData *data = [packet.encryptedData RSA_PKCS1Padding_DecryptWithPrivateKeyRef:[self getPrivateKey]];
@@ -260,11 +262,11 @@
     
     NSData *data;
     
-    if (packet.type == EnumEncryptType_AES)
+    if (packet.type == AES)
     {
         data = [packet.encryptedData AES128_CBC_NoPadding_DecryptWithKey:self.dataAES_IV IV:self.dataAES_IV];
     }
-    else if (packet.type == EnumEncryptType_RSA)
+    else if (packet.type == RSA)
     {
         data = [packet.encryptedData RSA_PKCS1Padding_DecryptWithPrivateKeyRef:_thePrivateKey];
         
@@ -384,6 +386,57 @@
     NSData *dataSend = [_networkRT sendRequest:data packet:packet authPhrase:NO];
     if (dataSend == nil)
         [self delPacketWithSeq:@(packet.seq)];   // Remove Packet if send failed
+}
+
+- (void)doTickRef:(NSArray *)arrSymbolID period:(EnumChartPeriod)period count:(int)nCount {
+    // A. Make Packet
+    SubscribeChart *chart = [[SubscribeChart alloc] initWithRefSymbolIDs:arrSymbolID
+                                                          unrefSymbolIDs:nil
+                                                                clearAll:NO
+                                                                   ctype:(period == DC) ? Line : K_Line
+                                                                    freq:nil
+                                                                  period:[FDTOCTools getEnumChartPeriod:period]
+                                                                   count:(period == DC) ? -2 : nCount
+                                                                 trddate:nil
+                                                                   tdate:nil
+                                                                    time:nil];
+    
+    
+    // B. Store it
+    [self setPacket:chart withSeq:@(chart.seq)];
+    
+    // C. Packet -> MsgPack
+    NSData *data = [_jPacketHelper doPackWithPacket:chart];
+    
+    // D. MsgPack -> Network
+    NSData *dataSend = [_networkRT sendRequest:data packet:chart authPhrase:NO];
+    if (dataSend == nil)
+        [self delPacketWithSeq:@(chart.seq)];   // Remove Packet if send failed
+}
+
+- (void)doGetTickData:(NSArray *)arrSymbolID period:(EnumChartPeriod)period count:(int)nCount {
+    // A. Make Packet
+    GetChart *chart = [[GetChart alloc] initWithSymbolIDs:arrSymbolID
+                                                    ctype:K_Line
+                                                     freq:nil
+                                                   period:[FDTOCTools getEnumChartPeriod:period]
+                                                    count:nCount];
+    [chart setHandlerTimeout:self];
+    
+    // B. Store it
+    [self setPacket:chart withSeq:@(chart.seq)];
+    
+    // C. Packet -> MsgPack
+    NSData *data = [_jPacketHelper doPackWithPacket:chart];
+    
+    // D. MsgPack -> Network
+    NSData *dataSend = [_networkRT sendRequest:data packet:chart authPhrase:NO];
+    if (dataSend == nil)
+        [self delPacketWithSeq:@(chart.seq)];   // Remove Packet if send failed
+}
+
+- (void)doUnGetTickData:(NSArray *)arrSymbolID period:(EnumChartPeriod)period {
+    
 }
 
 #pragma mark PacketTimeoutHandler

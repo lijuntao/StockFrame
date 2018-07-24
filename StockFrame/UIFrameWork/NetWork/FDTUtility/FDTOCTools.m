@@ -10,6 +10,38 @@
 
 @implementation FDTOCTools
 + (EnumSymbolLanguageType)getDeviceLanguage{
-    return EnumSymbolLanguageType_CN;
+    return CN;
+}
+
++ (NSString *) getEnumChartPeriod:(EnumChartPeriod)period {
+    NSString *result = @"";
+    switch (period) {
+        case OneMin:
+            result = @"1H";
+            break;
+        case FiveMin:
+            result = @"1D";
+            break;
+        case FifteenMin:
+            result = @"1W";
+            break;
+        case SixtyMin:
+            result = @"1M";
+            break;
+        case OneDay:
+            result = @"3M";
+            break;
+        case OneWeek:
+            result = @"1Y";
+            break;
+        case OneMonth:
+            result = @"5Y";
+            break;
+        case DC:
+            result = @"DC";
+        default:
+            break;
+    }
+    return result;
 }
 @end

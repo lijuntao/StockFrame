@@ -14,7 +14,7 @@
 }
 @synthesize dict = _dict;
 - (id)initWithSymbolIDs:(NSArray *)arrSymbolID
-                  ctype:(EnumTickType)ctype
+                  ctype:(EnumChartType)ctype
                    freq:(NSString *)strFreq
                  period:(NSString *)strPeriod
                   count:(int)nCount
@@ -71,7 +71,7 @@
 }
 
 - (id)initWithSymbolIDs:(NSArray *)arrSymbolID
-                  ctype:(EnumTickType)ctype
+                  ctype:(EnumChartType)ctype
                    freq:(NSString *)strFreq
                  period:(NSString *)strPeriod
                   count:(int)count

@@ -15,7 +15,7 @@
 - (id)initWithRefSymbolIDs:(NSArray *)arrRefSymbolID
             unrefSymbolIDs:(NSArray *)arrUnrefSymbolID
                   clearAll:(BOOL)bClearAll
-                     ctype:(EnumTickType)ctype
+                     ctype:(EnumChartType)ctype
                       freq:(NSString *)strFreq
                     period:(NSString *)strPeriod
                      count:(NSInteger)nCount

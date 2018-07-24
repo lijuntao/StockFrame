@@ -44,4 +44,21 @@ extension DataManager {
     func doGetQuote(_ symbolId:[String]) {
         self.quoteDataHelper.doGetQuote(symbolId, fields: nil)
     }
+    
+    /// chart
+    func doTickRef(_ symbolId:[String], period: EnumChartPeriod, count: Int = 200) {
+        self.quoteDataHelper.doTickRef(symbolId, period: period, count: Int32(count))
+    }
+    
+    func doTickUnRef(_ symbolId:[String], period: EnumChartPeriod) {
+        self.quoteDataHelper.doTickUnRef(symbolId, period: period)
+    }
+    
+    func doGetTickData(_ symbolId: [String], period: EnumChartPeriod, count: Int = 200) {
+        self.quoteDataHelper.doGetTickData(symbolId, period: period, count: Int32(count))
+    }
+    
+    func doUnGetTickData(_ symbolId: [String], period: EnumChartPeriod) {
+        self.quoteDataHelper.doUnGetTickData(symbolId, period: period)
+    }
 }

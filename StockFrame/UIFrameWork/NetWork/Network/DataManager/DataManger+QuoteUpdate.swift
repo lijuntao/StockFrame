@@ -199,7 +199,7 @@ extension DataManager {
                 quoteItem?.en_Name = item
             } while (false)
             
-            // FID_EN_Name
+            // FID_CN_Name
             repeat {
                 let strText = pkt.d[EnumFieldID.FID_CN_Name.rawValue]
                 if strText == nil { break }

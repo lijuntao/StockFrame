@@ -40,4 +40,20 @@ extension DataCenter {
     func doGetQuote(_ symbolId: [String]) {
         self.dataManager.doGetQuote(symbolId)
     }
+    
+    func doTickRef(_ symbolId: [String], period: EnumChartPeriod) {
+        self.dataManager.doTickRef(symbolId, period: period)
+    }
+    
+    func doTickUnRef(_ symbolId: [String], period: EnumChartPeriod) {
+        self.dataManager.doTickUnRef(symbolId, period: period)
+    }
+    
+    func doGetTickData(_ symbolId: [String], period: EnumChartPeriod) {
+        self.dataManager.doGetTickData(symbolId, period: period)
+    }
+    
+    func doUnGetTickData(_ symbolId: [String], period: EnumChartPeriod) {
+        self.dataManager.doUnGetTickData(symbolId, period: period)
+    }
 }
