@@ -34,6 +34,9 @@ class DataManager: NSObject, ResponseDataHandler, DataHelperConnectStatusDelegat
     var marketStatueDic: [String: [String: Int]] = [:]
     //quote数组，key为symbol
     var quoteListDic: [String: JQuoteItem] = [:]
+    
+    //chart 数组 多重字典形式 {symbol: {"1": [item],"2":[item]}}
+    var chartListDic: [String: [String:[ChartLineItem]]] = [:]
     override init() {
         super.init()
         self.initParams()
@@ -259,6 +262,8 @@ class DataManager: NSObject, ResponseDataHandler, DataHelperConnectStatusDelegat
             self.handleWmQuoteAndRankUpdate(packet)
         case .quoteUpdate:
             self.handleQuoteUpdate(packet)
+        case .chartUpdate, .chartUpdate2:
+            self.handleChartUpdate(packet)
         default:
             FDTLog.logDebug("\(packet.pt.rawValue) \(packet.classForCoder) 没有实现")
         }

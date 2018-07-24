@@ -31,7 +31,7 @@ class FinancialViewController: ViewControllerBase {
 //        DataCenter.sharedInstance.doQuoteRef(["BABA.US.WM"])
 //        DataCenter.sharedInstance.doQuoteRef(["000002.SZ.WM"])
 //        DataCenter.sharedInstance.doQuoteRef(["HSI.HK.WM"])
-        DataCenter.sharedInstance.doTickRef(["BABA.US.WM"], period: .DC)
+        DataCenter.sharedInstance.doTickRef(["000002.SZ.WM"], period: .DC)
     }
     
     override func viewWillDisappear(_ animated: Bool) {

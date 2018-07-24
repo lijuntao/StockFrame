@@ -395,7 +395,7 @@
                                                                 clearAll:NO
                                                                    ctype:(period == DC) ? Line : K_Line
                                                                     freq:nil
-                                                                  period:[FDTOCTools getEnumChartPeriod:period]
+                                                                  period:[FDTOCTools getStringFromEnumChartPeriod:period]
                                                                    count:(period == DC) ? -2 : nCount
                                                                  trddate:nil
                                                                    tdate:nil
@@ -419,7 +419,7 @@
     GetChart *chart = [[GetChart alloc] initWithSymbolIDs:arrSymbolID
                                                     ctype:K_Line
                                                      freq:nil
-                                                   period:[FDTOCTools getEnumChartPeriod:period]
+                                                   period:[FDTOCTools getStringFromEnumChartPeriod:period]
                                                     count:nCount];
     [chart setHandlerTimeout:self];
     

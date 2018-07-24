@@ -34,4 +34,8 @@
 #import "WmQuoteGroupRankingItem.h"
 #import "QuoteUpdate.h"
 #import "JQuoteItem.h"
+#import "ChartUpdate.h"
+#import "ChartUpdate2.h"
+#import "ChartLineItem.h"
+#import "ChartKItem.h"
 #endif /* StockFrame_Bridging_Header_h */

@@ -74,7 +74,7 @@
 }
 
 - (id)mutableCopyWithZone:(nullable NSZone *)zone{
-    ChartKItem *kItme = [[ChartKItem allocWithZone:zone]init];
+    ChartKItem *kItme = [ [ChartKItem allocWithZone:zone] init];
     kItme.open = self.open;
     kItme.close = self.close;
     kItme.high = self.high;
@@ -91,7 +91,7 @@
     kItme.backward_low = self.backward_low;
     
     kItme.trddate = self.trddate;
-    kItme.yyyymmdd = self.yyyymmdd;
+    kItme.tdate = self.tdate;
     kItme.hhmm = self.hhmm;
     kItme.dataTime = self.dataTime;
     kItme.volumeStr = self.volumeStr;

@@ -234,6 +234,7 @@
 		29B7F9B420ECAF1900A6F0D4 /* BDCryptorError.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B7F9AD20ECAF1900A6F0D4 /* BDCryptorError.m */; };
 		29B7F9B520ECAF1900A6F0D4 /* BDRSACryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B7F9B020ECAF1900A6F0D4 /* BDRSACryptor.m */; };
 		29B7F9B620ECAF1900A6F0D4 /* BDCryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B7F9B120ECAF1900A6F0D4 /* BDCryptor.m */; };
+		29C3FC4621073D0F00D12C13 /* DataManager+Chart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C3FC4521073D0F00D12C13 /* DataManager+Chart.swift */; };
 		29C5C9652100CBB300B4E491 /* StockRankCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C5C9642100CBB300B4E491 /* StockRankCellViewModel.swift */; };
 		29C5C9672100CF5C00B4E491 /* FDTFormatterUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C5C9662100CF5C00B4E491 /* FDTFormatterUtility.swift */; };
 		29C5C9692100CF9F00B4E491 /* FDTWMUiUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C5C9682100CF9F00B4E491 /* FDTWMUiUtility.swift */; };
@@ -694,6 +695,7 @@
 		29B7F9B020ECAF1900A6F0D4 /* BDRSACryptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDRSACryptor.m; sourceTree = "<group>"; };
 		29B7F9B120ECAF1900A6F0D4 /* BDCryptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDCryptor.m; sourceTree = "<group>"; };
 		29B7F9B220ECAF1900A6F0D4 /* BDCryptorError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDCryptorError.h; sourceTree = "<group>"; };
+		29C3FC4521073D0F00D12C13 /* DataManager+Chart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataManager+Chart.swift"; sourceTree = "<group>"; };
 		29C5C9642100CBB300B4E491 /* StockRankCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockRankCellViewModel.swift; sourceTree = "<group>"; };
 		29C5C9662100CF5C00B4E491 /* FDTFormatterUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FDTFormatterUtility.swift; sourceTree = "<group>"; };
 		29C5C9682100CF9F00B4E491 /* FDTWMUiUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FDTWMUiUtility.swift; sourceTree = "<group>"; };
@@ -1553,6 +1555,7 @@
 				29FB69CD20FE1AF5003C7022 /* DataManager+Extension.swift */,
 				29FB69CF20FE1B55003C7022 /* DataManger+QuoteUpdate.swift */,
 				29A63FEB2100321500A02DD6 /* DataManagerDefinition.h */,
+				29C3FC4521073D0F00D12C13 /* DataManager+Chart.swift */,
 			);
 			name = DataManager;
 			path = Network/DataManager;
@@ -1933,6 +1936,7 @@
 			files = (
 				2990AA3220EDB7DF00658277 /* NSString+FDT.m in Sources */,
 				29B7F92E20ECA32B00A6F0D4 /* UserPhoneUpdate.m in Sources */,
+				29C3FC4621073D0F00D12C13 /* DataManager+Chart.swift in Sources */,
 				296A9A6720E397B600AA07DE /* UIColor+Extension.swift in Sources */,
 				29B7F98820ECA32B00A6F0D4 /* GetLastTradeDateQuote.m in Sources */,
 				29B7F96C20ECA32B00A6F0D4 /* UserLogin.m in Sources */,

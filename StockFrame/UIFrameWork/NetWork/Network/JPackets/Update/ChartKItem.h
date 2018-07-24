@@ -12,9 +12,10 @@
 @interface ChartKItem : ChartLineItem <NSCopying,NSCoding,NSMutableCopying>
 
 @property (nonatomic, assign) KLINE_MODE mode;
-@property (nonatomic, strong) NSNumber *open;
-@property (nonatomic, strong) NSNumber *high;
-@property (nonatomic, strong) NSNumber *low;
+
+@property (nonatomic, strong) NSNumber *open;  //开盘价
+@property (nonatomic, strong) NSNumber *high; //最高价
+@property (nonatomic, strong) NSNumber *low; //最低价
 
 @property (nonatomic, strong) NSNumber *forward_close;
 @property (nonatomic, strong) NSNumber *forward_open;

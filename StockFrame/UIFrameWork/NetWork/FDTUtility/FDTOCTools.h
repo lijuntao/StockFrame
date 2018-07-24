@@ -20,6 +20,7 @@
  @param period 枚举
  @return server 所需字符串
  */
-+ (NSString *)getEnumChartPeriod:(EnumChartPeriod)period;
++ (NSString *)getStringFromEnumChartPeriod:(EnumChartPeriod)period;
 
++ (EnumChartPeriod)getEnumChartPeriodFromString:(NSString *)period;
 @end

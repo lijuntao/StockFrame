@@ -13,7 +13,7 @@
     return CN;
 }
 
-+ (NSString *) getEnumChartPeriod:(EnumChartPeriod)period {
++ (NSString *) getStringFromEnumChartPeriod:(EnumChartPeriod)period {
     NSString *result = @"";
     switch (period) {
         case OneMin:
@@ -43,5 +43,13 @@
             break;
     }
     return result;
+}
+
++ (EnumChartPeriod)getEnumChartPeriodFromString:(NSString *)period {
+    if ([period isEqualToString:@"DC"]) {
+        return DC;
+    } else {
+        return OneMin;
+    }
 }
 @end

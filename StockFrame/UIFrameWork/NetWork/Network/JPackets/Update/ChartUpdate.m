@@ -17,7 +17,7 @@
     self = [super init];
     if (self)
     {
-        _ID = nil;
+        _symbolID = nil;
         _ctype = JPacket_INVALID;
         _freq = nil;
         _period = nil;
@@ -40,7 +40,7 @@
         self.seq = [[dict objectForKey:@(2)] intValue];
     
     if ([[dict allKeys] containsObject:@(3)])
-        _ID = [dict objectForKey:@(3)];
+        _symbolID = [dict objectForKey:@(3)];
     
     if ([[dict allKeys] containsObject:@(4)])
         _ctype = [[dict objectForKey:@(4)] intValue];
@@ -57,13 +57,21 @@
     if ([[dict allKeys] containsObject:@(14)])
         _count = [[dict objectForKey:@(14)] intValue];
     
+    if ([[dict allKeys] containsObject:@(9)])
+        _period = [dict objectForKey:@(9)];
+    
+    if ([[dict allKeys] containsObject:@(10)])
+        _session = [dict objectForKey:@(10)];
+    
+    if ([[dict allKeys] containsObject:@(11)])
+        _base = [dict objectForKey:@(11)];
     
     NSArray *arrData = [dict objectForKey:@(8)];
     NSMutableArray *arrParsedData = [NSMutableArray new];
-    NSNumber *numDate = nil;
-    NSNumber *numTrDate = nil;
-
     
+    
+    NSNumber *numDate = nil; //当前日期
+
     for (NSDictionary *dictTickRawData in arrData)
     {
         id data = nil;
@@ -78,25 +86,29 @@
                 numDate = tmp;
             }
         }
-        if (numDate)
-            [data setYyyymmdd:numDate];
-        
-        
-        if ([[dictTickRawData allKeys] containsObject:@(11)]){
-            NSNumber *tmp = [dictTickRawData objectForKey:@(11)];
-            if ([tmp intValue] != 0) {
-                numTrDate = tmp;
-            }
+        if (numDate) {
+            [data setTrddate:numDate];
+            [data setTdate:numDate];
         }
-        if (numTrDate)
-            [data setTrddate:numTrDate];
-        
         
         if ([[dictTickRawData allKeys] containsObject:@(2)])
             [data setHhmm:[dictTickRawData objectForKey:@(2)]];
         
         if ([[dictTickRawData allKeys] containsObject:@(3)])
             [data setClose:[dictTickRawData objectForKey:@(3)]];
+        
+        if ([[dictTickRawData allKeys] containsObject:@(7)])
+            [data setVolume:[dictTickRawData objectForKey:@(7)]];
+        
+        if ([[dictTickRawData allKeys] containsObject:@(9)])
+            [data setVolumeStr:[dictTickRawData objectForKey:@(9)]];
+        
+        if ([[dictTickRawData allKeys] containsObject:@(8)])
+            [data setDataTime:[dictTickRawData objectForKey:@(8)]];
+        
+        if ([[dictTickRawData allKeys] containsObject:@(10)])
+            [data setAvgPX:[dictTickRawData objectForKey:@(10)]];
+        
         if (_ctype == 2) {
             if ([[dictTickRawData allKeys] containsObject:@(4)])
                 [data setOpen:[dictTickRawData objectForKey:@(4)]];
@@ -133,29 +145,9 @@
                 [data setBackward_low:[dictTickRawData objectForKey:@(19)]];
             }
         }
-
-        
-        //if ([[dictTickRawData allKeys] containsObject:@(7)])
-        //    [data setVolume:[dictTickRawData objectForKey:@(7)]];
-        
-        if ([[dictTickRawData allKeys] containsObject:@(8)])
-            [data setDataTime:[dictTickRawData objectForKey:@(8)]];
-        
-        if ([[dictTickRawData allKeys] containsObject:@(9)])
-            [data setVolumeStr:[dictTickRawData objectForKey:@(9)]];
-        
-        if ([[dictTickRawData allKeys] containsObject:@(10)])
-            [data setAvgPX:[dictTickRawData objectForKey:@(10)]];
-        
- 
         
         [arrParsedData addObject:data];
     }
     _d = arrParsedData;
-    
-    if ([[dict allKeys] containsObject:@(9)])
-        _period = [dict objectForKey:@(9)];
-    
-    _session = [dict objectForKey:@(10)];
 }
 @end
