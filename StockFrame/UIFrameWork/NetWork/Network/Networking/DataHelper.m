@@ -414,6 +414,10 @@
         [self delPacketWithSeq:@(chart.seq)];   // Remove Packet if send failed
 }
 
+- (void)doTickUnRef:(NSArray *)arrSymbolID period:(EnumChartPeriod)period {
+    //
+}
+
 - (void)doGetTickData:(NSArray *)arrSymbolID period:(EnumChartPeriod)period count:(int)nCount {
     // A. Make Packet
     GetChart *chart = [[GetChart alloc] initWithSymbolIDs:arrSymbolID

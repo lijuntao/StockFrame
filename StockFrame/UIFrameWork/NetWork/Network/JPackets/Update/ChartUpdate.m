@@ -91,23 +91,38 @@
             [data setTdate:numDate];
         }
         
-        if ([[dictTickRawData allKeys] containsObject:@(2)])
+        if ([[dictTickRawData allKeys] containsObject:@(2)]) {
             [data setHhmm:[dictTickRawData objectForKey:@(2)]];
+        }
         
-        if ([[dictTickRawData allKeys] containsObject:@(3)])
+        if ([[dictTickRawData allKeys] containsObject:@(8)]) {
+            //字符串形式 不够四位前面补0
+            NSString *dataTime = [NSString stringWithFormat:@"%04d",[[dictTickRawData objectForKey:@(8)] intValue]];
+            [data setDataTime:dataTime];
+        }
+        
+        if ([[dictTickRawData allKeys] containsObject:@(3)]) {
             [data setClose:[dictTickRawData objectForKey:@(3)]];
+        }
         
-        if ([[dictTickRawData allKeys] containsObject:@(7)])
+        if ([[dictTickRawData allKeys] containsObject:@(7)]) {
             [data setVolume:[dictTickRawData objectForKey:@(7)]];
+        }
         
-        if ([[dictTickRawData allKeys] containsObject:@(9)])
+        
+        if ([[dictTickRawData allKeys] containsObject:@(9)]) {
             [data setVolumeStr:[dictTickRawData objectForKey:@(9)]];
+        }
         
-        if ([[dictTickRawData allKeys] containsObject:@(8)])
-            [data setDataTime:[dictTickRawData objectForKey:@(8)]];
         
-        if ([[dictTickRawData allKeys] containsObject:@(10)])
+        if ([[dictTickRawData allKeys] containsObject:@(10)]) {            
             [data setAvgPX:[dictTickRawData objectForKey:@(10)]];
+        }
+        
+        //item里面也存入session 后续绘图使用
+        if (_session) {
+            [data setSession:_session];
+        }
         
         if (_ctype == 2) {
             if ([[dictTickRawData allKeys] containsObject:@(4)])

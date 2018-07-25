@@ -123,16 +123,19 @@ class StockRankView: BaseView, UITableViewDataSource, UITableViewDelegate, ViewM
             let cell = tableView.dequeueReusableCell(withIdentifier: StockSimpleTableViewCell.CELL_ID) as! StockSimpleTableViewCell
             let vm = self.viewModel.getCellViewModel(indexPath.section, row: indexPath.row) as! StockRankCellViewModel
             cell.setDataFromViewModel(vm)
+            cell.selectionStyle = .gray
             return cell
         case .normal:
             let cell = tableView.dequeueReusableCell(withIdentifier: StockNomalTableViewCell.CELL_ID) as! StockNomalTableViewCell
             let vm = self.viewModel.getCellViewModel(indexPath.section, row: indexPath.row) as! StockRankCellViewModel
             cell.setDataFromViewModel(vm)
+            cell.selectionStyle = .gray
             return cell
         case .ah:
             let cell = tableView.dequeueReusableCell(withIdentifier: StockAHTableViewCell.CELL_ID) as! StockAHTableViewCell
             let vm = self.viewModel.getCellViewModel(indexPath.section, row: indexPath.row) as! StockRankAHCellViewModel
             cell.setDataFromViewModel(vm)
+            cell.selectionStyle = .gray
             return cell
         }
         
@@ -140,6 +143,7 @@ class StockRankView: BaseView, UITableViewDataSource, UITableViewDelegate, ViewM
     
     //MARK: UITableViewDelegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
         //
     }
     

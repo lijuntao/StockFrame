@@ -95,7 +95,7 @@ extension DataManager {
                 }
             }    
         }
-        self.postDelegate.postNotification(withType: .OBSERVER_UPDATE_QUOTE_AND_RANK, object: item)
+        self.postDelegate.postNotification(withType: .UPDATE_QUOTE_AND_RANK, object: item)
     }
     
     func handleQuoteUpdate(_ packet:JPacketReceiveBase) {
@@ -806,7 +806,7 @@ extension DataManager {
                 let item = QuoteFieldItem.init(text: strText as! String)
                 quoteItem?.shortName = item
             } while (false)
-            self.postDelegate.postNotification(withType: .OBSERVER_UPDATE_QUOTE, object: nil)
+            self.postDelegate.postNotification(withType: .UPDATE_QUOTE_AND_RANK, object: nil)
         }
     }
 }

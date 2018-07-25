@@ -23,6 +23,7 @@
         [item setVolume:[_volume copy]];
         [item setVolumeStr:[_volumeStr copy]];
         [item setAvgPX:[_avgPX copy]];
+        [item setSession:[_session copy]];
     }
     
     return item;
@@ -39,6 +40,7 @@
     kItme.volume = self.volume;
     kItme.volumeStr = self.volumeStr;
     kItme.avgPX = self.avgPX;
+    kItme.session = self.session;
     return kItme;
 }
 
@@ -52,7 +54,7 @@
     [encoder encodeObject:_volume forKey:@"volume"];
     [encoder encodeObject:_volumeStr forKey:@"volumeStr"];
     [encoder encodeObject:_avgPX forKey:@"avgPX"];
-    
+    [encoder encodeObject:_session forKey:@"session"];
 }
 
 - (id)initWithCoder:(NSCoder *)decoder {
@@ -65,6 +67,7 @@
         _volume   = [decoder decodeObjectForKey:@"volume"];
         _volumeStr = [decoder decodeObjectForKey:@"volumeStr"];
         _avgPX     = [decoder decodeObjectForKey:@"avgPX"];
+        _session  = [decoder decodeObjectForKey:@"session"];
     }
     return self;
 }

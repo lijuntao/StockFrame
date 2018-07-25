@@ -40,6 +40,7 @@
 		2947DCD520B8068E007BCAF4 /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 2947DCD420B8068E007BCAF4 /* GDataXMLNode.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		2947DCD720B806AA007BCAF4 /* libxml2.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2947DCD620B806AA007BCAF4 /* libxml2.2.tbd */; };
 		2947DCDB20B8165B007BCAF4 /* FrameConfig.xml in Resources */ = {isa = PBXBuildFile; fileRef = 2947DCDA20B8165B007BCAF4 /* FrameConfig.xml */; };
+		2957001E21081D7300DE3402 /* FDTDataFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2957001D21081D7300DE3402 /* FDTDataFormatter.m */; };
 		296A0DDC210087FC00919C58 /* StockRankView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296A0DDB210087FC00919C58 /* StockRankView.swift */; };
 		296A0DDE21008FBF00919C58 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296A0DDD21008FBF00919C58 /* EmptyView.swift */; };
 		296A0DE0210090D300919C58 /* BaseLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296A0DDF210090D300919C58 /* BaseLabel.swift */; };
@@ -334,6 +335,8 @@
 		2947DCD620B806AA007BCAF4 /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
 		2947DCD820B80BEE007BCAF4 /* StockFrame-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "StockFrame-Bridging-Header.h"; sourceTree = "<group>"; };
 		2947DCDA20B8165B007BCAF4 /* FrameConfig.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = FrameConfig.xml; sourceTree = "<group>"; };
+		2957001C21081D7300DE3402 /* FDTDataFormatter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDTDataFormatter.h; sourceTree = "<group>"; };
+		2957001D21081D7300DE3402 /* FDTDataFormatter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDTDataFormatter.m; sourceTree = "<group>"; };
 		296A0DDB210087FC00919C58 /* StockRankView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockRankView.swift; sourceTree = "<group>"; };
 		296A0DDD21008FBF00919C58 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 		296A0DDF210090D300919C58 /* BaseLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseLabel.swift; sourceTree = "<group>"; };
@@ -1543,6 +1546,8 @@
 				29B7F99D20ECA41500A6F0D4 /* FDUtility.m */,
 				29A6400D210067A900A02DD6 /* FDTOCTools.h */,
 				29A6400E210067A900A02DD6 /* FDTOCTools.m */,
+				2957001C21081D7300DE3402 /* FDTDataFormatter.h */,
+				2957001D21081D7300DE3402 /* FDTDataFormatter.m */,
 			);
 			path = FDTUtility;
 			sourceTree = "<group>";
@@ -2058,6 +2063,7 @@
 				29B7F92C20ECA32B00A6F0D4 /* WmOrderUpdate.m in Sources */,
 				29B7F92920ECA32B00A6F0D4 /* PriceAlertUpdate.m in Sources */,
 				29B7F91920ECA32B00A6F0D4 /* ConnectStatus.m in Sources */,
+				2957001E21081D7300DE3402 /* FDTDataFormatter.m in Sources */,
 				29B7F95B20ECA32B00A6F0D4 /* LookUpSymbol.m in Sources */,
 				296A0DDC210087FC00919C58 /* StockRankView.swift in Sources */,
 				296A0DF52100B0EB00919C58 /* StockRankHSViewModel.swift in Sources */,

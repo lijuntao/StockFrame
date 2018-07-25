@@ -16,7 +16,7 @@
 @property (nonatomic, strong) NSNumber *tdate;
 // eg: 933 (09:33) 交易时间 时分
 @property (nonatomic, strong) NSNumber *hhmm;
-// eg: 933 (09:33) 和hhmm只是类型不同
+// eg: 0933 (09:33) 和hhmm只是类型不同
 @property (nonatomic, strong) NSString *dataTime;
 // close 档位，可理解为最新价
 @property (nonatomic, strong) NSNumber *close;
@@ -26,6 +26,9 @@
 @property (nonatomic, strong) NSString *volumeStr; // eg: 470239
 
 @property (nonatomic, strong) NSDecimalNumber *avgPX; //均价
+
+// 代表這個Chart所要繪製的盤別區間(HH:MM:SS-HH:MM:SS,HH:MM:SS-HH:MM:SS)
+@property (nonatomic, strong) NSString *session;
 
 // US 只有美股时有效
 //@property (nonatomic, strong) NSNumber *ori_yyyymmdd;  // eg: 20160613 数据日期所在的实际日期
