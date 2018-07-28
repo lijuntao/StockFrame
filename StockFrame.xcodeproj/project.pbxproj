@@ -16,6 +16,13 @@
 		2912AFBF20F3042B00041031 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2912AFBE20F3042B00041031 /* LoginViewController.swift */; };
 		2912AFC120F332FD00041031 /* LoginInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2912AFC020F332FD00041031 /* LoginInfoViewController.swift */; };
 		2912AFC620F368C200041031 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2912AFC520F368C200041031 /* UIView+Extension.swift */; };
+		291645342109F22C00733145 /* FDTChartDrawTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291645332109F22C00733145 /* FDTChartDrawTools.swift */; };
+		2916453B2109F97F00733145 /* ChartConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2916453A2109F97F00733145 /* ChartConfig.swift */; };
+		29164540210AAC8300733145 /* ChartLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2916453F210AAC8300733145 /* ChartLineView.swift */; };
+		29164542210AACA700733145 /* ChartLineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29164541210AACA700733145 /* ChartLineViewModel.swift */; };
+		29164544210AB0BF00733145 /* DataManager+getter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29164543210AB0BF00733145 /* DataManager+getter.swift */; };
+		2916454C210AB80D00733145 /* StockInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2916454B210AB80D00733145 /* StockInfoViewController.swift */; };
+		2916454E210ABC8A00733145 /* DataCenter+getter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2916454D210ABC8A00733145 /* DataCenter+getter.swift */; };
 		2924901320EF441800205628 /* ServerConfig.xml in Resources */ = {isa = PBXBuildFile; fileRef = 2924901220EF441800205628 /* ServerConfig.xml */; };
 		2924901520EF443D00205628 /* ServerConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2924901420EF443D00205628 /* ServerConfig.swift */; };
 		2924901720EF447C00205628 /* ServerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2924901620EF447C00205628 /* ServerManager.swift */; };
@@ -40,6 +47,7 @@
 		2947DCD520B8068E007BCAF4 /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 2947DCD420B8068E007BCAF4 /* GDataXMLNode.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		2947DCD720B806AA007BCAF4 /* libxml2.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2947DCD620B806AA007BCAF4 /* libxml2.2.tbd */; };
 		2947DCDB20B8165B007BCAF4 /* FrameConfig.xml in Resources */ = {isa = PBXBuildFile; fileRef = 2947DCDA20B8165B007BCAF4 /* FrameConfig.xml */; };
+		2957001E21081D7300DE3402 /* FDTDataFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2957001D21081D7300DE3402 /* FDTDataFormatter.m */; };
 		296A0DDC210087FC00919C58 /* StockRankView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296A0DDB210087FC00919C58 /* StockRankView.swift */; };
 		296A0DDE21008FBF00919C58 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296A0DDD21008FBF00919C58 /* EmptyView.swift */; };
 		296A0DE0210090D300919C58 /* BaseLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296A0DDF210090D300919C58 /* BaseLabel.swift */; };
@@ -50,7 +58,6 @@
 		296A0DF12100985500919C58 /* StockRankViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296A0DF02100985500919C58 /* StockRankViewModel.swift */; };
 		296A0DF32100A91300919C58 /* UILayoutEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296A0DF22100A91300919C58 /* UILayoutEnum.swift */; };
 		296A0DF52100B0EB00919C58 /* StockRankHSViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296A0DF42100B0EB00919C58 /* StockRankHSViewModel.swift */; };
-		296A0DF72100B29800919C58 /* StockInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296A0DF62100B29800919C58 /* StockInfoViewController.swift */; };
 		296A9A5020E362E700AA07DE /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296A9A4F20E362E700AA07DE /* String+Extension.swift */; };
 		296A9A5520E366B400AA07DE /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296A9A5420E366B400AA07DE /* UIImage+Extension.swift */; };
 		296A9A5720E370F500AA07DE /* FDTUIWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296A9A5620E370F500AA07DE /* FDTUIWindow.swift */; };
@@ -86,6 +93,12 @@
 		29A640062100666000A02DD6 /* FDTValueFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 29A640052100665F00A02DD6 /* FDTValueFormatter.m */; };
 		29A64009210066C800A02DD6 /* NSDecimalNumber+Compare.m in Sources */ = {isa = PBXBuildFile; fileRef = 29A64008210066C800A02DD6 /* NSDecimalNumber+Compare.m */; };
 		29A6400F210067A900A02DD6 /* FDTOCTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 29A6400E210067A900A02DD6 /* FDTOCTools.m */; };
+		29AAB4982105DDC1008D6BBC /* ChartUpdate.m in Sources */ = {isa = PBXBuildFile; fileRef = 29AAB4962105DDC0008D6BBC /* ChartUpdate.m */; };
+		29AAB4992105DDC1008D6BBC /* ChartUpdate2.m in Sources */ = {isa = PBXBuildFile; fileRef = 29AAB4972105DDC0008D6BBC /* ChartUpdate2.m */; };
+		29AAB49C2105DE30008D6BBC /* JQuoteItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 29AAB49B2105DE30008D6BBC /* JQuoteItem.m */; };
+		29AAB49F2105DE79008D6BBC /* QuoteFieldItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 29AAB49E2105DE79008D6BBC /* QuoteFieldItem.m */; };
+		29AAB4A22105DEBA008D6BBC /* ChartKItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 29AAB4A12105DEBA008D6BBC /* ChartKItem.m */; };
+		29AAB4A52105DEE3008D6BBC /* ChartLineItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 29AAB4A42105DEE3008D6BBC /* ChartLineItem.m */; };
 		29ABCD0C20EE4AAB0040F5D8 /* DataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29ABCD0B20EE4AAB0040F5D8 /* DataCenter.swift */; };
 		29ABCD1120EE4B490040F5D8 /* DataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 29ABCD1020EE4B490040F5D8 /* DataHelper.m */; };
 		29B7F7D720EC993300A6F0D4 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B7F7D120EC993300A6F0D4 /* Reachability.m */; };
@@ -228,6 +241,7 @@
 		29B7F9B420ECAF1900A6F0D4 /* BDCryptorError.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B7F9AD20ECAF1900A6F0D4 /* BDCryptorError.m */; };
 		29B7F9B520ECAF1900A6F0D4 /* BDRSACryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B7F9B020ECAF1900A6F0D4 /* BDRSACryptor.m */; };
 		29B7F9B620ECAF1900A6F0D4 /* BDCryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B7F9B120ECAF1900A6F0D4 /* BDCryptor.m */; };
+		29C3FC4621073D0F00D12C13 /* DataManager+Chart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C3FC4521073D0F00D12C13 /* DataManager+Chart.swift */; };
 		29C5C9652100CBB300B4E491 /* StockRankCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C5C9642100CBB300B4E491 /* StockRankCellViewModel.swift */; };
 		29C5C9672100CF5C00B4E491 /* FDTFormatterUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C5C9662100CF5C00B4E491 /* FDTFormatterUtility.swift */; };
 		29C5C9692100CF9F00B4E491 /* FDTWMUiUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C5C9682100CF9F00B4E491 /* FDTWMUiUtility.swift */; };
@@ -295,6 +309,13 @@
 		2912AFBE20F3042B00041031 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2912AFC020F332FD00041031 /* LoginInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInfoViewController.swift; sourceTree = "<group>"; };
 		2912AFC520F368C200041031 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		291645332109F22C00733145 /* FDTChartDrawTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FDTChartDrawTools.swift; sourceTree = "<group>"; };
+		2916453A2109F97F00733145 /* ChartConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartConfig.swift; sourceTree = "<group>"; };
+		2916453F210AAC8300733145 /* ChartLineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartLineView.swift; sourceTree = "<group>"; };
+		29164541210AACA700733145 /* ChartLineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartLineViewModel.swift; sourceTree = "<group>"; };
+		29164543210AB0BF00733145 /* DataManager+getter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataManager+getter.swift"; sourceTree = "<group>"; };
+		2916454B210AB80D00733145 /* StockInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StockInfoViewController.swift; sourceTree = "<group>"; };
+		2916454D210ABC8A00733145 /* DataCenter+getter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataCenter+getter.swift"; sourceTree = "<group>"; };
 		2924901220EF441800205628 /* ServerConfig.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ServerConfig.xml; sourceTree = "<group>"; };
 		2924901420EF443D00205628 /* ServerConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerConfig.swift; sourceTree = "<group>"; };
 		2924901620EF447C00205628 /* ServerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerManager.swift; sourceTree = "<group>"; };
@@ -327,6 +348,8 @@
 		2947DCD620B806AA007BCAF4 /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
 		2947DCD820B80BEE007BCAF4 /* StockFrame-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "StockFrame-Bridging-Header.h"; sourceTree = "<group>"; };
 		2947DCDA20B8165B007BCAF4 /* FrameConfig.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = FrameConfig.xml; sourceTree = "<group>"; };
+		2957001C21081D7300DE3402 /* FDTDataFormatter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDTDataFormatter.h; sourceTree = "<group>"; };
+		2957001D21081D7300DE3402 /* FDTDataFormatter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDTDataFormatter.m; sourceTree = "<group>"; };
 		296A0DDB210087FC00919C58 /* StockRankView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockRankView.swift; sourceTree = "<group>"; };
 		296A0DDD21008FBF00919C58 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 		296A0DDF210090D300919C58 /* BaseLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseLabel.swift; sourceTree = "<group>"; };
@@ -341,7 +364,6 @@
 		296A0DF02100985500919C58 /* StockRankViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockRankViewModel.swift; sourceTree = "<group>"; };
 		296A0DF22100A91300919C58 /* UILayoutEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILayoutEnum.swift; sourceTree = "<group>"; };
 		296A0DF42100B0EB00919C58 /* StockRankHSViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockRankHSViewModel.swift; sourceTree = "<group>"; };
-		296A0DF62100B29800919C58 /* StockInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StockInfoViewController.swift; sourceTree = "<group>"; };
 		296A9A4F20E362E700AA07DE /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		296A9A5420E366B400AA07DE /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		296A9A5620E370F500AA07DE /* FDTUIWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FDTUIWindow.swift; sourceTree = "<group>"; };
@@ -390,6 +412,19 @@
 		29A64008210066C800A02DD6 /* NSDecimalNumber+Compare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDecimalNumber+Compare.m"; sourceTree = "<group>"; };
 		29A6400D210067A900A02DD6 /* FDTOCTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDTOCTools.h; sourceTree = "<group>"; };
 		29A6400E210067A900A02DD6 /* FDTOCTools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDTOCTools.m; sourceTree = "<group>"; };
+		29AAB4932105C3C0008D6BBC /* FieldID.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FieldID.h; sourceTree = "<group>"; };
+		29AAB4942105DDC0008D6BBC /* ChartUpdate2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartUpdate2.h; sourceTree = "<group>"; };
+		29AAB4952105DDC0008D6BBC /* ChartUpdate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartUpdate.h; sourceTree = "<group>"; };
+		29AAB4962105DDC0008D6BBC /* ChartUpdate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartUpdate.m; sourceTree = "<group>"; };
+		29AAB4972105DDC0008D6BBC /* ChartUpdate2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartUpdate2.m; sourceTree = "<group>"; };
+		29AAB49A2105DE2F008D6BBC /* JQuoteItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JQuoteItem.h; sourceTree = "<group>"; };
+		29AAB49B2105DE30008D6BBC /* JQuoteItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JQuoteItem.m; sourceTree = "<group>"; };
+		29AAB49D2105DE79008D6BBC /* QuoteFieldItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuoteFieldItem.h; sourceTree = "<group>"; };
+		29AAB49E2105DE79008D6BBC /* QuoteFieldItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuoteFieldItem.m; sourceTree = "<group>"; };
+		29AAB4A02105DEB9008D6BBC /* ChartKItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartKItem.h; sourceTree = "<group>"; };
+		29AAB4A12105DEBA008D6BBC /* ChartKItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartKItem.m; sourceTree = "<group>"; };
+		29AAB4A32105DEE2008D6BBC /* ChartLineItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartLineItem.h; sourceTree = "<group>"; };
+		29AAB4A42105DEE3008D6BBC /* ChartLineItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartLineItem.m; sourceTree = "<group>"; };
 		29ABCD0B20EE4AAB0040F5D8 /* DataCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCenter.swift; sourceTree = "<group>"; };
 		29ABCD0F20EE4B490040F5D8 /* DataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataHelper.h; sourceTree = "<group>"; };
 		29ABCD1020EE4B490040F5D8 /* DataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataHelper.m; sourceTree = "<group>"; };
@@ -675,6 +710,7 @@
 		29B7F9B020ECAF1900A6F0D4 /* BDRSACryptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDRSACryptor.m; sourceTree = "<group>"; };
 		29B7F9B120ECAF1900A6F0D4 /* BDCryptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDCryptor.m; sourceTree = "<group>"; };
 		29B7F9B220ECAF1900A6F0D4 /* BDCryptorError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDCryptorError.h; sourceTree = "<group>"; };
+		29C3FC4521073D0F00D12C13 /* DataManager+Chart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataManager+Chart.swift"; sourceTree = "<group>"; };
 		29C5C9642100CBB300B4E491 /* StockRankCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockRankCellViewModel.swift; sourceTree = "<group>"; };
 		29C5C9662100CF5C00B4E491 /* FDTFormatterUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FDTFormatterUtility.swift; sourceTree = "<group>"; };
 		29C5C9682100CF9F00B4E491 /* FDTWMUiUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FDTWMUiUtility.swift; sourceTree = "<group>"; };
@@ -820,6 +856,73 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		291645312109F20800733145 /* Chart */ = {
+			isa = PBXGroup;
+			children = (
+				2916453E210AAC8300733145 /* Line */,
+				291645392109F96900733145 /* ChartConfig */,
+				291645322109F20800733145 /* ChartDrawTools */,
+			);
+			path = Chart;
+			sourceTree = "<group>";
+		};
+		291645322109F20800733145 /* ChartDrawTools */ = {
+			isa = PBXGroup;
+			children = (
+				291645332109F22C00733145 /* FDTChartDrawTools.swift */,
+			);
+			path = ChartDrawTools;
+			sourceTree = "<group>";
+		};
+		291645392109F96900733145 /* ChartConfig */ = {
+			isa = PBXGroup;
+			children = (
+				2916453A2109F97F00733145 /* ChartConfig.swift */,
+			);
+			path = ChartConfig;
+			sourceTree = "<group>";
+		};
+		2916453E210AAC8300733145 /* Line */ = {
+			isa = PBXGroup;
+			children = (
+				2916453F210AAC8300733145 /* ChartLineView.swift */,
+				29164541210AACA700733145 /* ChartLineViewModel.swift */,
+			);
+			path = Line;
+			sourceTree = "<group>";
+		};
+		29164545210AB7D900733145 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				2916454A210AB80D00733145 /* Controller */,
+				29164548210AB80D00733145 /* View */,
+				29164549210AB80D00733145 /* ViewModel */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		29164548210AB80D00733145 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		29164549210AB80D00733145 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2916454A210AB80D00733145 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2916454B210AB80D00733145 /* StockInfoViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		2924901120EF43DB00205628 /* Config */ = {
 			isa = PBXGroup;
 			children = (
@@ -908,6 +1011,7 @@
 		2947DCB420B7D975007BCAF4 /* UIFrameWork */ = {
 			isa = PBXGroup;
 			children = (
+				291645312109F20800733145 /* Chart */,
 				29E1184720F45FA0006C366F /* Common */,
 				29E1184220F45F40006C366F /* Tools */,
 				29ABCD0720EE4A570040F5D8 /* DetaCenter */,
@@ -1039,7 +1143,7 @@
 		296A9A6820E4777600AA07DE /* Stock */ = {
 			isa = PBXGroup;
 			children = (
-				296A0DF62100B29800919C58 /* StockInfoViewController.swift */,
+				29164545210AB7D900733145 /* Detail */,
 				29A640102100841F00A02DD6 /* Rank */,
 			);
 			path = Stock;
@@ -1134,6 +1238,7 @@
 				29A63FEE21003BB300A02DD6 /* DataCenter+PostNotification.swift */,
 				29A63FF02100533F00A02DD6 /* DataCenter+Quote.swift */,
 				29A63FF22100584D00A02DD6 /* DataEnum.swift */,
+				2916454D210ABC8A00733145 /* DataCenter+getter.swift */,
 			);
 			path = DetaCenter;
 			sourceTree = "<group>";
@@ -1161,6 +1266,7 @@
 			children = (
 				29B7F7DC20EC9C9E00A6F0D4 /* NetworkDefinition.h */,
 				29A63FEA21002CF500A02DD6 /* ObserverID.h */,
+				29AAB4932105C3C0008D6BBC /* FieldID.h */,
 			);
 			path = Inc;
 			sourceTree = "<group>";
@@ -1239,6 +1345,18 @@
 		29B7F80B20ECA32A00A6F0D4 /* Update */ = {
 			isa = PBXGroup;
 			children = (
+				29AAB4A32105DEE2008D6BBC /* ChartLineItem.h */,
+				29AAB4A42105DEE3008D6BBC /* ChartLineItem.m */,
+				29AAB4A02105DEB9008D6BBC /* ChartKItem.h */,
+				29AAB4A12105DEBA008D6BBC /* ChartKItem.m */,
+				29AAB49D2105DE79008D6BBC /* QuoteFieldItem.h */,
+				29AAB49E2105DE79008D6BBC /* QuoteFieldItem.m */,
+				29AAB49A2105DE2F008D6BBC /* JQuoteItem.h */,
+				29AAB49B2105DE30008D6BBC /* JQuoteItem.m */,
+				29AAB4952105DDC0008D6BBC /* ChartUpdate.h */,
+				29AAB4962105DDC0008D6BBC /* ChartUpdate.m */,
+				29AAB4942105DDC0008D6BBC /* ChartUpdate2.h */,
+				29AAB4972105DDC0008D6BBC /* ChartUpdate2.m */,
 				29A640012100631E00A02DD6 /* WmQuoteGroupRankingItem.h */,
 				29A640022100631E00A02DD6 /* WmQuoteGroupRankingItem.m */,
 				29B7F80C20ECA32A00A6F0D4 /* AttachUnionIdUpdate.h */,
@@ -1374,6 +1492,10 @@
 				29A63FF721005AA400A02DD6 /* WmRandomValueBaseItem.m */,
 				29A63FF521005AA400A02DD6 /* WmRankingCategoryItem.h */,
 				29A63FF621005AA400A02DD6 /* WmRankingCategoryItem.m */,
+				29B7F8CE20ECA32B00A6F0D4 /* GetQuote.h */,
+				29B7F89520ECA32B00A6F0D4 /* GetQuote.m */,
+				29B7F8FC20ECA32B00A6F0D4 /* GetChart.h */,
+				29B7F8B320ECA32B00A6F0D4 /* GetChart.m */,
 				29B7F88620ECA32B00A6F0D4 /* GetEmailUsage.h */,
 				29B7F88720ECA32B00A6F0D4 /* UserLogout.m */,
 				29B7F88820ECA32B00A6F0D4 /* UserCreateLogin.m */,
@@ -1388,7 +1510,6 @@
 				29B7F89220ECA32B00A6F0D4 /* WmUnionLogin.m */,
 				29B7F89320ECA32B00A6F0D4 /* GetTradeAlert.h */,
 				29B7F89420ECA32B00A6F0D4 /* SearchSymbol.h */,
-				29B7F89520ECA32B00A6F0D4 /* GetQuote.m */,
 				29B7F89620ECA32B00A6F0D4 /* UseCoinPacket.h */,
 				29B7F89720ECA32B00A6F0D4 /* EnterOrder.m */,
 				29B7F89A20ECA32B00A6F0D4 /* WmEnterOrder.m */,
@@ -1413,7 +1534,6 @@
 				29B7F8AF20ECA32B00A6F0D4 /* AccountSetting.h */,
 				29B7F8B020ECA32B00A6F0D4 /* WmSmsLogin.h */,
 				29B7F8B120ECA32B00A6F0D4 /* WmCalculateOrder.h */,
-				29B7F8B320ECA32B00A6F0D4 /* GetChart.m */,
 				29B7F8B520ECA32B00A6F0D4 /* SearchItem.m */,
 				29B7F8B620ECA32B00A6F0D4 /* WmUnionTokenLogin.h */,
 				29B7F8B720ECA32B00A6F0D4 /* UnionCreate.h */,
@@ -1438,7 +1558,6 @@
 				29B7F8CB20ECA32B00A6F0D4 /* EnterOrder.h */,
 				29B7F8CC20ECA32B00A6F0D4 /* SearchSymbol.m */,
 				29B7F8CD20ECA32B00A6F0D4 /* GetTradeAlert.m */,
-				29B7F8CE20ECA32B00A6F0D4 /* GetQuote.h */,
 				29B7F8CF20ECA32B00A6F0D4 /* WmGetTrade.m */,
 				29B7F8D020ECA32B00A6F0D4 /* GetPhoneUsage.h */,
 				29B7F8D120ECA32B00A6F0D4 /* LookUpSymbol.h */,
@@ -1478,7 +1597,6 @@
 				29B7F8F720ECA32B00A6F0D4 /* UnionCreate.m */,
 				29B7F8F820ECA32B00A6F0D4 /* SearchItem.h */,
 				29B7F8F920ECA32B00A6F0D4 /* WmUnionTokenLogin.m */,
-				29B7F8FC20ECA32B00A6F0D4 /* GetChart.h */,
 				29B7F8FD20ECA32B00A6F0D4 /* WmCalculateOrder.m */,
 				29B7F8FE20ECA32B00A6F0D4 /* WmSmsLogin.m */,
 				29B7F8FF20ECA32B00A6F0D4 /* AccountSetting.m */,
@@ -1509,6 +1627,8 @@
 				29B7F99D20ECA41500A6F0D4 /* FDUtility.m */,
 				29A6400D210067A900A02DD6 /* FDTOCTools.h */,
 				29A6400E210067A900A02DD6 /* FDTOCTools.m */,
+				2957001C21081D7300DE3402 /* FDTDataFormatter.h */,
+				2957001D21081D7300DE3402 /* FDTDataFormatter.m */,
 			);
 			path = FDTUtility;
 			sourceTree = "<group>";
@@ -1517,10 +1637,12 @@
 			isa = PBXGroup;
 			children = (
 				2924901820EF547900205628 /* DataManager.swift */,
+				29164543210AB0BF00733145 /* DataManager+getter.swift */,
 				29FB69C620FDE3CD003C7022 /* DataManager+HouseKeeping.swift */,
 				29FB69CD20FE1AF5003C7022 /* DataManager+Extension.swift */,
 				29FB69CF20FE1B55003C7022 /* DataManger+QuoteUpdate.swift */,
 				29A63FEB2100321500A02DD6 /* DataManagerDefinition.h */,
+				29C3FC4521073D0F00D12C13 /* DataManager+Chart.swift */,
 			);
 			name = DataManager;
 			path = Network/DataManager;
@@ -1803,6 +1925,7 @@
 				"${BUILT_PRODUCTS_DIR}/CocoaAsyncSocket/CocoaAsyncSocket.framework",
 				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
@@ -1813,6 +1936,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaAsyncSocket.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaLumberjack.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
@@ -1869,6 +1993,7 @@
 				"${BUILT_PRODUCTS_DIR}/CocoaAsyncSocket/CocoaAsyncSocket.framework",
 				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
@@ -1879,6 +2004,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaAsyncSocket.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaLumberjack.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
@@ -1897,11 +2023,13 @@
 			files = (
 				2990AA3220EDB7DF00658277 /* NSString+FDT.m in Sources */,
 				29B7F92E20ECA32B00A6F0D4 /* UserPhoneUpdate.m in Sources */,
+				29C3FC4621073D0F00D12C13 /* DataManager+Chart.swift in Sources */,
 				296A9A6720E397B600AA07DE /* UIColor+Extension.swift in Sources */,
 				29B7F98820ECA32B00A6F0D4 /* GetLastTradeDateQuote.m in Sources */,
 				29B7F96C20ECA32B00A6F0D4 /* UserLogin.m in Sources */,
 				296A9A5520E366B400AA07DE /* UIImage+Extension.swift in Sources */,
 				296A9A7420E47F8E00AA07DE /* FunInfoViewController.swift in Sources */,
+				29AAB4A22105DEBA008D6BBC /* ChartKItem.m in Sources */,
 				29B7F96F20ECA32B00A6F0D4 /* CloseOrder.m in Sources */,
 				29E1184520F45F40006C366F /* WebViewTools.swift in Sources */,
 				29B7F92B20ECA32B00A6F0D4 /* TokenUpdate.m in Sources */,
@@ -1911,6 +2039,7 @@
 				296A0DE22100912E00919C58 /* UIFont+Extension.swift in Sources */,
 				2912AFC120F332FD00041031 /* LoginInfoViewController.swift in Sources */,
 				296A9A7820E47FF300AA07DE /* AccountInfoViewController.swift in Sources */,
+				2916453B2109F97F00733145 /* ChartConfig.swift in Sources */,
 				29B7F93B20ECA32B00A6F0D4 /* ProfitUpdate.m in Sources */,
 				29C5C9672100CF5C00B4E491 /* FDTFormatterUtility.swift in Sources */,
 				29B7F99E20ECA41500A6F0D4 /* FDUtility.m in Sources */,
@@ -1920,6 +2049,7 @@
 				29DF0A872103969900168002 /* StockRankAHCellViewModel.swift in Sources */,
 				29A63FE621001BF700A02DD6 /* TestViewController.swift in Sources */,
 				29A63FEF21003BB300A02DD6 /* DataCenter+PostNotification.swift in Sources */,
+				29AAB4A52105DEE3008D6BBC /* ChartLineItem.m in Sources */,
 				29FB69E020FF882B003C7022 /* FDTRequest.swift in Sources */,
 				29C5C9692100CF9F00B4E491 /* FDTWMUiUtility.swift in Sources */,
 				29B7F95120ECA32B00A6F0D4 /* AlertStatus.m in Sources */,
@@ -1944,10 +2074,12 @@
 				29B7F97720ECA32B00A6F0D4 /* WmGetOrder.m in Sources */,
 				2996E2C72104422B00FE4303 /* ConstantKey.swift in Sources */,
 				29B7F92020ECA32B00A6F0D4 /* AccountStateUpdate.m in Sources */,
+				2916454C210AB80D00733145 /* StockInfoViewController.swift in Sources */,
 				296A0DE0210090D300919C58 /* BaseLabel.swift in Sources */,
 				29B7F93420ECA32B00A6F0D4 /* LastTradeDateQuoteUpdate.m in Sources */,
 				29B7F97920ECA32B00A6F0D4 /* SearchSymbol.m in Sources */,
 				29FB69C720FDE3CD003C7022 /* DataManager+HouseKeeping.swift in Sources */,
+				29AAB4982105DDC1008D6BBC /* ChartUpdate.m in Sources */,
 				296A9A5920E3713200AA07DE /* FDTEntry.swift in Sources */,
 				29B7F95520ECA32B00A6F0D4 /* SubscribeChart2.m in Sources */,
 				29B7F94920ECA32B00A6F0D4 /* LightWeightRankUpdate.m in Sources */,
@@ -1967,7 +2099,9 @@
 				29DF0A812102FD8F00168002 /* StockRankUSViewModel.swift in Sources */,
 				29A6400F210067A900A02DD6 /* FDTOCTools.m in Sources */,
 				29B7F9B620ECAF1900A6F0D4 /* BDCryptor.m in Sources */,
+				2916454E210ABC8A00733145 /* DataCenter+getter.swift in Sources */,
 				29B7F94120ECA32B00A6F0D4 /* WmExchangeOrderUpdate.m in Sources */,
+				29164542210AACA700733145 /* ChartLineViewModel.swift in Sources */,
 				29B7F95920ECA32B00A6F0D4 /* UserCreateLogin.m in Sources */,
 				29B7F90E20ECA32B00A6F0D4 /* JPacketReceiveBase.m in Sources */,
 				29B7F97820ECA32B00A6F0D4 /* UseCoinPacket.m in Sources */,
@@ -2009,16 +2143,19 @@
 				29B7F98720ECA32B00A6F0D4 /* WmGetTradeHistory.m in Sources */,
 				29B7F93120ECA32B00A6F0D4 /* UserMappingDetachUpdate.m in Sources */,
 				29B7F7EA20ECA32100A6F0D4 /* JPacketHelper+Protocol.m in Sources */,
+				29AAB49F2105DE79008D6BBC /* QuoteFieldItem.m in Sources */,
 				29B7F93020ECA32B00A6F0D4 /* CloseOrderUpdate.m in Sources */,
 				296A9A5D20E3938700AA07DE /* StockViewController.swift in Sources */,
 				29B7F92C20ECA32B00A6F0D4 /* WmOrderUpdate.m in Sources */,
 				29B7F92920ECA32B00A6F0D4 /* PriceAlertUpdate.m in Sources */,
 				29B7F91920ECA32B00A6F0D4 /* ConnectStatus.m in Sources */,
+				2957001E21081D7300DE3402 /* FDTDataFormatter.m in Sources */,
 				29B7F95B20ECA32B00A6F0D4 /* LookUpSymbol.m in Sources */,
 				296A0DDC210087FC00919C58 /* StockRankView.swift in Sources */,
 				296A0DF52100B0EB00919C58 /* StockRankHSViewModel.swift in Sources */,
 				29B7F96420ECA32B00A6F0D4 /* GetPriceAlert.m in Sources */,
 				29DF0A762102E03600168002 /* TabsSegment.swift in Sources */,
+				29AAB4992105DDC1008D6BBC /* ChartUpdate2.m in Sources */,
 				29083C5F20E550400074AC58 /* UIDevice+Extension.swift in Sources */,
 				299426E520E7664700A67E94 /* PageIdDef.swift in Sources */,
 				29B7F94B20ECA32B00A6F0D4 /* UseCoinUpdate.m in Sources */,
@@ -2047,6 +2184,8 @@
 				293A9A3E210249D500749AB6 /* StockSimpleTableViewCell.swift in Sources */,
 				29B7F94320ECA32B00A6F0D4 /* AccountStatus.m in Sources */,
 				29B7F97420ECA32B00A6F0D4 /* UserMappingStatus.m in Sources */,
+				29AAB49C2105DE30008D6BBC /* JQuoteItem.m in Sources */,
+				29164544210AB0BF00733145 /* DataManager+getter.swift in Sources */,
 				29FB69D920FF40E3003C7022 /* JPacketPTMap.m in Sources */,
 				296A9A6120E393BC00AA07DE /* TransactionViewController.swift in Sources */,
 				29B7F94520ECA32B00A6F0D4 /* WmExchangeRateUpdate.m in Sources */,
@@ -2112,13 +2251,13 @@
 				29A64009210066C800A02DD6 /* NSDecimalNumber+Compare.m in Sources */,
 				298CDDE220EE222700BFBB57 /* TestObjc.m in Sources */,
 				29DF0A8521037B3500168002 /* StockNomalSecitonView.swift in Sources */,
+				291645342109F22C00733145 /* FDTChartDrawTools.swift in Sources */,
 				2947DCC320B7F1DA007BCAF4 /* NavigationControllerBase.swift in Sources */,
 				2912AFBF20F3042B00041031 /* LoginViewController.swift in Sources */,
 				29ABCD0C20EE4AAB0040F5D8 /* DataCenter.swift in Sources */,
 				29E1184E20F45FA1006C366F /* BaseBarButtonItem.swift in Sources */,
 				296A9A7220E47F3400AA07DE /* MeInfoViewController.swift in Sources */,
 				29B7F92420ECA32B00A6F0D4 /* SymbolChangedUpdate.m in Sources */,
-				296A0DF72100B29800919C58 /* StockInfoViewController.swift in Sources */,
 				29A640032100631E00A02DD6 /* WmQuoteGroupRankingItem.m in Sources */,
 				29B7F97C20ECA32B00A6F0D4 /* GetOrder.m in Sources */,
 				29B7F92220ECA32B00A6F0D4 /* SymbolListUpdate.m in Sources */,
@@ -2126,6 +2265,7 @@
 				29ABCD1120EE4B490040F5D8 /* DataHelper.m in Sources */,
 				29B7F92620ECA32B00A6F0D4 /* WmQuoteAndRankUpdate.m in Sources */,
 				29B7F92520ECA32B00A6F0D4 /* SymbolListGroupsUpdate.m in Sources */,
+				29164540210AAC8300733145 /* ChartLineView.swift in Sources */,
 				29B7F98C20ECA32B00A6F0D4 /* EditFavoriteSymbol.m in Sources */,
 				29FB69CE20FE1AF5003C7022 /* DataManager+Extension.swift in Sources */,
 				29A63FF12100533F00A02DD6 /* DataCenter+Quote.swift in Sources */,

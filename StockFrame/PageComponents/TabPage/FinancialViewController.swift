@@ -26,6 +26,20 @@ class FinancialViewController: ViewControllerBase {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+//        DataCenter.sharedInstance.doQuoteRef(["BABA.US.WM"])
+//        DataCenter.sharedInstance.doQuoteRef(["000002.SZ.WM"])
+//        DataCenter.sharedInstance.doQuoteRef(["HSI.HK.WM"])
+        DataCenter.sharedInstance.doTickRef(["000002.SZ.WM"], period: .DC)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+//        DataCenter.sharedInstance.doQuoteUnRef(["BABA.US.WM"])
+//        DataCenter.sharedInstance.doQuoteUnRef(["000002.SZ.WM"])
+//        DataCenter.sharedInstance.doQuoteRef(["HSI.HK.WM"])
+    }
     @objc func btnAction(_ sender: Any) {
         FDT_UI_Public_Proxy.GotoVCWithId(PAGE_ID_MINE)
     }

@@ -87,7 +87,7 @@
     
     NSMutableString *strRet = [NSMutableString new];
     [strRet appendString:@"{\n\t"];
-    [strRet appendFormat:@"pt: SubScribeQuote (%d)\n\t", EnumPacketPT_SubscribeQuote];
+    [strRet appendFormat:@"pt: SubScribeQuote (%ld)\n\t", (long)EnumPacketPT_SubscribeQuote];
     [strRet appendFormat:@"seq: %ld\n\t", (long)self.seq];
     
     if (_strSubribe)

@@ -3,3 +3,4 @@
 *.xcuserstate
 *.xcworkspace
 xcuserdata
+Podfile.lock

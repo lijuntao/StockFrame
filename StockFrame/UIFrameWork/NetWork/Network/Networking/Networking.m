@@ -261,7 +261,7 @@
     
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.delegateNetworkConnect handleConnectStatus:NetworkStatus_DisConnect
-                                              obj:@[[NSString stringWithFormat:@"%d", NetworkStatus_DisConnect], ERROR_NETWORKING_DIDCONNECT, @(prvState)] sender:self];
+                                                     obj:@[[NSString stringWithFormat:@"%ld", (long)NetworkStatus_DisConnect], ERROR_NETWORKING_DIDCONNECT, @(prvState)] sender:self];
     });
     
     // 沒在用的連線斷了就算了

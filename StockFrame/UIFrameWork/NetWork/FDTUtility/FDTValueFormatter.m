@@ -175,12 +175,12 @@
 + (NSString *)formatToChineseAbbrNumber:(NSDecimalNumber *)numVal withComma:(BOOL)bComma dataMgr:(id)dataMgr
 {
     // EN版, 用千位點
-    BOOL isEN = [FDTOCTools getDeviceLanguage] == EnumSymbolLanguageType_EN;//[[self getDeviceLanguage] isEqualToString:@"EN"];
+    BOOL isEN = [FDTOCTools getDeviceLanguage] == EN; //[[self getDeviceLanguage] isEqualToString:@"EN"];
     if (isEN) {
         return [self formatToKMBNumber:numVal];
     }
     
-    BOOL trad = [FDTOCTools getDeviceLanguage] == EnumSymbolLanguageType_TW;//[[self getDeviceLanguage] isEqualToString:@"TW"];
+    BOOL trad = [FDTOCTools getDeviceLanguage] == TW; //[[self getDeviceLanguage] isEqualToString:@"TW"];
     
     if (numVal == nil)
         numVal = [[NSDecimalNumber alloc] initWithDouble:0.0];

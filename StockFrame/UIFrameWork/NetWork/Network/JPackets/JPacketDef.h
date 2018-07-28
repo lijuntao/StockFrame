@@ -13,8 +13,8 @@
 #define JPacket_SendTimeout 10
 
 typedef NS_ENUM(NSUInteger, EnumEncryptType) {
-    EnumEncryptType_RSA = 0x00,
-    EnumEncryptType_AES = 0x01
+    RSA = 0x00,
+    AES = 0x01
 };
 
 typedef NS_ENUM(NSUInteger, EnumQuoteStale) {
@@ -32,10 +32,35 @@ typedef NS_ENUM(NSUInteger, EnumQuoteStatus)
 };
 
 typedef NS_ENUM(NSUInteger, EnumSymbolLanguageType) {
-    EnumSymbolLanguageType_EN = 1,
-    EnumSymbolLanguageType_CN = 2,
-    EnumSymbolLanguageType_TW = 3
+    EN = 1,
+    CN = 2,
+    TW = 3
 };
+
+typedef NS_ENUM(NSInteger, KLINE_MODE) {
+    KLINE_MODE_EX_RIGHT = 0,
+    KLINE_MODE_BACKWARD_RIGHT,
+    KLINE_MODE_FORWARD_RIGHT,
+};
+
+typedef NS_ENUM(NSUInteger, EnumChartType) {
+    Line = 1,
+    K_Line = 2
+};
+
+typedef NS_ENUM(NSUInteger, EnumChartPeriod) {
+    None = 0,
+    // Corresponding to Config file!
+    OneMin = 1, //1分钟 1H
+    FiveMin = 2, //5分钟 1D
+    FifteenMin = 3, //15分钟 1W
+    SixtyMin = 4, //50分钟 1M
+    OneDay = 5, //日K 3M
+    OneWeek = 6, // 周K 1Y
+    OneMonth = 7, //月K 5Y
+    DC = 99  //分时 DC
+};
+
 //-------分割线----------
 
 typedef enum
@@ -109,13 +134,6 @@ typedef enum
     EnumAccountState_Terminated = 2,
     
 } EnumAccountState;
-
-typedef enum
-{
-    EnumTickType_Line = 1,
-    EnumTickType_K = 2
-    
-} EnumTickType;
 
 typedef enum
 {

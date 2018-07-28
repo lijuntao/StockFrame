@@ -18,7 +18,7 @@
 	  	<i pagelist="1000" name="首页" type="stacklist" list="2000-2500"/>
 		<i pagelist="1001" name="行情" type="stacklist" list="3000-3500"/>
 		<i pagelist="1002" name="理财" type="stacklist" list="4000-4500"/>
-		<i pagelist="1003" name="交易" type="stacklist" list="5000-5500,3001"/>
+		<i pagelist="1003" name="交易" type="stacklist" list="5000-5500,3003"/>
 		<i pagelist="1004" name="我的" type="stacklist" list="6000-6199"/>
 		<i pagelist="1010" name="弹出竖屏幕" type="stacklist" list="6201-6300"/>
 	</menu>
@@ -36,7 +36,7 @@
 	<!-- 行情 -->
 	<page id="3000" name="行情" type="frame" stackLevel="0" vcname="StockViewController"/>
 	<page id="3002" name="二级榜单" type="frame" stackLevel="10" vcname="StockRankMoreViewController"/>
-
+    <page id="3003" name="详情" type="frame" stackLevel="15" vcname="StockInfoViewController"/>
 	<!-- 理财 -->
 	<page id="4000" name="理财" type="frame" stackLevel="0" vcname="FinancialViewController"/>
 	<page id="4002" name="理财详情" type="frame" stackLevel="30" vcname="FunInfoViewController"/>

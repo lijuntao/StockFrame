@@ -65,6 +65,7 @@ enum FDTWMColor: NSNumber {
     case whiteColor = 0xFFFFFF
     case activeColor = 0xBE9862
     case defalueTextColor = 0xaaa69c
+    case grayTextColor = 0xB2B2B2
     case mainTextColor = 0x1E1E1E
     case unchangeColor = 0x007AFF
     case valueRiseColor = 0xE14440
@@ -73,7 +74,10 @@ enum FDTWMColor: NSNumber {
     case szColor = 0xC84845 //深股的背景色
     case symbolHKColor = 0xE07D46
     case symbolUSColor = 0x2387DF
-    
+    case defalutLineColor = 0xD8D8D8
+    case timeLineColor = 0x4A90E2
+    case layerColor = 0x0066DC
+    case selectedColor = 0xF2EADF
     //-----分割线-------
 //    case goldNewColor = 0xe8c082
 //    case goldNewColor1 = 0xBA9560

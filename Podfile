@@ -8,6 +8,7 @@ def shared_pods
     pod 'SnapKit'
     pod 'MBProgressHUD'
     pod 'CocoaLumberjack'
+    pod 'Masonry'
 end
 
 target:StockFrame do

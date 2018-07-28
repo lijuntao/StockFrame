@@ -27,6 +27,9 @@ NSString *debugInfo = [NSString stringWithFormat:@"%@%@",info,message];\
 #define StrongObj(o) autoreleasepool{} __strong typeof(o) o = o##Weak;
 
 
+#define PRICE_INVAID_DASH   @"-"
+#define PRICE_INVAID_DASH2  @"--"
+
 #define ERROR_DISCONNECT                            @"You were disconnected."
 #define ERROR_ALL_SERVICE_DOWN                      @"All Service Connect Fail."
 #define ERROR_CANNOT_GET_SERVICE_LIST               @"Cannot Get AppSvc List."
@@ -55,6 +58,13 @@ typedef NS_ENUM(NSInteger, Network_Status)
     NetworkStatus_AllServiceDown                = 6105,
 } ;
 
+typedef NS_ENUM(NSInteger, FDTNetworkFrequency)
+{
+    FDTNetworkFrequencyHigh       = 0,
+    FDTNetworkFrequencyNormal     = 1,
+    FDTNetworkFrequencyLow        = 2
+};
+
 typedef NS_ENUM(NSInteger, SysErrorStatus)
 {
     
@@ -76,15 +86,6 @@ typedef NS_ENUM(NSInteger, SysErrorStatus)
     PopupAlert = 5000,
     PopupAttributedAlert = 5001,
     PopupToast = 5002,
-    
-};
-
-
-typedef NS_ENUM(NSInteger, FDTNetworkFrequency)
-{
-    FDTNetworkFrequencyHigh       = 0,
-    FDTNetworkFrequencyNormal     = 1,
-    FDTNetworkFrequencyLow        = 2
 };
 
 #endif /* NetworkDefinition_h */

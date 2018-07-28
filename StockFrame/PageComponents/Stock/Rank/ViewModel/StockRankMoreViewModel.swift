@@ -24,13 +24,13 @@ class StockRankMoreViewModel: BaseViewModel {
     
     override func active() {
         //
-        DataCenter.sharedInstance.addObserver(.OBSERVER_UPDATE_QUOTE_AND_RANK, observer: self, sec: #selector(handleNotification(_:)))
+        DataCenter.sharedInstance.addObserver(.UPDATE_QUOTE_AND_RANK, observer: self, sec: #selector(handleNotification(_:)))
         _refreshVM.startProcess(nil)
     }
     
     override func deactive() {
         //
-        DataCenter.sharedInstance.removeObserver(.OBSERVER_UPDATE_QUOTE_AND_RANK, observer: self)
+        DataCenter.sharedInstance.removeObserver(.UPDATE_QUOTE_AND_RANK, observer: self)
         _refreshVM.reset()
     }
     
@@ -154,7 +154,7 @@ class StockRankMoreViewModel: BaseViewModel {
         }
         
         cellArray = cells
-        self.notifiToUI()
+        self.notifiedToUI()
     }
     /*
     // Only override draw() if you perform custom drawing.

@@ -28,4 +28,32 @@ extension DataCenter {
         }
         self.dataManager.doGetQuoteAndRank(market, categories: categoriesArray)
     }
+    
+    func doQuoteRef(_ symbolId: [String]) {
+        self.dataManager.doQuoteRef(symbolId)
+    }
+    
+    func doQuoteUnRef(_ symbolId: [String]) {
+        self.dataManager.doQuoteUnRef(symbolId)
+    }
+    
+    func doGetQuote(_ symbolId: [String]) {
+        self.dataManager.doGetQuote(symbolId)
+    }
+    
+    func doTickRef(_ symbolId: [String], period: EnumChartPeriod) {
+        self.dataManager.doTickRef(symbolId, period: period)
+    }
+    
+    func doTickUnRef(_ symbolId: [String], period: EnumChartPeriod) {
+        self.dataManager.doTickUnRef(symbolId, period: period)
+    }
+    
+    func doGetTickData(_ symbolId: [String], period: EnumChartPeriod) {
+        self.dataManager.doGetTickData(symbolId, period: period)
+    }
+    
+    func doUnGetTickData(_ symbolId: [String], period: EnumChartPeriod) {
+        self.dataManager.doUnGetTickData(symbolId, period: period)
+    }
 }
