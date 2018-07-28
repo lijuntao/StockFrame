@@ -154,7 +154,7 @@ class StockRankMoreViewModel: BaseViewModel {
         }
         
         cellArray = cells
-        self.notifiToUI()
+        self.notifiedToUI()
     }
     /*
     // Only override draw() if you perform custom drawing.

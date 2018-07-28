@@ -7,7 +7,7 @@
 //
 
 #import "FDTDataFormatter.h"
-
+static NSString *timeZoneBJName = @"Asia/Shanghai";
 static FDTDataFormatter *singletonInstance = nil;
 @interface FDTDataFormatter()
 //093000
@@ -29,6 +29,7 @@ static FDTDataFormatter *singletonInstance = nil;
     if (self.HHmmssFormatter == nil) {
         self.HHmmssFormatter = [[NSDateFormatter alloc] init];
         self.HHmmssFormatter.dateFormat = @"yyyy-MM-dd HHmmss";
+        self.HHmmssFormatter.timeZone = [NSTimeZone timeZoneWithName:timeZoneBJName];
     }
     return self.HHmmssFormatter;
 }
@@ -37,6 +38,7 @@ static FDTDataFormatter *singletonInstance = nil;
     if (self.ColonHHmmssFormatter == nil) {
         self.ColonHHmmssFormatter = [[NSDateFormatter alloc] init];
         self.ColonHHmmssFormatter.dateFormat = @"yyyy-MM-dd HH:mm:ss";
+        self.HHmmssFormatter.timeZone = [NSTimeZone timeZoneWithName:timeZoneBJName];
     }
     return self.ColonHHmmssFormatter;
 }

@@ -82,4 +82,8 @@ class FDTWMUiUtility
         
         return attributeString
     }
+    
+    class func stringSize(string:String, withAttributes attr: [NSAttributedStringKey: Any]) -> CGSize{
+        return string.size(withAttributes: attr)
+    }
 }

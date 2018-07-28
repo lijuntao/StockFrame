@@ -10,15 +10,12 @@ import UIKit
 
 class StockInfoViewController: ViewControllerBase {
 
+    var chartLineView = ChartLineView(frame: CGRect.zero)
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        let btn = UIButton.init(frame: CGRect(x: 100, y: 100, width: 100, height: 100))
-        btn.backgroundColor = UIColor.red
-        btn.setTitle("我详细信息", for: .normal)
-        btn.addTarget(self, action: #selector(btnAction(_:)), for: .touchUpInside)
-        self.view.addSubview(btn)
+        self.initView()
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,10 +23,32 @@ class StockInfoViewController: ViewControllerBase {
         // Dispose of any resources that can be recreated.
     }
     
-    @objc func btnAction(_ sender: Any) {
-        FDT_UI_Public_Proxy.GotoVCWithId(PAGE_ID_STOCK_MORE_RANK)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        chartLineView.activeViewModel()
     }
-
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        chartLineView.deactiveViewModel()
+    }
+    
+    func initView() {
+        let symbol = pageData![SYMBOLID_KEY] as! String
+        chartLineView = ChartLineView(symbolId: symbol, period: .DC)
+        let _ = self.view + chartLineView
+    }
+    
+    override func updateViewConstraints() {
+        
+        chartLineView.snp.makeConstraints { (make) in
+            make.left.right.top.equalToSuperview()
+            make.height.equalTo(400)
+        }
+        
+        super.updateViewConstraints()
+    }
+    
     /*
     // MARK: - Navigation
 

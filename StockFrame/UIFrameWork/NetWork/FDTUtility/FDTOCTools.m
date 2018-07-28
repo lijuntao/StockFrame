@@ -67,20 +67,23 @@
 }
 
 + (BOOL)timeIsInInterval:(NSString *)time startTime:(NSString *)startTime endTime:(NSString *)endTime {
-    NSString *newTime = [NSString stringWithFormat:@"2000-01-01 %@",time];
+    NSString *nowTime = [NSString stringWithFormat:@"2000-01-01 %@",time];
     NSDateFormatter *dateFormatter = [[FDTDataFormatter sharedInstance] getHHmmss];
-    NSDate *nowDate = [dateFormatter dateFromString:newTime];
+    NSDate *nowDate = [dateFormatter dateFromString:nowTime];
     
     NSString *newStartTime = [NSString stringWithFormat:@"2000-01-01 %@",startTime];
     NSString *newEndTime = [NSString stringWithFormat:@"2000-01-01 %@",endTime];
     dateFormatter = [[FDTDataFormatter sharedInstance] getColonHHmmss];
     NSDate *startDate = [dateFormatter dateFromString:newStartTime];
     NSDate *endDate = [dateFormatter dateFromString:newEndTime];
-    
+    //如果结束时间比开始时间早，说明是隔夜盘，加一天
+    if ([endDate compare:startDate] == NSOrderedAscending) {
+        endDate = [endDate dateByAddingTimeInterval:3600 * 24];
+    }
     if ([nowDate isEqualToDate:startDate] ||
         [nowDate isEqualToDate:endDate] ||
-        ([nowDate laterDate:startDate] &&
-         [nowDate earlierDate:endDate])) {
+        ([nowDate compare:startDate] == NSOrderedDescending &&
+          [nowDate compare:endDate] == NSOrderedAscending)) {
             return true;
     }
     return false;
@@ -98,6 +101,10 @@
         NSDateFormatter *dateFormatter = [[FDTDataFormatter sharedInstance] getColonHHmmss];
         NSDate *startDate = [dateFormatter dateFromString:newStartTime];
         NSDate *endDate = [dateFormatter dateFromString:newEndTime];
+        //如果结束时间比开始时间早，说明是隔夜盘，加一天
+        if ([endDate compare:startDate] == NSOrderedAscending) {
+            endDate = [endDate dateByAddingTimeInterval:3600 * 24];
+        }
         count += [endDate timeIntervalSinceDate:startDate] / 60.0;
         count += 1;
     }

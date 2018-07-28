@@ -144,7 +144,9 @@ class StockRankView: BaseView, UITableViewDataSource, UITableViewDelegate, ViewM
     //MARK: UITableViewDelegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
-        //
+        let symbolId = self.viewModel.getCellSymbolId(indexPath.section, row: indexPath.row)
+        let params = [SYMBOLID_KEY: symbolId]
+        FDT_UI_Public_Proxy.GoToVCWithId(PAGE_ID_STOCK_INFO, params: params)
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

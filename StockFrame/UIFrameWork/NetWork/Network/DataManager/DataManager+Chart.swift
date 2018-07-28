@@ -38,15 +38,6 @@ extension DataManager {
             self.chartListDic[pkt.symbolID]![String(period.rawValue)] = chartItems
             
             self.postDelegate.postNotification(withType: .UPDATE_TICK, object: nil)
-            let newchartItems = self.chartListDic[pkt.symbolID]![String(period.rawValue)]!
-            print("-------")
-            for item in newchartItems {
-                print("----\(item.dataTime)")
-                print("----\(item.trddate)")
-            }
-            print("-----count--\(newchartItems.count)")
-            print("-----last--\(newchartItems.last?.dataTime)")
-            print("--------")
         }
     }
     

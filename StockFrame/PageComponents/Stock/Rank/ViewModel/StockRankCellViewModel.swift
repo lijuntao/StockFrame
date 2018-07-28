@@ -10,6 +10,7 @@ import UIKit
 
 class StockRankCellViewModel: BaseViewModel {
 
+    var symbolID: String! // 股票symbol
     var symbolName: String! //股票名称
     var symbolName2: String! //股票代码
     var symbolMarket: String! //股票市场
@@ -35,7 +36,7 @@ class StockRankCellViewModel: BaseViewModel {
     func setDataItem(_ item: WmGroupCategoryBaseItem)
     {
         self.item = item
-        
+        symbolID = item.id
         symbolName = item.name
         symbolName2 = FDTTools.getSymbolShortId(item.id)
         symbolMarket = FDTTools.getMarketWithSymbolId(item.id)

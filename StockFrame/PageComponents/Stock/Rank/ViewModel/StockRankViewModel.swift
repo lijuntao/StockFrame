@@ -111,6 +111,17 @@ class StockRankViewModel: BaseViewModel {
         let cells = self.sectionArray[section][StockRankViewModel.SECTION_CELL] as! Array<BaseViewModel>
         return cells[row]
     }
+    
+    func getCellSymbolId(_ section: Int, row: Int) -> String
+    {
+        let cells = self.sectionArray[section][StockRankViewModel.SECTION_CELL] as! Array<BaseViewModel>
+        if let viewModel = cells[row] as? StockRankCellViewModel {
+            return viewModel.symbolID
+        } else if let viewModel = cells[row] as? StockRankAHCellViewModel {
+            return viewModel.symbolID
+        }
+        return ""
+    }
     ///该页面所需市场
     func getMarketTypes() -> [MarketType]? {
         preconditionFailure("This method must be overridden")
@@ -211,7 +222,7 @@ class StockRankViewModel: BaseViewModel {
                 }
                 sectionArray[index][StockRankViewModel.SECTION_CELL] = cells as AnyObject
             }
-            self.notifiToUI()
+            self.notifiedToUI()
         }
     }
 }

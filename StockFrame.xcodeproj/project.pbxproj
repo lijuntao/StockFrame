@@ -16,6 +16,13 @@
 		2912AFBF20F3042B00041031 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2912AFBE20F3042B00041031 /* LoginViewController.swift */; };
 		2912AFC120F332FD00041031 /* LoginInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2912AFC020F332FD00041031 /* LoginInfoViewController.swift */; };
 		2912AFC620F368C200041031 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2912AFC520F368C200041031 /* UIView+Extension.swift */; };
+		291645342109F22C00733145 /* FDTChartDrawTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291645332109F22C00733145 /* FDTChartDrawTools.swift */; };
+		2916453B2109F97F00733145 /* ChartConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2916453A2109F97F00733145 /* ChartConfig.swift */; };
+		29164540210AAC8300733145 /* ChartLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2916453F210AAC8300733145 /* ChartLineView.swift */; };
+		29164542210AACA700733145 /* ChartLineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29164541210AACA700733145 /* ChartLineViewModel.swift */; };
+		29164544210AB0BF00733145 /* DataManager+getter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29164543210AB0BF00733145 /* DataManager+getter.swift */; };
+		2916454C210AB80D00733145 /* StockInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2916454B210AB80D00733145 /* StockInfoViewController.swift */; };
+		2916454E210ABC8A00733145 /* DataCenter+getter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2916454D210ABC8A00733145 /* DataCenter+getter.swift */; };
 		2924901320EF441800205628 /* ServerConfig.xml in Resources */ = {isa = PBXBuildFile; fileRef = 2924901220EF441800205628 /* ServerConfig.xml */; };
 		2924901520EF443D00205628 /* ServerConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2924901420EF443D00205628 /* ServerConfig.swift */; };
 		2924901720EF447C00205628 /* ServerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2924901620EF447C00205628 /* ServerManager.swift */; };
@@ -51,7 +58,6 @@
 		296A0DF12100985500919C58 /* StockRankViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296A0DF02100985500919C58 /* StockRankViewModel.swift */; };
 		296A0DF32100A91300919C58 /* UILayoutEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296A0DF22100A91300919C58 /* UILayoutEnum.swift */; };
 		296A0DF52100B0EB00919C58 /* StockRankHSViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296A0DF42100B0EB00919C58 /* StockRankHSViewModel.swift */; };
-		296A0DF72100B29800919C58 /* StockInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296A0DF62100B29800919C58 /* StockInfoViewController.swift */; };
 		296A9A5020E362E700AA07DE /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296A9A4F20E362E700AA07DE /* String+Extension.swift */; };
 		296A9A5520E366B400AA07DE /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296A9A5420E366B400AA07DE /* UIImage+Extension.swift */; };
 		296A9A5720E370F500AA07DE /* FDTUIWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296A9A5620E370F500AA07DE /* FDTUIWindow.swift */; };
@@ -303,6 +309,13 @@
 		2912AFBE20F3042B00041031 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2912AFC020F332FD00041031 /* LoginInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInfoViewController.swift; sourceTree = "<group>"; };
 		2912AFC520F368C200041031 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		291645332109F22C00733145 /* FDTChartDrawTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FDTChartDrawTools.swift; sourceTree = "<group>"; };
+		2916453A2109F97F00733145 /* ChartConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartConfig.swift; sourceTree = "<group>"; };
+		2916453F210AAC8300733145 /* ChartLineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartLineView.swift; sourceTree = "<group>"; };
+		29164541210AACA700733145 /* ChartLineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartLineViewModel.swift; sourceTree = "<group>"; };
+		29164543210AB0BF00733145 /* DataManager+getter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataManager+getter.swift"; sourceTree = "<group>"; };
+		2916454B210AB80D00733145 /* StockInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StockInfoViewController.swift; sourceTree = "<group>"; };
+		2916454D210ABC8A00733145 /* DataCenter+getter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataCenter+getter.swift"; sourceTree = "<group>"; };
 		2924901220EF441800205628 /* ServerConfig.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ServerConfig.xml; sourceTree = "<group>"; };
 		2924901420EF443D00205628 /* ServerConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerConfig.swift; sourceTree = "<group>"; };
 		2924901620EF447C00205628 /* ServerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerManager.swift; sourceTree = "<group>"; };
@@ -351,7 +364,6 @@
 		296A0DF02100985500919C58 /* StockRankViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockRankViewModel.swift; sourceTree = "<group>"; };
 		296A0DF22100A91300919C58 /* UILayoutEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILayoutEnum.swift; sourceTree = "<group>"; };
 		296A0DF42100B0EB00919C58 /* StockRankHSViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockRankHSViewModel.swift; sourceTree = "<group>"; };
-		296A0DF62100B29800919C58 /* StockInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StockInfoViewController.swift; sourceTree = "<group>"; };
 		296A9A4F20E362E700AA07DE /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		296A9A5420E366B400AA07DE /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		296A9A5620E370F500AA07DE /* FDTUIWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FDTUIWindow.swift; sourceTree = "<group>"; };
@@ -844,6 +856,73 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		291645312109F20800733145 /* Chart */ = {
+			isa = PBXGroup;
+			children = (
+				2916453E210AAC8300733145 /* Line */,
+				291645392109F96900733145 /* ChartConfig */,
+				291645322109F20800733145 /* ChartDrawTools */,
+			);
+			path = Chart;
+			sourceTree = "<group>";
+		};
+		291645322109F20800733145 /* ChartDrawTools */ = {
+			isa = PBXGroup;
+			children = (
+				291645332109F22C00733145 /* FDTChartDrawTools.swift */,
+			);
+			path = ChartDrawTools;
+			sourceTree = "<group>";
+		};
+		291645392109F96900733145 /* ChartConfig */ = {
+			isa = PBXGroup;
+			children = (
+				2916453A2109F97F00733145 /* ChartConfig.swift */,
+			);
+			path = ChartConfig;
+			sourceTree = "<group>";
+		};
+		2916453E210AAC8300733145 /* Line */ = {
+			isa = PBXGroup;
+			children = (
+				2916453F210AAC8300733145 /* ChartLineView.swift */,
+				29164541210AACA700733145 /* ChartLineViewModel.swift */,
+			);
+			path = Line;
+			sourceTree = "<group>";
+		};
+		29164545210AB7D900733145 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				2916454A210AB80D00733145 /* Controller */,
+				29164548210AB80D00733145 /* View */,
+				29164549210AB80D00733145 /* ViewModel */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		29164548210AB80D00733145 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		29164549210AB80D00733145 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2916454A210AB80D00733145 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2916454B210AB80D00733145 /* StockInfoViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		2924901120EF43DB00205628 /* Config */ = {
 			isa = PBXGroup;
 			children = (
@@ -932,6 +1011,7 @@
 		2947DCB420B7D975007BCAF4 /* UIFrameWork */ = {
 			isa = PBXGroup;
 			children = (
+				291645312109F20800733145 /* Chart */,
 				29E1184720F45FA0006C366F /* Common */,
 				29E1184220F45F40006C366F /* Tools */,
 				29ABCD0720EE4A570040F5D8 /* DetaCenter */,
@@ -1063,7 +1143,7 @@
 		296A9A6820E4777600AA07DE /* Stock */ = {
 			isa = PBXGroup;
 			children = (
-				296A0DF62100B29800919C58 /* StockInfoViewController.swift */,
+				29164545210AB7D900733145 /* Detail */,
 				29A640102100841F00A02DD6 /* Rank */,
 			);
 			path = Stock;
@@ -1158,6 +1238,7 @@
 				29A63FEE21003BB300A02DD6 /* DataCenter+PostNotification.swift */,
 				29A63FF02100533F00A02DD6 /* DataCenter+Quote.swift */,
 				29A63FF22100584D00A02DD6 /* DataEnum.swift */,
+				2916454D210ABC8A00733145 /* DataCenter+getter.swift */,
 			);
 			path = DetaCenter;
 			sourceTree = "<group>";
@@ -1556,6 +1637,7 @@
 			isa = PBXGroup;
 			children = (
 				2924901820EF547900205628 /* DataManager.swift */,
+				29164543210AB0BF00733145 /* DataManager+getter.swift */,
 				29FB69C620FDE3CD003C7022 /* DataManager+HouseKeeping.swift */,
 				29FB69CD20FE1AF5003C7022 /* DataManager+Extension.swift */,
 				29FB69CF20FE1B55003C7022 /* DataManger+QuoteUpdate.swift */,
@@ -1957,6 +2039,7 @@
 				296A0DE22100912E00919C58 /* UIFont+Extension.swift in Sources */,
 				2912AFC120F332FD00041031 /* LoginInfoViewController.swift in Sources */,
 				296A9A7820E47FF300AA07DE /* AccountInfoViewController.swift in Sources */,
+				2916453B2109F97F00733145 /* ChartConfig.swift in Sources */,
 				29B7F93B20ECA32B00A6F0D4 /* ProfitUpdate.m in Sources */,
 				29C5C9672100CF5C00B4E491 /* FDTFormatterUtility.swift in Sources */,
 				29B7F99E20ECA41500A6F0D4 /* FDUtility.m in Sources */,
@@ -1991,6 +2074,7 @@
 				29B7F97720ECA32B00A6F0D4 /* WmGetOrder.m in Sources */,
 				2996E2C72104422B00FE4303 /* ConstantKey.swift in Sources */,
 				29B7F92020ECA32B00A6F0D4 /* AccountStateUpdate.m in Sources */,
+				2916454C210AB80D00733145 /* StockInfoViewController.swift in Sources */,
 				296A0DE0210090D300919C58 /* BaseLabel.swift in Sources */,
 				29B7F93420ECA32B00A6F0D4 /* LastTradeDateQuoteUpdate.m in Sources */,
 				29B7F97920ECA32B00A6F0D4 /* SearchSymbol.m in Sources */,
@@ -2015,7 +2099,9 @@
 				29DF0A812102FD8F00168002 /* StockRankUSViewModel.swift in Sources */,
 				29A6400F210067A900A02DD6 /* FDTOCTools.m in Sources */,
 				29B7F9B620ECAF1900A6F0D4 /* BDCryptor.m in Sources */,
+				2916454E210ABC8A00733145 /* DataCenter+getter.swift in Sources */,
 				29B7F94120ECA32B00A6F0D4 /* WmExchangeOrderUpdate.m in Sources */,
+				29164542210AACA700733145 /* ChartLineViewModel.swift in Sources */,
 				29B7F95920ECA32B00A6F0D4 /* UserCreateLogin.m in Sources */,
 				29B7F90E20ECA32B00A6F0D4 /* JPacketReceiveBase.m in Sources */,
 				29B7F97820ECA32B00A6F0D4 /* UseCoinPacket.m in Sources */,
@@ -2099,6 +2185,7 @@
 				29B7F94320ECA32B00A6F0D4 /* AccountStatus.m in Sources */,
 				29B7F97420ECA32B00A6F0D4 /* UserMappingStatus.m in Sources */,
 				29AAB49C2105DE30008D6BBC /* JQuoteItem.m in Sources */,
+				29164544210AB0BF00733145 /* DataManager+getter.swift in Sources */,
 				29FB69D920FF40E3003C7022 /* JPacketPTMap.m in Sources */,
 				296A9A6120E393BC00AA07DE /* TransactionViewController.swift in Sources */,
 				29B7F94520ECA32B00A6F0D4 /* WmExchangeRateUpdate.m in Sources */,
@@ -2164,13 +2251,13 @@
 				29A64009210066C800A02DD6 /* NSDecimalNumber+Compare.m in Sources */,
 				298CDDE220EE222700BFBB57 /* TestObjc.m in Sources */,
 				29DF0A8521037B3500168002 /* StockNomalSecitonView.swift in Sources */,
+				291645342109F22C00733145 /* FDTChartDrawTools.swift in Sources */,
 				2947DCC320B7F1DA007BCAF4 /* NavigationControllerBase.swift in Sources */,
 				2912AFBF20F3042B00041031 /* LoginViewController.swift in Sources */,
 				29ABCD0C20EE4AAB0040F5D8 /* DataCenter.swift in Sources */,
 				29E1184E20F45FA1006C366F /* BaseBarButtonItem.swift in Sources */,
 				296A9A7220E47F3400AA07DE /* MeInfoViewController.swift in Sources */,
 				29B7F92420ECA32B00A6F0D4 /* SymbolChangedUpdate.m in Sources */,
-				296A0DF72100B29800919C58 /* StockInfoViewController.swift in Sources */,
 				29A640032100631E00A02DD6 /* WmQuoteGroupRankingItem.m in Sources */,
 				29B7F97C20ECA32B00A6F0D4 /* GetOrder.m in Sources */,
 				29B7F92220ECA32B00A6F0D4 /* SymbolListUpdate.m in Sources */,
@@ -2178,6 +2265,7 @@
 				29ABCD1120EE4B490040F5D8 /* DataHelper.m in Sources */,
 				29B7F92620ECA32B00A6F0D4 /* WmQuoteAndRankUpdate.m in Sources */,
 				29B7F92520ECA32B00A6F0D4 /* SymbolListGroupsUpdate.m in Sources */,
+				29164540210AAC8300733145 /* ChartLineView.swift in Sources */,
 				29B7F98C20ECA32B00A6F0D4 /* EditFavoriteSymbol.m in Sources */,
 				29FB69CE20FE1AF5003C7022 /* DataManager+Extension.swift in Sources */,
 				29A63FF12100533F00A02DD6 /* DataCenter+Quote.swift in Sources */,

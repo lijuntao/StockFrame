@@ -28,7 +28,7 @@ class BaseViewModel: NSObject {
         preconditionFailure("This method must be overridden")
     }
     
-    func notifiToUI () {
+    func notifiedToUI () {
         delegate?.refreshUI()
     }
 }

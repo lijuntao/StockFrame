@@ -806,7 +806,7 @@ extension DataManager {
                 let item = QuoteFieldItem.init(text: strText as! String)
                 quoteItem?.shortName = item
             } while (false)
-            self.postDelegate.postNotification(withType: .UPDATE_QUOTE_AND_RANK, object: nil)
+            self.postDelegate.postNotification(withType: .UPDATE_QUOTE, object: nil)
         }
     }
 }
